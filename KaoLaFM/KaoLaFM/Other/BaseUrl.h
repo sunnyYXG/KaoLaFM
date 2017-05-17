@@ -14,7 +14,7 @@
 /**
  *  精选
  */
-#define selection_url   @"/api/v4/pagecontent/list?"
+#define selection_url   @"http://api.kaolafm.com/api/v4/pagecontent/list?"
 
 
 

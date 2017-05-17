@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "968EF03BC9241410D6515C01B2D65ADF019115D7",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "4506C442403551CB3904E6737AB515B906075F52" : 0,
+    "968EF03BC9241410D6515C01B2D65ADF019115D7" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "BF5FC083-E3E7-4C11-A07E-94F148138439",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "4506C442403551CB3904E6737AB515B906075F52" : "",
+    "968EF03BC9241410D6515C01B2D65ADF019115D7" : "KaoLaFM\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "KaoLaFM",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "KaoLaFM\/KaoLaFM.xcworkspace",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/sunnyYXG\/Koala.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "4506C442403551CB3904E6737AB515B906075F52"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/sunnyYXG\/KaoLaFM.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "968EF03BC9241410D6515C01B2D65ADF019115D7"
+    }
+  ]
+}
