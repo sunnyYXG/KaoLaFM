@@ -6,6 +6,8 @@ pod 'SDWebImage'
 pod 'MJExtension'
 pod 'MJRefresh'
 pod 'YYModel'
+pod 'YYText'
+pod 'YYWebImage'
 pod 'MBProgressHUD'
 pod 'SVProgressHUD'
 end

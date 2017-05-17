@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = 'FE83880AC381A41C66E5279022C8AA26'
+               BlueprintIdentifier = 'A011AB9B6703A5073D69BD216A6F70E1'
                BlueprintName = 'Pods-KaoLaFM'
                ReferencedContainer = 'container:Pods.xcodeproj'
                BuildableName = 'libPods-KaoLaFM.a'>
