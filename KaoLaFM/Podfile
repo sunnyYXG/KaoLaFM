@@ -1,0 +1,11 @@
+platform :ios, '8.0'
+target 'KaoLaFM'™ do
+pod 'AFNetworking'
+pod 'Masonry'
+pod 'SDWebImage'
+pod 'MJExtension'
+pod 'MJRefresh'
+pod 'YYModel'
+pod 'MBProgressHUD'
+pod 'SVProgressHUD'
+end

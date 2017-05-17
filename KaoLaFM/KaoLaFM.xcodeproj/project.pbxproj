@@ -1,0 +1,640 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0DB24B111ECC2D0A00ABF4CA /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DB24B101ECC2D0A00ABF4CA /* main.m */; };
+		0DB24B141ECC2D0A00ABF4CA /* KLFMAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DB24B131ECC2D0A00ABF4CA /* KLFMAppDelegate.m */; };
+		0DB24B171ECC2D0A00ABF4CA /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DB24B161ECC2D0A00ABF4CA /* ViewController.m */; };
+		0DB24B1A1ECC2D0A00ABF4CA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0DB24B181ECC2D0A00ABF4CA /* Main.storyboard */; };
+		0DB24B1C1ECC2D0A00ABF4CA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0DB24B1B1ECC2D0A00ABF4CA /* Assets.xcassets */; };
+		0DB24B1F1ECC2D0A00ABF4CA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0DB24B1D1ECC2D0A00ABF4CA /* LaunchScreen.storyboard */; };
+		0DB24B2A1ECC2D0B00ABF4CA /* KaoLaFMTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DB24B291ECC2D0B00ABF4CA /* KaoLaFMTests.m */; };
+		0DB24B351ECC2D0B00ABF4CA /* KaoLaFMUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DB24B341ECC2D0B00ABF4CA /* KaoLaFMUITests.m */; };
+		0DB24B5B1ECC315800ABF4CA /* BaseTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DB24B481ECC315800ABF4CA /* BaseTableViewController.m */; };
+		0DB24B5C1ECC315800ABF4CA /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DB24B4A1ECC315800ABF4CA /* BaseViewController.m */; };
+		0DB24B5D1ECC315800ABF4CA /* BaseRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DB24B4D1ECC315800ABF4CA /* BaseRequest.m */; };
+		0DB24B5E1ECC315800ABF4CA /* BaseTableHeaderFooterView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DB24B501ECC315800ABF4CA /* BaseTableHeaderFooterView.m */; };
+		0DB24B5F1ECC315800ABF4CA /* BaseTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DB24B521ECC315800ABF4CA /* BaseTableView.m */; };
+		0DB24B601ECC315800ABF4CA /* BaseTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DB24B541ECC315800ABF4CA /* BaseTableViewCell.m */; };
+		0DB24B611ECC315800ABF4CA /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0DB24B581ECC315800ABF4CA /* InfoPlist.strings */; };
+		0DB24B651ECC343700ABF4CA /* KLFM_SelectionController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DB24B641ECC343700ABF4CA /* KLFM_SelectionController.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		0DB24B261ECC2D0B00ABF4CA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0DB24B041ECC2D0A00ABF4CA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 0DB24B0B1ECC2D0A00ABF4CA;
+			remoteInfo = KaoLaFM;
+		};
+		0DB24B311ECC2D0B00ABF4CA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0DB24B041ECC2D0A00ABF4CA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 0DB24B0B1ECC2D0A00ABF4CA;
+			remoteInfo = KaoLaFM;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		0DB24B0C1ECC2D0A00ABF4CA /* KaoLaFM.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KaoLaFM.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		0DB24B101ECC2D0A00ABF4CA /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		0DB24B121ECC2D0A00ABF4CA /* KLFMAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KLFMAppDelegate.h; sourceTree = "<group>"; };
+		0DB24B131ECC2D0A00ABF4CA /* KLFMAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KLFMAppDelegate.m; sourceTree = "<group>"; };
+		0DB24B151ECC2D0A00ABF4CA /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		0DB24B161ECC2D0A00ABF4CA /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		0DB24B191ECC2D0A00ABF4CA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		0DB24B1B1ECC2D0A00ABF4CA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		0DB24B1E1ECC2D0A00ABF4CA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		0DB24B201ECC2D0A00ABF4CA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0DB24B251ECC2D0B00ABF4CA /* KaoLaFMTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KaoLaFMTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		0DB24B291ECC2D0B00ABF4CA /* KaoLaFMTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KaoLaFMTests.m; sourceTree = "<group>"; };
+		0DB24B2B1ECC2D0B00ABF4CA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0DB24B301ECC2D0B00ABF4CA /* KaoLaFMUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KaoLaFMUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		0DB24B341ECC2D0B00ABF4CA /* KaoLaFMUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KaoLaFMUITests.m; sourceTree = "<group>"; };
+		0DB24B361ECC2D0B00ABF4CA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0DB24B471ECC315800ABF4CA /* BaseTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseTableViewController.h; sourceTree = "<group>"; };
+		0DB24B481ECC315800ABF4CA /* BaseTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseTableViewController.m; sourceTree = "<group>"; };
+		0DB24B491ECC315800ABF4CA /* BaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseViewController.h; sourceTree = "<group>"; };
+		0DB24B4A1ECC315800ABF4CA /* BaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseViewController.m; sourceTree = "<group>"; };
+		0DB24B4C1ECC315800ABF4CA /* BaseRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseRequest.h; sourceTree = "<group>"; };
+		0DB24B4D1ECC315800ABF4CA /* BaseRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseRequest.m; sourceTree = "<group>"; };
+		0DB24B4F1ECC315800ABF4CA /* BaseTableHeaderFooterView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseTableHeaderFooterView.h; sourceTree = "<group>"; };
+		0DB24B501ECC315800ABF4CA /* BaseTableHeaderFooterView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseTableHeaderFooterView.m; sourceTree = "<group>"; };
+		0DB24B511ECC315800ABF4CA /* BaseTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseTableView.h; sourceTree = "<group>"; };
+		0DB24B521ECC315800ABF4CA /* BaseTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseTableView.m; sourceTree = "<group>"; };
+		0DB24B531ECC315800ABF4CA /* BaseTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseTableViewCell.h; sourceTree = "<group>"; };
+		0DB24B541ECC315800ABF4CA /* BaseTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseTableViewCell.m; sourceTree = "<group>"; };
+		0DB24B561ECC315800ABF4CA /* BaseDefine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseDefine.h; sourceTree = "<group>"; };
+		0DB24B571ECC315800ABF4CA /* BaseUrl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseUrl.h; sourceTree = "<group>"; };
+		0DB24B581ECC315800ABF4CA /* InfoPlist.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = InfoPlist.strings; sourceTree = "<group>"; };
+		0DB24B591ECC315800ABF4CA /* PrefixHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
+		0DB24B631ECC343700ABF4CA /* KLFM_SelectionController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KLFM_SelectionController.h; sourceTree = "<group>"; };
+		0DB24B641ECC343700ABF4CA /* KLFM_SelectionController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KLFM_SelectionController.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		0DB24B091ECC2D0A00ABF4CA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0DB24B221ECC2D0B00ABF4CA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0DB24B2D1ECC2D0B00ABF4CA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		0DB24B031ECC2D0A00ABF4CA = {
+			isa = PBXGroup;
+			children = (
+				0DB24B0E1ECC2D0A00ABF4CA /* KaoLaFM */,
+				0DB24B281ECC2D0B00ABF4CA /* KaoLaFMTests */,
+				0DB24B331ECC2D0B00ABF4CA /* KaoLaFMUITests */,
+				0DB24B0D1ECC2D0A00ABF4CA /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		0DB24B0D1ECC2D0A00ABF4CA /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				0DB24B0C1ECC2D0A00ABF4CA /* KaoLaFM.app */,
+				0DB24B251ECC2D0B00ABF4CA /* KaoLaFMTests.xctest */,
+				0DB24B301ECC2D0B00ABF4CA /* KaoLaFMUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		0DB24B0E1ECC2D0A00ABF4CA /* KaoLaFM */ = {
+			isa = PBXGroup;
+			children = (
+				0DB24B421ECC315800ABF4CA /* Class */,
+				0DB24B551ECC315800ABF4CA /* Other */,
+				0DB24B121ECC2D0A00ABF4CA /* KLFMAppDelegate.h */,
+				0DB24B131ECC2D0A00ABF4CA /* KLFMAppDelegate.m */,
+				0DB24B151ECC2D0A00ABF4CA /* ViewController.h */,
+				0DB24B161ECC2D0A00ABF4CA /* ViewController.m */,
+				0DB24B181ECC2D0A00ABF4CA /* Main.storyboard */,
+				0DB24B1B1ECC2D0A00ABF4CA /* Assets.xcassets */,
+				0DB24B1D1ECC2D0A00ABF4CA /* LaunchScreen.storyboard */,
+				0DB24B201ECC2D0A00ABF4CA /* Info.plist */,
+				0DB24B0F1ECC2D0A00ABF4CA /* Supporting Files */,
+			);
+			path = KaoLaFM;
+			sourceTree = "<group>";
+		};
+		0DB24B0F1ECC2D0A00ABF4CA /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				0DB24B101ECC2D0A00ABF4CA /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		0DB24B281ECC2D0B00ABF4CA /* KaoLaFMTests */ = {
+			isa = PBXGroup;
+			children = (
+				0DB24B291ECC2D0B00ABF4CA /* KaoLaFMTests.m */,
+				0DB24B2B1ECC2D0B00ABF4CA /* Info.plist */,
+			);
+			path = KaoLaFMTests;
+			sourceTree = "<group>";
+		};
+		0DB24B331ECC2D0B00ABF4CA /* KaoLaFMUITests */ = {
+			isa = PBXGroup;
+			children = (
+				0DB24B341ECC2D0B00ABF4CA /* KaoLaFMUITests.m */,
+				0DB24B361ECC2D0B00ABF4CA /* Info.plist */,
+			);
+			path = KaoLaFMUITests;
+			sourceTree = "<group>";
+		};
+		0DB24B421ECC315800ABF4CA /* Class */ = {
+			isa = PBXGroup;
+			children = (
+				0DB24B621ECC336D00ABF4CA /* Selection */,
+				0DB24B431ECC315800ABF4CA /* Base */,
+			);
+			path = Class;
+			sourceTree = "<group>";
+		};
+		0DB24B431ECC315800ABF4CA /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				0DB24B441ECC315800ABF4CA /* Control */,
+				0DB24B4B1ECC315800ABF4CA /* Request */,
+				0DB24B4E1ECC315800ABF4CA /* View */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		0DB24B441ECC315800ABF4CA /* Control */ = {
+			isa = PBXGroup;
+			children = (
+				0DB24B471ECC315800ABF4CA /* BaseTableViewController.h */,
+				0DB24B481ECC315800ABF4CA /* BaseTableViewController.m */,
+				0DB24B491ECC315800ABF4CA /* BaseViewController.h */,
+				0DB24B4A1ECC315800ABF4CA /* BaseViewController.m */,
+			);
+			path = Control;
+			sourceTree = "<group>";
+		};
+		0DB24B4B1ECC315800ABF4CA /* Request */ = {
+			isa = PBXGroup;
+			children = (
+				0DB24B4C1ECC315800ABF4CA /* BaseRequest.h */,
+				0DB24B4D1ECC315800ABF4CA /* BaseRequest.m */,
+			);
+			path = Request;
+			sourceTree = "<group>";
+		};
+		0DB24B4E1ECC315800ABF4CA /* View */ = {
+			isa = PBXGroup;
+			children = (
+				0DB24B4F1ECC315800ABF4CA /* BaseTableHeaderFooterView.h */,
+				0DB24B501ECC315800ABF4CA /* BaseTableHeaderFooterView.m */,
+				0DB24B511ECC315800ABF4CA /* BaseTableView.h */,
+				0DB24B521ECC315800ABF4CA /* BaseTableView.m */,
+				0DB24B531ECC315800ABF4CA /* BaseTableViewCell.h */,
+				0DB24B541ECC315800ABF4CA /* BaseTableViewCell.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		0DB24B551ECC315800ABF4CA /* Other */ = {
+			isa = PBXGroup;
+			children = (
+				0DB24B561ECC315800ABF4CA /* BaseDefine.h */,
+				0DB24B571ECC315800ABF4CA /* BaseUrl.h */,
+				0DB24B581ECC315800ABF4CA /* InfoPlist.strings */,
+				0DB24B591ECC315800ABF4CA /* PrefixHeader.pch */,
+			);
+			path = Other;
+			sourceTree = "<group>";
+		};
+		0DB24B621ECC336D00ABF4CA /* Selection */ = {
+			isa = PBXGroup;
+			children = (
+				0DB24B631ECC343700ABF4CA /* KLFM_SelectionController.h */,
+				0DB24B641ECC343700ABF4CA /* KLFM_SelectionController.m */,
+			);
+			path = Selection;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		0DB24B0B1ECC2D0A00ABF4CA /* KaoLaFM */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0DB24B391ECC2D0B00ABF4CA /* Build configuration list for PBXNativeTarget "KaoLaFM" */;
+			buildPhases = (
+				0DB24B081ECC2D0A00ABF4CA /* Sources */,
+				0DB24B091ECC2D0A00ABF4CA /* Frameworks */,
+				0DB24B0A1ECC2D0A00ABF4CA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = KaoLaFM;
+			productName = KaoLaFM;
+			productReference = 0DB24B0C1ECC2D0A00ABF4CA /* KaoLaFM.app */;
+			productType = "com.apple.product-type.application";
+		};
+		0DB24B241ECC2D0B00ABF4CA /* KaoLaFMTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0DB24B3C1ECC2D0B00ABF4CA /* Build configuration list for PBXNativeTarget "KaoLaFMTests" */;
+			buildPhases = (
+				0DB24B211ECC2D0B00ABF4CA /* Sources */,
+				0DB24B221ECC2D0B00ABF4CA /* Frameworks */,
+				0DB24B231ECC2D0B00ABF4CA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				0DB24B271ECC2D0B00ABF4CA /* PBXTargetDependency */,
+			);
+			name = KaoLaFMTests;
+			productName = KaoLaFMTests;
+			productReference = 0DB24B251ECC2D0B00ABF4CA /* KaoLaFMTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		0DB24B2F1ECC2D0B00ABF4CA /* KaoLaFMUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0DB24B3F1ECC2D0B00ABF4CA /* Build configuration list for PBXNativeTarget "KaoLaFMUITests" */;
+			buildPhases = (
+				0DB24B2C1ECC2D0B00ABF4CA /* Sources */,
+				0DB24B2D1ECC2D0B00ABF4CA /* Frameworks */,
+				0DB24B2E1ECC2D0B00ABF4CA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				0DB24B321ECC2D0B00ABF4CA /* PBXTargetDependency */,
+			);
+			name = KaoLaFMUITests;
+			productName = KaoLaFMUITests;
+			productReference = 0DB24B301ECC2D0B00ABF4CA /* KaoLaFMUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		0DB24B041ECC2D0A00ABF4CA /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0730;
+				ORGANIZATIONNAME = YXGang;
+				TargetAttributes = {
+					0DB24B0B1ECC2D0A00ABF4CA = {
+						CreatedOnToolsVersion = 7.3;
+					};
+					0DB24B241ECC2D0B00ABF4CA = {
+						CreatedOnToolsVersion = 7.3;
+						DevelopmentTeam = ZD8NCKVX95;
+						TestTargetID = 0DB24B0B1ECC2D0A00ABF4CA;
+					};
+					0DB24B2F1ECC2D0B00ABF4CA = {
+						CreatedOnToolsVersion = 7.3;
+						DevelopmentTeam = ZD8NCKVX95;
+						TestTargetID = 0DB24B0B1ECC2D0A00ABF4CA;
+					};
+				};
+			};
+			buildConfigurationList = 0DB24B071ECC2D0A00ABF4CA /* Build configuration list for PBXProject "KaoLaFM" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 0DB24B031ECC2D0A00ABF4CA;
+			productRefGroup = 0DB24B0D1ECC2D0A00ABF4CA /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				0DB24B0B1ECC2D0A00ABF4CA /* KaoLaFM */,
+				0DB24B241ECC2D0B00ABF4CA /* KaoLaFMTests */,
+				0DB24B2F1ECC2D0B00ABF4CA /* KaoLaFMUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		0DB24B0A1ECC2D0A00ABF4CA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0DB24B1F1ECC2D0A00ABF4CA /* LaunchScreen.storyboard in Resources */,
+				0DB24B611ECC315800ABF4CA /* InfoPlist.strings in Resources */,
+				0DB24B1C1ECC2D0A00ABF4CA /* Assets.xcassets in Resources */,
+				0DB24B1A1ECC2D0A00ABF4CA /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0DB24B231ECC2D0B00ABF4CA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0DB24B2E1ECC2D0B00ABF4CA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		0DB24B081ECC2D0A00ABF4CA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0DB24B601ECC315800ABF4CA /* BaseTableViewCell.m in Sources */,
+				0DB24B5F1ECC315800ABF4CA /* BaseTableView.m in Sources */,
+				0DB24B171ECC2D0A00ABF4CA /* ViewController.m in Sources */,
+				0DB24B5C1ECC315800ABF4CA /* BaseViewController.m in Sources */,
+				0DB24B141ECC2D0A00ABF4CA /* KLFMAppDelegate.m in Sources */,
+				0DB24B111ECC2D0A00ABF4CA /* main.m in Sources */,
+				0DB24B651ECC343700ABF4CA /* KLFM_SelectionController.m in Sources */,
+				0DB24B5E1ECC315800ABF4CA /* BaseTableHeaderFooterView.m in Sources */,
+				0DB24B5D1ECC315800ABF4CA /* BaseRequest.m in Sources */,
+				0DB24B5B1ECC315800ABF4CA /* BaseTableViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0DB24B211ECC2D0B00ABF4CA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0DB24B2A1ECC2D0B00ABF4CA /* KaoLaFMTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0DB24B2C1ECC2D0B00ABF4CA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0DB24B351ECC2D0B00ABF4CA /* KaoLaFMUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		0DB24B271ECC2D0B00ABF4CA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 0DB24B0B1ECC2D0A00ABF4CA /* KaoLaFM */;
+			targetProxy = 0DB24B261ECC2D0B00ABF4CA /* PBXContainerItemProxy */;
+		};
+		0DB24B321ECC2D0B00ABF4CA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 0DB24B0B1ECC2D0A00ABF4CA /* KaoLaFM */;
+			targetProxy = 0DB24B311ECC2D0B00ABF4CA /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		0DB24B181ECC2D0A00ABF4CA /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				0DB24B191ECC2D0A00ABF4CA /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		0DB24B1D1ECC2D0A00ABF4CA /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				0DB24B1E1ECC2D0A00ABF4CA /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		0DB24B371ECC2D0B00ABF4CA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		0DB24B381ECC2D0B00ABF4CA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		0DB24B3A1ECC2D0B00ABF4CA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				INFOPLIST_FILE = KaoLaFM/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = sunny.KaoLaFM;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "8aa663eb-f145-42c3-8e73-f15a83bff2fd";
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		0DB24B3B1ECC2D0B00ABF4CA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				INFOPLIST_FILE = KaoLaFM/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = sunny.KaoLaFM;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "8aa663eb-f145-42c3-8e73-f15a83bff2fd";
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+		0DB24B3D1ECC2D0B00ABF4CA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = KaoLaFMTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = sunny.KaoLaFMTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/KaoLaFM.app/KaoLaFM";
+			};
+			name = Debug;
+		};
+		0DB24B3E1ECC2D0B00ABF4CA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = KaoLaFMTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = sunny.KaoLaFMTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/KaoLaFM.app/KaoLaFM";
+			};
+			name = Release;
+		};
+		0DB24B401ECC2D0B00ABF4CA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = KaoLaFMUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = sunny.KaoLaFMUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = KaoLaFM;
+			};
+			name = Debug;
+		};
+		0DB24B411ECC2D0B00ABF4CA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = KaoLaFMUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = sunny.KaoLaFMUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = KaoLaFM;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		0DB24B071ECC2D0A00ABF4CA /* Build configuration list for PBXProject "KaoLaFM" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0DB24B371ECC2D0B00ABF4CA /* Debug */,
+				0DB24B381ECC2D0B00ABF4CA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		0DB24B391ECC2D0B00ABF4CA /* Build configuration list for PBXNativeTarget "KaoLaFM" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0DB24B3A1ECC2D0B00ABF4CA /* Debug */,
+				0DB24B3B1ECC2D0B00ABF4CA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		0DB24B3C1ECC2D0B00ABF4CA /* Build configuration list for PBXNativeTarget "KaoLaFMTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0DB24B3D1ECC2D0B00ABF4CA /* Debug */,
+				0DB24B3E1ECC2D0B00ABF4CA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		0DB24B3F1ECC2D0B00ABF4CA /* Build configuration list for PBXNativeTarget "KaoLaFMUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0DB24B401ECC2D0B00ABF4CA /* Debug */,
+				0DB24B411ECC2D0B00ABF4CA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 0DB24B041ECC2D0A00ABF4CA /* Project object */;
+}
