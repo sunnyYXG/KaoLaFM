@@ -23,6 +23,7 @@
 		0DB24B601ECC315800ABF4CA /* BaseTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DB24B541ECC315800ABF4CA /* BaseTableViewCell.m */; };
 		0DB24B611ECC315800ABF4CA /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0DB24B581ECC315800ABF4CA /* InfoPlist.strings */; };
 		0DB24B651ECC343700ABF4CA /* KLFM_SelectionController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DB24B641ECC343700ABF4CA /* KLFM_SelectionController.m */; };
+		2D8132F5BB7DD3E7E194207E /* libPods-KaoLaFM.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E0B1FDF5DB2AEF51F75978F6 /* libPods-KaoLaFM.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -77,6 +78,9 @@
 		0DB24B591ECC315800ABF4CA /* PrefixHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		0DB24B631ECC343700ABF4CA /* KLFM_SelectionController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KLFM_SelectionController.h; sourceTree = "<group>"; };
 		0DB24B641ECC343700ABF4CA /* KLFM_SelectionController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KLFM_SelectionController.m; sourceTree = "<group>"; };
+		1644424F9F813B9E3FD963A3 /* Pods-KaoLaFM.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KaoLaFM.release.xcconfig"; path = "Pods/Target Support Files/Pods-KaoLaFM/Pods-KaoLaFM.release.xcconfig"; sourceTree = "<group>"; };
+		CB4B633E6392EED9648BAD4C /* Pods-KaoLaFM.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KaoLaFM.debug.xcconfig"; path = "Pods/Target Support Files/Pods-KaoLaFM/Pods-KaoLaFM.debug.xcconfig"; sourceTree = "<group>"; };
+		E0B1FDF5DB2AEF51F75978F6 /* libPods-KaoLaFM.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-KaoLaFM.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +88,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2D8132F5BB7DD3E7E194207E /* libPods-KaoLaFM.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -111,6 +116,8 @@
 				0DB24B281ECC2D0B00ABF4CA /* KaoLaFMTests */,
 				0DB24B331ECC2D0B00ABF4CA /* KaoLaFMUITests */,
 				0DB24B0D1ECC2D0A00ABF4CA /* Products */,
+				7555203D37C84CAC75E31AD1 /* Pods */,
+				1251B4A32C5266E020B52319 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -240,6 +247,23 @@
 			path = Selection;
 			sourceTree = "<group>";
 		};
+		1251B4A32C5266E020B52319 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E0B1FDF5DB2AEF51F75978F6 /* libPods-KaoLaFM.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		7555203D37C84CAC75E31AD1 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				CB4B633E6392EED9648BAD4C /* Pods-KaoLaFM.debug.xcconfig */,
+				1644424F9F813B9E3FD963A3 /* Pods-KaoLaFM.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -247,9 +271,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0DB24B391ECC2D0B00ABF4CA /* Build configuration list for PBXNativeTarget "KaoLaFM" */;
 			buildPhases = (
+				24288A925CF9458F1C68FD08 /* [CP] Check Pods Manifest.lock */,
 				0DB24B081ECC2D0A00ABF4CA /* Sources */,
 				0DB24B091ECC2D0A00ABF4CA /* Frameworks */,
 				0DB24B0A1ECC2D0A00ABF4CA /* Resources */,
+				0CC3A5B5E8ED4B9F1F262C81 /* [CP] Embed Pods Frameworks */,
+				5C4E6793328CA6B19E317431 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -367,6 +394,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0CC3A5B5E8ED4B9F1F262C81 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-KaoLaFM/Pods-KaoLaFM-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		24288A925CF9458F1C68FD08 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		5C4E6793328CA6B19E317431 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-KaoLaFM/Pods-KaoLaFM-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		0DB24B081ECC2D0A00ABF4CA /* Sources */ = {
@@ -523,6 +598,7 @@
 		};
 		0DB24B3A1ECC2D0B00ABF4CA /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CB4B633E6392EED9648BAD4C /* Pods-KaoLaFM.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -537,6 +613,7 @@
 		};
 		0DB24B3B1ECC2D0B00ABF4CA /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1644424F9F813B9E3FD963A3 /* Pods-KaoLaFM.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
