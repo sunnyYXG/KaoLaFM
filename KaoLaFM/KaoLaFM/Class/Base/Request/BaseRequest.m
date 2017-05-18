@@ -44,15 +44,14 @@
 
 - (void)yxg_sendRequestWithCompletion:(NHAPIDicCompletion)completion {
 
-        AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
-    
-    [manager.requestSerializer setValue:@"application/json"forHTTPHeaderField:@"Accept"];
-    [manager.requestSerializer setValue:@"JSESSIONID=1syrr72gajqkz1ppqnr1s6fkbc" forHTTPHeaderField:@"Cookie"];
-    [manager.requestSerializer setValue:@"KaolaFM/5.0.1 (iPhone; iOS 10.3.1; Scale/2.00)"forHTTPHeaderField:@"User-Agent"];
-    [manager.requestSerializer setValue:@"zh-Hans-CN;q=1" forHTTPHeaderField:@"Accept-Language"];
-    [manager.requestSerializer setValue:@"gzip, deflate" forHTTPHeaderField:@"Accept-Encoding"];
-    [manager.requestSerializer setValue:@"keep-alive" forHTTPHeaderField:@"Connection"];
-    [manager.requestSerializer setValue:@"application/json;charset=utf-8"forHTTPHeaderField:@"Content-Type"];
+    AFHTTPSessionManager *manager = [self createManager];
+//    [manager.requestSerializer setValue:@"application/json"forHTTPHeaderField:@"Accept"];
+//    [manager.requestSerializer setValue:@"JSESSIONID=1syrr72gajqkz1ppqnr1s6fkbc" forHTTPHeaderField:@"Cookie"];
+//    [manager.requestSerializer setValue:@"KaolaFM/5.0.1 (iPhone; iOS 10.3.1; Scale/2.00)"forHTTPHeaderField:@"User-Agent"];
+//    [manager.requestSerializer setValue:@"zh-Hans-CN;q=1" forHTTPHeaderField:@"Accept-Language"];
+//    [manager.requestSerializer setValue:@"gzip, deflate" forHTTPHeaderField:@"Accept-Encoding"];
+//    [manager.requestSerializer setValue:@"keep-alive" forHTTPHeaderField:@"Connection"];
+//    [manager.requestSerializer setValue:@"application/json;charset=utf-8"forHTTPHeaderField:@"Content-Type"];
 
             [manager GET:self.yxg_url parameters:self.paramsDic progress:^(NSProgress * _Nonnull downloadProgress) {
             
@@ -64,7 +63,19 @@
         } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
             //
         }];
+}
+
+- (AFHTTPSessionManager *)createManager{
+    AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
     
+    [manager.requestSerializer setValue:@"application/json"forHTTPHeaderField:@"Accept"];
+    [manager.requestSerializer setValue:@"JSESSIONID=1syrr72gajqkz1ppqnr1s6fkbc" forHTTPHeaderField:@"Cookie"];
+    [manager.requestSerializer setValue:@"KaolaFM/5.0.1 (iPhone; iOS 10.3.1; Scale/2.00)"forHTTPHeaderField:@"User-Agent"];
+    [manager.requestSerializer setValue:@"zh-Hans-CN;q=1" forHTTPHeaderField:@"Accept-Language"];
+    [manager.requestSerializer setValue:@"gzip, deflate" forHTTPHeaderField:@"Accept-Encoding"];
+    [manager.requestSerializer setValue:@"keep-alive" forHTTPHeaderField:@"Connection"];
+    [manager.requestSerializer setValue:@"application/json;charset=utf-8"forHTTPHeaderField:@"Content-Type"];
+    return manager;
 }
 
 

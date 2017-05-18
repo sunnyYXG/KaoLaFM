@@ -7,8 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+@class BaseRequest;
 
 @interface BaseViewController : UIViewController
+
+@property (nonatomic) BaseRequest *request;
 
 
 - (void)pop;
@@ -50,6 +53,8 @@
 /** 停止加载*/
 - (void)hideLoadingAnimation;
 
+/** 创建请求，交给子类实现 */
+- (void)initRequest;
 /** 请求数据，交给子类去实现*/
 - (void)loadData;
 

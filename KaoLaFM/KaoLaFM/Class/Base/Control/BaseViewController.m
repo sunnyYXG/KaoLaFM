@@ -22,6 +22,8 @@
     [UIView setAnimationsEnabled:YES];
     self.automaticallyAdjustsScrollViewInsets = NO;
     self.edgesForExtendedLayout = UIRectEdgeAll;
+    [self initRequest];
+    [self loadData];
     // Do any additional setup after loading the view, typically from a nib.
 }
 
@@ -97,6 +99,11 @@
     [self.view endEditing:YES];
 }
 
+- (void)initRequest {
+    /**
+     *  子类实现
+     */
+}
 - (void)loadData {
     /**
      *  子类实现
@@ -104,7 +111,7 @@
     
 }
 
-/*
+
 - (void)startProgress {
     self.view.userInteractionEnabled = NO;
     if (self.navigationController != nil) {
@@ -136,7 +143,7 @@
         self.navigationController.interactivePopGestureRecognizer.enabled = YES;
     }
 }
-*/
+
 -(void)showLoadingAnimation{
 
 }
