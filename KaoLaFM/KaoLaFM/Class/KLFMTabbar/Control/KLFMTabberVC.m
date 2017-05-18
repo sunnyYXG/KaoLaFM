@@ -43,6 +43,7 @@
     [super viewDidLoad];
     [self initRequest];
     [self loadData];
+
 }
 
 - (void)initRequest{
@@ -117,7 +118,7 @@
     [self addChildViewController:viewController];
     
     //默认显示第二个VC
-    [_mainView setContentOffset:CGPointMake(SCREEN_WIDTH, 0) animated:YES];
+    [_mainView setContentOffset:CGPointMake(SCREEN_WIDTH, 0) animated:NO];
 
 }
 
@@ -140,6 +141,8 @@
     _mainView.showsVerticalScrollIndicator = NO;
     _mainView.contentSize = CGSizeMake(SCREEN_WIDTH * _subViewControllers.count, 0);
     [self.view addSubview:_mainView];
+    
+
     
 }
 

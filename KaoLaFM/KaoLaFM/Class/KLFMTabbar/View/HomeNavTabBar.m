@@ -75,7 +75,7 @@
         CGSize textRealSize = [_itemTitles[index] sizeWithFont:[UIFont systemFontOfSize:16] maxSize:textMaxSize].size;
 
         textRealSize = CGSizeMake(textRealSize.width + 15*2, 35);
-        button.frame = CGRectMake(buttonX, 0,textRealSize.width, 35);
+        button.frame = CGRectMake(buttonX + 25, 0,textRealSize.width, 35);
         
         button.tag = 100 + index;
         //字体颜色
