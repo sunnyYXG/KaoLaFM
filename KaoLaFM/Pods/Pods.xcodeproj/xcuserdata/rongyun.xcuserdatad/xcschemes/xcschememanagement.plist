@@ -44,10 +44,30 @@
 			<key>orderHint</key>
 			<integer>8</integer>
 		</dict>
+		<key>YYCache.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>10</integer>
+		</dict>
+		<key>YYImage.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>11</integer>
+		</dict>
 		<key>YYModel.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>9</integer>
+		</dict>
+		<key>YYText.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>12</integer>
+		</dict>
+		<key>YYWebImage.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>13</integer>
 		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
@@ -62,12 +82,37 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>11F9D9DA73E901536188A36DBEFC647A</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>586F2DFA9BDCC6675C2546793A69E5CC</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>685B333AEF706F42B5702C38AE699ABB</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>7255790A7BA02A1F85317A9B675F69D5</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>7BAE4C1C0BC0D3DD88DF9BA17CA1AF6B</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>7BEE60C0A98AB501064179F641B6BCC4</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>9508F7CE7E2E6D24B75F4F8BE3FE1F5E</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -82,12 +127,27 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>A011AB9B6703A5073D69BD216A6F70E1</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>A316B54C67E947D23CECD230FA5BFAEF</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>A5A04B49D0ADDC915953C5A3AC2161BD</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>D02C75F38ACBA144133E84920F7EBD4B</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>F2E34DB01D329426AC3ED5BD4D71FD9E</key>
 		<dict>
 			<key>primary</key>
 			<true/>
