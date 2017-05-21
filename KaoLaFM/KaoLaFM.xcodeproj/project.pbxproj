@@ -45,6 +45,9 @@
 		0DB24B5F1ECC315800ABF4CA /* BaseTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DB24B521ECC315800ABF4CA /* BaseTableView.m */; };
 		0DB24B601ECC315800ABF4CA /* BaseTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DB24B541ECC315800ABF4CA /* BaseTableViewCell.m */; };
 		2D8132F5BB7DD3E7E194207E /* libPods-KaoLaFM.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E0B1FDF5DB2AEF51F75978F6 /* libPods-KaoLaFM.a */; };
+		640FB24B1ED12E3C008036F7 /* 02.3gp in Resources */ = {isa = PBXBuildFile; fileRef = 640FB2491ED12E3C008036F7 /* 02.3gp */; };
+		640FB24E1ED13240008036F7 /* 05.3gp in Resources */ = {isa = PBXBuildFile; fileRef = 640FB24D1ED13240008036F7 /* 05.3gp */; };
+		64F927181ED0775900C2F424 /* KLFMLauchMovieVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 64F927151ED0775900C2F424 /* KLFMLauchMovieVC.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -144,6 +147,10 @@
 		0DB24B531ECC315800ABF4CA /* BaseTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseTableViewCell.h; sourceTree = "<group>"; };
 		0DB24B541ECC315800ABF4CA /* BaseTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseTableViewCell.m; sourceTree = "<group>"; };
 		1644424F9F813B9E3FD963A3 /* Pods-KaoLaFM.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KaoLaFM.release.xcconfig"; path = "Pods/Target Support Files/Pods-KaoLaFM/Pods-KaoLaFM.release.xcconfig"; sourceTree = "<group>"; };
+		640FB2491ED12E3C008036F7 /* 02.3gp */ = {isa = PBXFileReference; lastKnownFileType = file; path = 02.3gp; sourceTree = "<group>"; };
+		640FB24D1ED13240008036F7 /* 05.3gp */ = {isa = PBXFileReference; lastKnownFileType = file; path = 05.3gp; sourceTree = "<group>"; };
+		64F927141ED0775900C2F424 /* KLFMLauchMovieVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KLFMLauchMovieVC.h; sourceTree = "<group>"; };
+		64F927151ED0775900C2F424 /* KLFMLauchMovieVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KLFMLauchMovieVC.m; sourceTree = "<group>"; };
 		CB4B633E6392EED9648BAD4C /* Pods-KaoLaFM.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KaoLaFM.debug.xcconfig"; path = "Pods/Target Support Files/Pods-KaoLaFM/Pods-KaoLaFM.debug.xcconfig"; sourceTree = "<group>"; };
 		E0B1FDF5DB2AEF51F75978F6 /* libPods-KaoLaFM.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-KaoLaFM.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -387,6 +394,7 @@
 		0DB24B0E1ECC2D0A00ABF4CA /* KaoLaFM */ = {
 			isa = PBXGroup;
 			children = (
+				64F927131ED0775900C2F424 /* StartLunchMovie */,
 				0D352D231ECD3E5400447E1B /* Tools */,
 				0D352D111ECD343200447E1B /* AppDelegate */,
 				0DB24B421ECC315800ABF4CA /* Class */,
@@ -500,6 +508,17 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		64F927131ED0775900C2F424 /* StartLunchMovie */ = {
+			isa = PBXGroup;
+			children = (
+				640FB2491ED12E3C008036F7 /* 02.3gp */,
+				640FB24D1ED13240008036F7 /* 05.3gp */,
+				64F927141ED0775900C2F424 /* KLFMLauchMovieVC.h */,
+				64F927151ED0775900C2F424 /* KLFMLauchMovieVC.m */,
+			);
+			path = StartLunchMovie;
+			sourceTree = "<group>";
+		};
 		7555203D37C84CAC75E31AD1 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -579,6 +598,8 @@
 				TargetAttributes = {
 					0DB24B0B1ECC2D0A00ABF4CA = {
 						CreatedOnToolsVersion = 7.3;
+						DevelopmentTeam = ZD8NCKVX95;
+						ProvisioningStyle = Automatic;
 					};
 					0DB24B241ECC2D0B00ABF4CA = {
 						CreatedOnToolsVersion = 7.3;
@@ -619,6 +640,8 @@
 			files = (
 				0DB24B1F1ECC2D0A00ABF4CA /* LaunchScreen.storyboard in Resources */,
 				0D352D181ECD343200447E1B /* InfoPlist.strings in Resources */,
+				640FB24B1ED12E3C008036F7 /* 02.3gp in Resources */,
+				640FB24E1ED13240008036F7 /* 05.3gp in Resources */,
 				0DB24B1C1ECC2D0A00ABF4CA /* Assets.xcassets in Resources */,
 				0DB24B1A1ECC2D0A00ABF4CA /* Main.storyboard in Resources */,
 			);
@@ -722,6 +745,7 @@
 				0DB24B5D1ECC315800ABF4CA /* BaseRequest.m in Sources */,
 				0D352D561ECD4C6600447E1B /* SelectionModel.m in Sources */,
 				0D352D601ECD62A200447E1B /* KLFMAnchorVC.m in Sources */,
+				64F927181ED0775900C2F424 /* KLFMLauchMovieVC.m in Sources */,
 				0DB24B5B1ECC315800ABF4CA /* BaseTableViewController.m in Sources */,
 				0D352D381ECD3E5400447E1B /* CycleBannerView.m in Sources */,
 			);
@@ -867,13 +891,18 @@
 			baseConfigurationReference = CB4B633E6392EED9648BAD4C /* Pods-KaoLaFM.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = ZD8NCKVX95;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/KaoLaFM/AppDelegate/PrefixHeader.pch";
 				INFOPLIST_FILE = KaoLaFM/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = sunny.KaoLaFM;
+				PRODUCT_BUNDLE_IDENTIFIER = "sunny.-1";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "8aa663eb-f145-42c3-8e73-f15a83bff2fd";
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
@@ -883,13 +912,18 @@
 			baseConfigurationReference = 1644424F9F813B9E3FD963A3 /* Pods-KaoLaFM.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = ZD8NCKVX95;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/KaoLaFM/AppDelegate/PrefixHeader.pch";
 				INFOPLIST_FILE = KaoLaFM/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = sunny.KaoLaFM;
+				PRODUCT_BUNDLE_IDENTIFIER = "sunny.-1";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "8aa663eb-f145-42c3-8e73-f15a83bff2fd";
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;

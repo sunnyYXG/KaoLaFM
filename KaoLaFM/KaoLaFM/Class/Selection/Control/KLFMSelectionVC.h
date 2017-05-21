@@ -7,7 +7,7 @@
 //
 
 #import "BaseViewController.h"
-#import "SelectionDataModels.h"
+@class SelectionBaseClass;
 
 @interface KLFMSelectionVC : BaseViewController
 

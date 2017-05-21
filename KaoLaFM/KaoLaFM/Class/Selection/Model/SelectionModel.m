@@ -17,16 +17,17 @@
 
 @implementation SelectionModel
 
-+(void)ModelResolver:(id)response VC:(UIViewController *)VC{
++(NSDictionary *)ModelResolver:(SelectionBaseClass *)baseModel VC:(UIViewController *)VC{
     NSMutableArray *listMarr = [NSMutableArray new];
-   SelectionBaseClass *model = (SelectionBaseClass *)[self mj_objectWithKeyValues:response];
-    for (NSDictionary *dic in model.result.dataList) {
-//        SelectionDataList *list = [SelectionDataList modelObjectWithDictionary:dic];
-//        [listMarr addObject:list];
+    for (NSDictionary *dic in baseModel.result.dataList) {
+                SelectionDataList *list = [SelectionDataList modelObjectWithDictionary:dic];
+                [listMarr addObject:list];
     }
     
-//    KLFMSelectionVC *vc = (KLFMSelectionVC *)VC;
-//    vc.data = listMarr;
-}
+        KLFMSelectionVC *vc = (KLFMSelectionVC *)VC;
+        vc.data = listMarr;
+    
+    return @{};
 
+}
 @end

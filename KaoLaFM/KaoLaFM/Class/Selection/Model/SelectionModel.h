@@ -8,8 +8,10 @@
 
 #import <Foundation/Foundation.h>
 
+@class SelectionBaseClass;
+
 @interface SelectionModel : NSObject
 
-+ (void)ModelResolver:(id)response VC:(UIViewController *)VC;
++ (NSDictionary *)ModelResolver:(SelectionBaseClass *)baseModel VC:(UIViewController *)VC;
 
 @end

@@ -1,9 +1,11 @@
 //
 //  NSString+Extension.h
 //
-//  Created by apple on 14-4-2.
-//  Copyright (c) 2014年 gyh. All rights reserved.
+//  Created by sunny_FX on 2017/3/25.
+//  Copyright © 2017年 YXG. All rights reserved.
 //
+
+
 
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>

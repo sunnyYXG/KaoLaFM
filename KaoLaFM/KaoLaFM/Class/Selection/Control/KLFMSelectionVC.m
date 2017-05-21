@@ -10,8 +10,7 @@
 
 #import "KLFMSelectionReq.h"
 
-//#import "SelectionDataModels.h"
-
+#import "SelectionBaseClass.h"
 #import "SelectionModel.h"
 
 @interface KLFMSelectionVC ()
@@ -33,18 +32,21 @@
     self.request = req;
 }
 
+
 - (void)loadData{
     if (!self.request) return;
+    WEAK_BLOCK_SELF(KLFMSelectionVC);
     [self.request yxg_sendRequestWithCompletion:^(id response, BOOL success, NSString *message) {
         
-//        [SelectionModel ModelResolver:response VC:self];
-//        self.baseModel = ()[];
+        self.baseModel = (SelectionBaseClass *)[SelectionBaseClass yy_modelWithJSON:response];
+        [SelectionModel ModelResolver:block_self.baseModel VC:block_self];
+
         
     }];
 }
 
 -(void)setData:(NSArray *)data{
-    
+    _data = data;
     
 }
 - (void)didReceiveMemoryWarning {
