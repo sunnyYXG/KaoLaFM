@@ -160,7 +160,7 @@
         self.timer = nil;
     }
 }
-//进入主界面
+//进入主界面6
 - (void)enterMain {
     KLFMAppDelegate *delegate = (KLFMAppDelegate *)[UIApplication sharedApplication].delegate;
     UIViewController *main = [[UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]] instantiateInitialViewController];
