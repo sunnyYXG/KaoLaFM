@@ -6,13 +6,15 @@
 //  Copyright © 2017年 YXGang. All rights reserved.
 //
 
-#import "BaseViewController.h"
+#import "BaseTableViewController.h"
 @class SelectionBaseClass;
 
-@interface KLFMSelectionVC : BaseViewController
+@interface KLFMSelectionVC : BaseTableViewController
 
 
 @property (nonatomic) NSArray *data;
+@property (nonatomic) NSMutableArray *frameArr;
+
 @property (nonatomic) SelectionBaseClass *baseModel;
 
 @end
