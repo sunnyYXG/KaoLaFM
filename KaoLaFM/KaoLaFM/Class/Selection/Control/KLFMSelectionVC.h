@@ -7,7 +7,7 @@
 //
 
 #import "BaseTableViewController.h"
-@class SelectionBaseClass;
+@class SelectionBaseClass,CycleBannerView,HomeTJMenuView;
 
 @interface KLFMSelectionVC : BaseTableViewController
 
@@ -16,5 +16,18 @@
 @property (nonatomic) NSMutableArray *frameArr;
 
 @property (nonatomic) SelectionBaseClass *baseModel;
+
+/**
+ *  顶部广告图片轮播
+ */
+@property (nonatomic)NSArray *BannerList;
+
+/**
+ *  顶部广告轮播视图
+ */
+@property (nonatomic , strong) CycleBannerView *bannerView;
+@property (nonatomic , strong) HomeTJMenuView *TJMenuView;
+@property (nonatomic)NSArray *menuList;
+
 
 @end

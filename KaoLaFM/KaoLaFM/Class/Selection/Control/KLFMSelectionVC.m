@@ -17,7 +17,9 @@
 #import "SelectionCell.h"
 #import "SelectionCellFrame.h"
 
-@interface KLFMSelectionVC ()
+#import "CycleBannerView.h"
+#import "HomeTJMenuView.h"
+@interface KLFMSelectionVC ()<HomeTJMenuViewDelegate>
 
 @end
 
@@ -34,9 +36,36 @@
     self.tableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
         [self loadData];
     }];
-    
+    [self initBannerView];
+
 //    self.view.backgroundColor = [UIColor orangeColor];
     // Do any additional setup after loading the view.
+}
+
+#pragma mark 首页轮播图
+- (void)initBannerView
+{
+    UIView *headerView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_WIDTH * 0.37 + 100)];
+    CycleBannerView *bannerView = [[CycleBannerView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_WIDTH * 0.37)];
+    bannerView.bgImg = [UIImage imageNamed:@"shadow.png"];
+    
+//    WEAK_BLOCK_SELF(KLFMSelectionVC);
+    bannerView.clickItemBlock = ^(NSInteger index) {
+        
+//        SelectionDataList *banner = block_self.BannerList[index];
+        
+//        [block_self pushVc:[BannerViewController new] userInfo:@{@"bannerUrl":banner.linkUrl}];
+    };
+    
+    [headerView addSubview:bannerView];
+    
+    _TJMenuView = [[HomeTJMenuView alloc]initWithFrame:CGRectMake(0, bannerView.bottom, SCREEN_WIDTH, 100)];
+    _TJMenuView.delegate = self;
+    [headerView addSubview:self.TJMenuView];
+
+    self.tableView.tableHeaderView = headerView;
+    self.bannerView = bannerView;
+
 }
 
 - (void)initRequest{
@@ -66,6 +95,13 @@
         [self.frameArr addObject:cellFrame];
     }
     [self yxg_reloadData];
+}
+
+-(void)setBannerList:(NSArray *)BannerList{
+    self.bannerView.aryImg = BannerList;
+}
+-(void)setMenuList:(NSArray *)menuList{
+    self.TJMenuView.menus = menuList;
 }
 
 #pragma mark - <UITableViewDataSource, UITableViewDelegate>

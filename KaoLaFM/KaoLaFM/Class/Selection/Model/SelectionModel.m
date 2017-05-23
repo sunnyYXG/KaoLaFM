@@ -19,14 +19,37 @@
 
 +(NSDictionary *)ModelResolver:(SelectionBaseClass *)baseModel VC:(UIViewController *)VC{
     NSMutableArray *listMarr = [NSMutableArray new];
+    NSMutableArray *BannerList = [NSMutableArray new];
+    NSMutableArray *menuList = [NSMutableArray new];
+
     for (NSDictionary *dic in baseModel.result.dataList) {
                 SelectionDataList *list = [SelectionDataList modelObjectWithDictionary:dic];
                 [listMarr addObject:list];
     }
+    //顶部滚动图片
+    SelectionDataList *SelectionData = (SelectionDataList *)[listMarr firstObject];
+    [listMarr removeObjectAtIndex:0];
+
+    for (NSDictionary *dic in SelectionData.dataList) {
+        SelectionDataList *list = [SelectionDataList modelObjectWithDictionary:dic];
+        [BannerList addObject:list.pic];
+    }
     
-        KLFMSelectionVC *vc = (KLFMSelectionVC *)VC;
-        vc.data = listMarr;
     
+    SelectionDataList *menus = (SelectionDataList *)[listMarr firstObject];
+    [listMarr removeObjectAtIndex:0];
+    
+    for (NSDictionary *dic in menus.dataList) {
+        SelectionDataList *list = [SelectionDataList modelObjectWithDictionary:dic];
+        [menuList addObject:list.pic];
+    }
+
+    KLFMSelectionVC *vc = (KLFMSelectionVC *)VC;
+    vc.BannerList = BannerList;
+    vc.menuList = menuList;
+
+    vc.data = listMarr;
+
     return @{};
 
 }

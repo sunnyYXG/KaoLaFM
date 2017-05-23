@@ -47,6 +47,7 @@
 		2D8132F5BB7DD3E7E194207E /* libPods-KaoLaFM.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E0B1FDF5DB2AEF51F75978F6 /* libPods-KaoLaFM.a */; };
 		640FB24B1ED12E3C008036F7 /* 02.3gp in Resources */ = {isa = PBXBuildFile; fileRef = 640FB2491ED12E3C008036F7 /* 02.3gp */; };
 		640FB24E1ED13240008036F7 /* 05.3gp in Resources */ = {isa = PBXBuildFile; fileRef = 640FB24D1ED13240008036F7 /* 05.3gp */; };
+		64853D991ED477A800D05788 /* HomeTJMenuView.m in Sources */ = {isa = PBXBuildFile; fileRef = 64853D981ED477A800D05788 /* HomeTJMenuView.m */; };
 		64C370D81ED31D0A00EC366D /* SelectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 64C370D71ED31D0A00EC366D /* SelectionCell.m */; };
 		64C370DB1ED3271300EC366D /* SelectionCellFrame.m in Sources */ = {isa = PBXBuildFile; fileRef = 64C370DA1ED3271300EC366D /* SelectionCellFrame.m */; };
 		64F927181ED0775900C2F424 /* KLFMLauchMovieVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 64F927151ED0775900C2F424 /* KLFMLauchMovieVC.m */; };
@@ -151,6 +152,8 @@
 		1644424F9F813B9E3FD963A3 /* Pods-KaoLaFM.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KaoLaFM.release.xcconfig"; path = "Pods/Target Support Files/Pods-KaoLaFM/Pods-KaoLaFM.release.xcconfig"; sourceTree = "<group>"; };
 		640FB2491ED12E3C008036F7 /* 02.3gp */ = {isa = PBXFileReference; lastKnownFileType = file; path = 02.3gp; sourceTree = "<group>"; };
 		640FB24D1ED13240008036F7 /* 05.3gp */ = {isa = PBXFileReference; lastKnownFileType = file; path = 05.3gp; sourceTree = "<group>"; };
+		64853D971ED477A800D05788 /* HomeTJMenuView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeTJMenuView.h; sourceTree = "<group>"; };
+		64853D981ED477A800D05788 /* HomeTJMenuView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeTJMenuView.m; sourceTree = "<group>"; };
 		64C370D61ED31D0A00EC366D /* SelectionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelectionCell.h; sourceTree = "<group>"; };
 		64C370D71ED31D0A00EC366D /* SelectionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelectionCell.m; sourceTree = "<group>"; };
 		64C370D91ED3271300EC366D /* SelectionCellFrame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelectionCellFrame.h; sourceTree = "<group>"; };
@@ -518,6 +521,8 @@
 		64C370D51ED31CD500EC366D /* View */ = {
 			isa = PBXGroup;
 			children = (
+				64853D971ED477A800D05788 /* HomeTJMenuView.h */,
+				64853D981ED477A800D05788 /* HomeTJMenuView.m */,
 				64C370D61ED31D0A00EC366D /* SelectionCell.h */,
 				64C370D71ED31D0A00EC366D /* SelectionCell.m */,
 				64C370D91ED3271300EC366D /* SelectionCellFrame.h */,
@@ -768,6 +773,7 @@
 				64F927181ED0775900C2F424 /* KLFMLauchMovieVC.m in Sources */,
 				0DB24B5B1ECC315800ABF4CA /* BaseTableViewController.m in Sources */,
 				0D352D381ECD3E5400447E1B /* CycleBannerView.m in Sources */,
+				64853D991ED477A800D05788 /* HomeTJMenuView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
