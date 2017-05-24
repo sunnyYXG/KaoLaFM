@@ -25,6 +25,7 @@
     for (NSDictionary *dic in baseModel.result.dataList) {
                 SelectionDataList *list = [SelectionDataList modelObjectWithDictionary:dic];
                 [listMarr addObject:list];
+        DDLog(@"%@-%.0f-%.0f-%.0f-%.0f",list.name,list.hasmore,list.moreType,list.componentType,list.contentType);
     }
     //顶部滚动图片
     SelectionDataList *SelectionData = (SelectionDataList *)[listMarr firstObject];

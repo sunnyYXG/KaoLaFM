@@ -7,12 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
-@class BaseRequest,KLFMNavBar;
+@class BaseRequest;
 
 @interface BaseViewController : UIViewController
 
 @property (nonatomic) BaseRequest *request;
-@property (nonatomic) KLFMNavBar *navBar;
 
 - (void)pop;
 

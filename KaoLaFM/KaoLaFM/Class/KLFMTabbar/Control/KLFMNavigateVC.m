@@ -12,6 +12,7 @@
 #import "KLFMFindVC.h"
 #import "KLFMAnchorVC.h"
 #import "KLFMClassVC.h"
+#import "KLFMNavBar.h"
 
 #import "KLFMNavigateView.h"
 
@@ -19,7 +20,7 @@
 
 #import "TabbarDataModels.h"
 
-@interface KLFMNavigateVC ()<UIScrollViewDelegate,SCNavTabBarDelegate>
+@interface KLFMNavigateVC ()<UIScrollViewDelegate,SCNavTabBarDelegate,KLFMNavBarDelegate>
 {
     NSInteger       _currentIndex;
     NSMutableArray  *_titles;
@@ -32,6 +33,16 @@
 
 @implementation KLFMNavigateVC
 
+- (KLFMNavBar *)navBar{
+    if (!_navBar) {
+        _navBar = [[KLFMNavBar alloc] initWithFrame:CGRectMake(0,0, SCREEN_WIDTH, NavBarHeight)];
+        _navBar.delegate = self;
+        _navBar.backgroundColor = [UIColor grayColor];
+        
+    }
+    return _navBar;
+}
+
 -(NSMutableArray *)navBars{
     if (!_navBars) {
         _navBars = [[NSMutableArray alloc]init];
@@ -41,6 +52,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self.view addSubview:self.navBar];
+
 
 }
 
@@ -163,6 +176,12 @@
     }else{
         [_mainView setContentOffset:CGPointMake(index * SCREEN_WIDTH, 0) animated:YES];
     }
+}
+
+
+#pragma mark - KLFMNavBarDelegate
+-(void)touchLeftButton{
+    [self pop];
 }
 
 - (void)didReceiveMemoryWarning {

@@ -19,7 +19,7 @@
 
 #import "CycleBannerView.h"
 #import "HomeTJMenuView.h"
-@interface KLFMSelectionVC ()<HomeTJMenuViewDelegate>
+@interface KLFMSelectionVC ()
 
 @end
 
@@ -46,8 +46,8 @@
 }
 -(HomeTJMenuView *)TJMenuView{
     if (!_TJMenuView) {
-        _TJMenuView = [[HomeTJMenuView alloc]initWithFrame:CGRectMake(0, self.bannerView.bottom - self.bannerView.height/3, SCREEN_WIDTH, 100)];
-        _TJMenuView.delegate = self;
+        _TJMenuView = [[HomeTJMenuView alloc]initWithFrame:CGRectMake(0, self.bannerView.bottom, SCREEN_WIDTH, 100)];
+//        _TJMenuView.delegate = self;
         _TJMenuView.itemsBlock = ^(NSInteger index) {
 
         };
@@ -67,7 +67,7 @@
 #pragma mark 首页轮播图
 - (void)initBannerView
 {
-    UIView *headerView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_WIDTH * 0.37 + 100)];
+    UIView *headerView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_WIDTH * 0.55 + 100)];
     
     [headerView addSubview:self.bannerView];
     [headerView addSubview:self.TJMenuView];

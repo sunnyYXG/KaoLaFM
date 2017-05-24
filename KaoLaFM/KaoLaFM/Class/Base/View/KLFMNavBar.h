@@ -8,14 +8,14 @@
 
 #import <UIKit/UIKit.h>
 
-typedef NS_ENUM(NSInteger, JYNavBarType) {
-    JYNavBarTypeMain,
-    JYNavBarTypeBack,
-    JYNavBarTypeHome,
-    JYNavBarTypeUserCenter
+typedef NS_ENUM(NSInteger, KLFMNavBarType) {
+    KLFMNavBarTypeMain,
+    KLFMNavBarTypeBack,
+    KLFMNavBarTypeHome,
+    KLFMNavBarTypeUserCenter
 };
 
-@protocol JYNavBarDelegate <NSObject>
+@protocol KLFMNavBarDelegate <NSObject>
 @optional
 - (void)touchLeftButton;
 - (void)touchRightButton;
@@ -30,8 +30,8 @@ typedef NS_ENUM(NSInteger, JYNavBarType) {
 @property (weak, nonatomic)  UILabel *iTitleLabel;
 @property (weak, nonatomic)  UIButton *iRightOtherButton;
 
-@property (nonatomic) id<JYNavBarDelegate>delegate;
+@property (nonatomic) id<KLFMNavBarDelegate>delegate;
 
-- (void)configureViewWithTitle:(NSString *)title Type:(JYNavBarType)type;
+- (void)configureViewWithTitle:(NSString *)title Type:(KLFMNavBarType)type;
 
 @end

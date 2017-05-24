@@ -25,11 +25,6 @@
     self.edgesForExtendedLayout = UIRectEdgeAll;
     [self initRequest];
     [self loadData];
-    
-    self.navBar = [[KLFMNavBar alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, NavBarHeight)];
-//    self.navBar.delegate = self;
-    self.navBar.backgroundColor = [UIColor grayColor];
-    [self.view addSubview:self.navBar];
     // Do any additional setup after loading the view, typically from a nib.
 }
 
@@ -156,6 +151,9 @@
 -(void)hideLoadingAnimation{
 
 }
+
+
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

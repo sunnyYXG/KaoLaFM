@@ -8,9 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
-@protocol HomeTJMenuViewDelegate <NSObject>
-- (void)HomeTJMenuPushWithURL:(NSString *)url;
-@end
+//@protocol HomeTJMenuViewDelegate <NSObject>
+//- (void)HomeTJMenuPushWithURL:(NSString *)url;
+//@end
 
 typedef void (^HomeTJMenuViewItemsBlock)(NSInteger index);
 
@@ -18,7 +18,7 @@ typedef void (^HomeTJMenuViewItemsBlock)(NSInteger index);
 
 @property (nonatomic,copy) HomeTJMenuViewItemsBlock itemsBlock;
 
-@property (nonatomic)id<HomeTJMenuViewDelegate>delegate;
+//@property (nonatomic)id<HomeTJMenuViewDelegate>delegate;
 
 @property (nonatomic)NSArray *menus;
 @property (nonatomic)NSArray *h5_urls;
