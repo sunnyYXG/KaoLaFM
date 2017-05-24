@@ -45,7 +45,6 @@
         IV.tag = 100 + i;
         IV.userInteractionEnabled = YES;
         [IV addGestureRecognizer:tap];
-//        IV.image = [UIImage imageNamed:menus[i]];
         [IV sd_setImageWithURL:menus[i]];
         
         [self.sc addSubview:IV];
@@ -58,8 +57,12 @@
 - (void)Html5ImageIsTap:(UITapGestureRecognizer *)tap {
     
     NSString *url = self.h5_urls[tap.view.tag - 100];
-    if ([self.delegate respondsToSelector:@selector(pushWebViewWithURL:)]) {
-        [self.delegate pushWebViewWithURL:url];
+    if ([self.delegate respondsToSelector:@selector(HomeTJMenuPushWithURL:)]) {
+        [self.delegate HomeTJMenuPushWithURL:url];
+    }
+    
+    if (self.itemsBlock) {
+        self.itemsBlock(tap.view.tag - 100);
     }
     
 }

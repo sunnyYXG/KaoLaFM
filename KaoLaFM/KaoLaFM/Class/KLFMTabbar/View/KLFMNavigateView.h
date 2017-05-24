@@ -17,7 +17,7 @@
 
 @end
 
-@interface HomeNavTabBar : UIView
+@interface KLFMNavigateView : UIView
 
 @property (nonatomic, weak)    id<SCNavTabBarDelegate>delegate;
 

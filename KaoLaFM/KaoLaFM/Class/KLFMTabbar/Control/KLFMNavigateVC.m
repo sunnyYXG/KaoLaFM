@@ -6,31 +6,31 @@
 //  Copyright © 2017年 YXGang. All rights reserved.
 //
 
-#import "KLFMTabberVC.h"
+#import "KLFMNavigateVC.h"
 #import "KLFMNewsVC.h"
 #import "KLFMSelectionVC.h"
 #import "KLFMFindVC.h"
 #import "KLFMAnchorVC.h"
 #import "KLFMClassVC.h"
 
-#import "HomeNavTabBar.h"
+#import "KLFMNavigateView.h"
 
 #import "KLFMTabbarReq.h"
 
 #import "TabbarDataModels.h"
 
-@interface KLFMTabberVC ()<UIScrollViewDelegate,SCNavTabBarDelegate>
+@interface KLFMNavigateVC ()<UIScrollViewDelegate,SCNavTabBarDelegate>
 {
     NSInteger       _currentIndex;
     NSMutableArray  *_titles;
-    HomeNavTabBar     *_navTabBar;
+    KLFMNavigateView     *_navTabBar;
     UIScrollView    *_mainView;
 }
 
 
 @end
 
-@implementation KLFMTabberVC
+@implementation KLFMNavigateVC
 
 -(NSMutableArray *)navBars{
     if (!_navBars) {
@@ -41,8 +41,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self initRequest];
-    [self loadData];
 
 }
 
@@ -55,7 +53,7 @@
 
 - (void)loadData{
     if (!self.request) return;
-    WEAK_BLOCK_SELF(KLFMTabberVC);
+    WEAK_BLOCK_SELF(KLFMNavigateVC);
     [self.request yxg_sendRequestWithCompletion:^(id response, BOOL success, NSString *message) {
         block_self.baseModel = (TabbarBaseClass *)[TabbarBaseClass yy_modelWithJSON:response];
         for (NSDictionary *dic in block_self.baseModel.result.dataList) {
@@ -124,7 +122,7 @@
 
 - (void)viewInit
 {
-    _navTabBar = [[HomeNavTabBar alloc] initWithFrame:CGRectMake(0, 64, SCREEN_WIDTH , 44)];
+    _navTabBar = [[KLFMNavigateView alloc] initWithFrame:CGRectMake(0, 64, SCREEN_WIDTH , 44)];
     _navTabBar.backgroundColor = [UIColor whiteColor];
     
     _navTabBar.delegate = self;

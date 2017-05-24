@@ -37,7 +37,6 @@ static NSString *k_cellId = @"CycleBannerCell";
 }
 
 - (void)setupCollectionView {
-    
     self.flowlayout = [[UICollectionViewFlowLayout alloc] init];
     self.flowlayout.minimumLineSpacing = 0;
     self.flowlayout.itemSize = CGSizeMake(ScreenWidth, self.bounds.size.height);

@@ -9,12 +9,14 @@
 #import <UIKit/UIKit.h>
 
 @protocol HomeTJMenuViewDelegate <NSObject>
-
-- (void)pushWebViewWithURL:(NSString *)url;
-
+- (void)HomeTJMenuPushWithURL:(NSString *)url;
 @end
 
+typedef void (^HomeTJMenuViewItemsBlock)(NSInteger index);
+
 @interface HomeTJMenuView : UIView<UIGestureRecognizerDelegate>
+
+@property (nonatomic,copy) HomeTJMenuViewItemsBlock itemsBlock;
 
 @property (nonatomic)id<HomeTJMenuViewDelegate>delegate;
 

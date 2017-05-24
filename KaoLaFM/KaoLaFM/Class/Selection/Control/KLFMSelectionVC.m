@@ -31,6 +31,30 @@
     }
     return _frameArr;
 }
+-(CycleBannerView *)bannerView{
+    if (!_bannerView) {
+        _bannerView = [[CycleBannerView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_WIDTH * 0.55)];
+        _bannerView.bgImg = [UIImage imageNamed:@"shadow.png"];
+        
+        //    WEAK_BLOCK_SELF(KLFMSelectionVC);
+        _bannerView.clickItemBlock = ^(NSInteger index) {
+        //        SelectionDataList *banner = block_self.BannerList[index];
+        //        [block_self pushVc:[BannerViewController new] userInfo:@{@"bannerUrl":banner.linkUrl}];
+        };
+    }
+    return _bannerView;
+}
+-(HomeTJMenuView *)TJMenuView{
+    if (!_TJMenuView) {
+        _TJMenuView = [[HomeTJMenuView alloc]initWithFrame:CGRectMake(0, self.bannerView.bottom - self.bannerView.height/3, SCREEN_WIDTH, 100)];
+        _TJMenuView.delegate = self;
+        _TJMenuView.itemsBlock = ^(NSInteger index) {
+
+        };
+    }
+    return _TJMenuView;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.tableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
@@ -38,33 +62,16 @@
     }];
     [self initBannerView];
 
-//    self.view.backgroundColor = [UIColor orangeColor];
-    // Do any additional setup after loading the view.
 }
 
 #pragma mark 首页轮播图
 - (void)initBannerView
 {
     UIView *headerView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_WIDTH * 0.37 + 100)];
-    CycleBannerView *bannerView = [[CycleBannerView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_WIDTH * 0.37)];
-    bannerView.bgImg = [UIImage imageNamed:@"shadow.png"];
     
-//    WEAK_BLOCK_SELF(KLFMSelectionVC);
-    bannerView.clickItemBlock = ^(NSInteger index) {
-        
-//        SelectionDataList *banner = block_self.BannerList[index];
-        
-//        [block_self pushVc:[BannerViewController new] userInfo:@{@"bannerUrl":banner.linkUrl}];
-    };
-    
-    [headerView addSubview:bannerView];
-    
-    _TJMenuView = [[HomeTJMenuView alloc]initWithFrame:CGRectMake(0, bannerView.bottom, SCREEN_WIDTH, 100)];
-    _TJMenuView.delegate = self;
+    [headerView addSubview:self.bannerView];
     [headerView addSubview:self.TJMenuView];
-
     self.tableView.tableHeaderView = headerView;
-    self.bannerView = bannerView;
 
 }
 

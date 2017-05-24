@@ -9,12 +9,12 @@
 
 
 
-#import "HomeNavTabBar.h"
+#import "KLFMNavigateView.h"
 #import "NSString+Extension.h"
 
 #define line_X 15
 
-@interface HomeNavTabBar ()
+@interface KLFMNavigateView ()
 {
     UIScrollView    *_navgationTabBar;
     UIView          *_line;                 // underscore show which item selected
@@ -24,7 +24,7 @@
 }
 @end
 
-@implementation HomeNavTabBar
+@implementation KLFMNavigateView
 
 - (id)initWithFrame:(CGRect)frame
 {

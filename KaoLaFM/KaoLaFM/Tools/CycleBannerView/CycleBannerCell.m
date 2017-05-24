@@ -18,7 +18,7 @@
     
     if (self = [super initWithFrame:frame]) {
         
-        UIImageView *imgView = [[UIImageView alloc] initWithFrame:self.bounds];
+        UIImageView *imgView = [[UIImageView alloc] initWithFrame:CGRectMake(0, - self.height/3, self.width, self.height)];
         [self addSubview:imgView];
         self.imgView = imgView;
     }
