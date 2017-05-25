@@ -37,7 +37,7 @@
     if (!_navBar) {
         _navBar = [[KLFMNavBar alloc] initWithFrame:CGRectMake(0,0, SCREEN_WIDTH, NavBarHeight)];
         _navBar.delegate = self;
-        _navBar.backgroundColor = [UIColor grayColor];
+        _navBar.backgroundColor = [UIColor whiteColor];
         
     }
     return _navBar;

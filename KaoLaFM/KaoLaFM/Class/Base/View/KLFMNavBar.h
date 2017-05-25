@@ -17,18 +17,21 @@ typedef NS_ENUM(NSInteger, KLFMNavBarType) {
 
 @protocol KLFMNavBarDelegate <NSObject>
 @optional
-- (void)touchLeftButton;
-- (void)touchRightButton;
-- (void)touchRightOtherButton;
+- (void)touchHeadImage;
+- (void)touchHistoryButton;
+- (void)touchUpdateButton;
+- (void)touchSearchButton;
+
 @end
 
-@interface KLFMNavBar : UIView
+@interface KLFMNavBar : UIView<UIGestureRecognizerDelegate>
 
 
-@property (weak, nonatomic)  UIButton *iLeftButton;
-@property (weak, nonatomic)  UIButton *iRightButton;
-@property (weak, nonatomic)  UILabel *iTitleLabel;
-@property (weak, nonatomic)  UIButton *iRightOtherButton;
+
+@property (nonatomic)  UIImageView *iHeadImage;
+@property (nonatomic)  UIButton *iUpdateButton;
+@property (nonatomic)  UIButton *iSearchButton;
+@property (nonatomic)  UIButton *ihistoryButton;
 
 @property (nonatomic) id<KLFMNavBarDelegate>delegate;
 
