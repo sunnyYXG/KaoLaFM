@@ -16,6 +16,16 @@
 
 @implementation BaseViewController
 
+- (KLFMNavBar *)navBar{
+    if (!_navBar) {
+        _navBar = [[KLFMNavBar alloc] initWithFrame:CGRectMake(0,0, SCREEN_WIDTH, NavBarHeight)];
+        _navBar.delegate = self;
+        _navBar.backgroundColor = [UIColor whiteColor];
+        
+    }
+    return _navBar;
+}
+
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -23,6 +33,7 @@
     [UIView setAnimationsEnabled:YES];
     self.automaticallyAdjustsScrollViewInsets = NO;
     self.edgesForExtendedLayout = UIRectEdgeAll;
+//    [self.view addSubview:self.navBar];
     [self initRequest];
     [self loadData];
     // Do any additional setup after loading the view, typically from a nib.
@@ -152,6 +163,17 @@
 
 }
 
+-(void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    [self.navigationController setNavigationBarHidden:YES];
+}
+
+-(void)viewWillDisappear:(BOOL)animated
+{
+    [super viewWillDisappear:animated];
+    [self.navigationController setNavigationBarHidden:NO];
+}
 
 
 

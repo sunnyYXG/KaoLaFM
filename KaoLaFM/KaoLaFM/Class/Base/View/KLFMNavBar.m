@@ -70,8 +70,21 @@
 
 }
 
+-(void)configureViewWithTitle:(NSString *)title Type:(KLFMNavBarType)type{
+    switch (type) {
+        case KLFMNavBarTypeBack:
+            
+            break;
+            
+        default:
+            break;
+    }
+}
 - (void)headImageClick{
     DDLog(@"点击头像");
+    if (_delegate && [_delegate respondsToSelector:@selector(touchHeadImage)]) {
+        [_delegate touchHeadImage];
+    }
 }
 - (void)historyClick{
     DDLog(@"点击历史记录");

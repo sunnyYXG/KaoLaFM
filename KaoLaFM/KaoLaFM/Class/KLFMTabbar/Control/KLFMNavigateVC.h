@@ -8,11 +8,8 @@
 
 #import "BaseViewController.h"
 #import "TabbarBaseClass.h"
-@class KLFMNavBar;
 
 @interface KLFMNavigateVC : BaseViewController
-@property (nonatomic,strong) KLFMNavBar *navBar;
-
 
 
 @property (nonatomic, assign)   BOOL        scrollAnimation;            // Default value: NO

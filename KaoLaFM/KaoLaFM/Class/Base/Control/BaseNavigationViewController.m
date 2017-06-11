@@ -1,18 +1,18 @@
 //
-//  KLFMAnchorVC.m
-//  KaoLaFM
+//  BaseNavigationViewController.m
+//  YXGDemo
 //
-//  Created by rongyun on 17/5/18.
-//  Copyright © 2017年 YXGang. All rights reserved.
+//  Created by sunny_FX on 2017/3/25.
+//  Copyright © 2017年 YXG. All rights reserved.
 //
 
-#import "KLFMAnchorVC.h"
+#import "BaseNavigationViewController.h"
 
-@interface KLFMAnchorVC ()
+@interface BaseNavigationViewController ()
 
 @end
 
-@implementation KLFMAnchorVC
+@implementation BaseNavigationViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];

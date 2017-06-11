@@ -1,23 +1,22 @@
 //
-//  KLFMNewsVC.m
+//  KLFMOtherVC.m
 //  KaoLaFM
 //
-//  Created by rongyun on 17/5/18.
+//  Created by sunny_FX on 2017/6/10.
 //  Copyright © 2017年 YXGang. All rights reserved.
 //
 
-#import "KLFMNewsVC.h"
+#import "KLFMOtherVC.h"
 
-@interface KLFMNewsVC ()
+@interface KLFMOtherVC ()
 
 @end
 
-@implementation KLFMNewsVC
+@implementation KLFMOtherVC
 
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-    self.view.backgroundColor = [UIColor redColor];
     // Do any additional setup after loading the view.
 }
 

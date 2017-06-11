@@ -56,7 +56,6 @@
             [manager GET:self.yxg_url parameters:self.paramsDic progress:^(NSProgress * _Nonnull downloadProgress) {
             
         } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-            
             //数据请求成功的block回调
             completion(responseObject, YES, @"");
             

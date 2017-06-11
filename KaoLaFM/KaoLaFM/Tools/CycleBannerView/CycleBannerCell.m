@@ -26,15 +26,17 @@
 }
 
 - (void)setCellDataWithUrl:(NSString *)imgUrl {
-    if ([imgUrl hasPrefix:@"http"]) {
-        [self.imgView sd_setImageWithURL:[NSURL URLWithString:imgUrl] placeholderImage:nil];
-    } else {
-        UIImage *image = [UIImage imageNamed:imgUrl];
-        if (!image) {
-            [UIImage imageWithContentsOfFile:imgUrl];
-        }
-        self.imgView.image = image;
-    }
+    [self.imgView sd_setImageWithURL:[NSURL URLWithString:imgUrl]];
+
+//    if ([imgUrl hasPrefix:@"http"]) {
+//        [self.imgView sd_setImageWithURL:[NSURL URLWithString:imgUrl] placeholderImage:nil];
+//    } else {
+//        UIImage *image = [UIImage imageNamed:imgUrl];
+//        if (!image) {
+//            [UIImage imageWithContentsOfFile:imgUrl];
+//        }
+//        self.imgView.image = image;
+//    }
 }
 
 @end

@@ -19,6 +19,7 @@
 
 #import "CycleBannerView.h"
 #import "HomeTJMenuView.h"
+#import "KLFMViewVC.h"
 @interface KLFMSelectionVC ()
 
 @end
@@ -48,8 +49,11 @@
     if (!_TJMenuView) {
         _TJMenuView = [[HomeTJMenuView alloc]initWithFrame:CGRectMake(0, self.bannerView.bottom, SCREEN_WIDTH, 100)];
 //        _TJMenuView.delegate = self;
+        WEAK_BLOCK_SELF(KLFMSelectionVC);
         _TJMenuView.itemsBlock = ^(NSInteger index) {
-
+            DDLog(@"dinjia");
+            
+            [block_self pushVc:[KLFMViewVC new] userInfo:nil];
         };
     }
     return _TJMenuView;
@@ -87,7 +91,7 @@
     if (!self.request) return;
     WEAK_BLOCK_SELF(KLFMSelectionVC);
     [self.request yxg_sendRequestWithCompletion:^(id response, BOOL success, NSString *message) {
-        
+        [self.tableView.mj_header endRefreshing];
         self.baseModel = (SelectionBaseClass *)[SelectionBaseClass yy_modelWithJSON:response];
         [SelectionModel ModelResolver:block_self.baseModel VC:block_self];
         
