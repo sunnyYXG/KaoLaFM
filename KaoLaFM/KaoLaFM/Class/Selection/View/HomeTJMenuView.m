@@ -14,7 +14,9 @@
     self = [super initWithFrame:frame];
     if (self) {
         self.backgroundColor = [UIColor whiteColor];
-
+        UIView *line = [[UIView alloc]initWithFrame:CGRectMake(0, self.height - 10, SCREEN_WIDTH, 10)];
+        line.backgroundColor = UIColorFromRGB(248, 248, 248);
+        [self addSubview:line];
     }
     return self;
 }
@@ -41,7 +43,7 @@
         tap.delegate = self;
 
         
-        UIImageView *IV = [[UIImageView alloc]initWithFrame:CGRectMake(i * (w + 10) + 10, 10, w, self.height - 20)];
+        UIImageView *IV = [[UIImageView alloc]initWithFrame:CGRectMake(i * (w + 10) + 10, 10, w, self.height - 45)];
         IV.tag = 100 + i;
         IV.userInteractionEnabled = YES;
         [IV addGestureRecognizer:tap];

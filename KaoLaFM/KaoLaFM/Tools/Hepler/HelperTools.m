@@ -67,4 +67,13 @@
     return [NSString stringWithFormat:@"%ld",integer];
 }
 
++ (NSValue *)withFrame:(CGRect)frame{
+    return [NSValue valueWithCGRect:frame];
+}
+
++(CGRect)withNSValue:(NSValue *)value{
+    return [value CGRectValue];
+}
+
+
 @end

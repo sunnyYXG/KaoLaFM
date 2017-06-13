@@ -13,7 +13,7 @@
 
 
 @property (nonatomic) NSArray *data;
-@property (nonatomic) NSMutableArray *frameArr;
+//@property (nonatomic) NSMutableArray *frameArr;
 
 @property (nonatomic) SelectionBaseClass *baseModel;
 

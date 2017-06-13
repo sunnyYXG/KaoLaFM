@@ -19,4 +19,7 @@
 + (NSString *)HTtimeStamp;
 
 + (NSString *)stringWith_int:(NSInteger)integer;
+
++ (NSValue *)withFrame:(CGRect)frame;
++ (CGRect)withNSValue:(NSValue *)value;
 @end

@@ -26,12 +26,12 @@
 
 @implementation KLFMSelectionVC
 
--(NSMutableArray *)frameArr{
-    if (!_frameArr) {
-        _frameArr = [NSMutableArray new];
-    }
-    return _frameArr;
-}
+//-(NSMutableArray *)frameArr{
+//    if (!_frameArr) {
+//        _frameArr = [NSMutableArray new];
+//    }
+//    return _frameArr;
+//}
 -(CycleBannerView *)bannerView{
     if (!_bannerView) {
         _bannerView = [[CycleBannerView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_WIDTH * 0.55)];
@@ -47,7 +47,7 @@
 }
 -(HomeTJMenuView *)TJMenuView{
     if (!_TJMenuView) {
-        _TJMenuView = [[HomeTJMenuView alloc]initWithFrame:CGRectMake(0, self.bannerView.bottom, SCREEN_WIDTH, 100)];
+        _TJMenuView = [[HomeTJMenuView alloc]initWithFrame:CGRectMake(0, self.bannerView.bottom, SCREEN_WIDTH, 125)];
 //        _TJMenuView.delegate = self;
         WEAK_BLOCK_SELF(KLFMSelectionVC);
         _TJMenuView.itemsBlock = ^(NSInteger index) {
@@ -64,6 +64,9 @@
     self.tableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
         [self loadData];
     }];
+    CGRect frame = CGRectMake(0, 0, SCREEN_WIDTH, self.tableView.height - 108);
+    self.tableView.frame = frame;
+
     [self initBannerView];
 
 }
@@ -71,7 +74,7 @@
 #pragma mark 首页轮播图
 - (void)initBannerView
 {
-    UIView *headerView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_WIDTH * 0.55 + 100)];
+    UIView *headerView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_WIDTH * 0.55 + 125)];
     
     [headerView addSubview:self.bannerView];
     [headerView addSubview:self.TJMenuView];
@@ -91,20 +94,15 @@
     if (!self.request) return;
     WEAK_BLOCK_SELF(KLFMSelectionVC);
     [self.request yxg_sendRequestWithCompletion:^(id response, BOOL success, NSString *message) {
-        [self.tableView.mj_header endRefreshing];
-        self.baseModel = (SelectionBaseClass *)[SelectionBaseClass yy_modelWithJSON:response];
+        [block_self.tableView.mj_header endRefreshing];
+        block_self.baseModel = (SelectionBaseClass *)[SelectionBaseClass yy_modelWithJSON:response];
         [SelectionModel ModelResolver:block_self.baseModel VC:block_self];
-        
+        [block_self yxg_reloadData];
     }];
 }
 
 -(void)setData:(NSArray *)data{
     _data = data;
-    for (NSInteger i = 0; i < _data.count; i ++) {
-        SelectionCellFrame *cellFrame = [SelectionCellFrame new];
-        cellFrame.cellModel = (SelectionDataList *)_data[i];
-        [self.frameArr addObject:cellFrame];
-    }
     [self yxg_reloadData];
 }
 
@@ -120,18 +118,17 @@
     return 1;
 }
 -(NSInteger)yxg_numberOfRowsInSection:(NSInteger)section{
-    return _data.count;
+    return self.data.count;
 }
 -(BaseTableViewCell *)yxg_cellAtIndexPath:(NSIndexPath *)indexPath{
     SelectionCell *cell = [SelectionCell cellWithTableView:self.tableView identifier:[NSString stringWithFormat:@"cell%ld%ld",indexPath.section,indexPath.row]];
-//    cell.cellModel = (SelectionDataList *)_data[indexPath.row];
-    SelectionCellFrame *cellFrame = self.frameArr[indexPath.row];
+    SelectionCellFrame *cellFrame = self.data[indexPath.row];
     cell.cellFrame = cellFrame;
-
     return cell;
 }
 -(CGFloat)yxg_cellheightAtIndexPath:(NSIndexPath *)indexPath{
-    return 40.f;
+    SelectionCellFrame *cellFrame = self.data[indexPath.row];
+    return cellFrame.cellHeight;
 }
 
 - (void)didReceiveMemoryWarning {

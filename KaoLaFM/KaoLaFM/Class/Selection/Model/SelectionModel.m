@@ -9,6 +9,7 @@
 #import "SelectionModel.h"
 #import "SelectionDataModels.h"
 #import "KLFMSelectionVC.h"
+#import "SelectionCellFrame.h"
 @interface SelectionModel()
 
 
@@ -52,10 +53,17 @@
         [menuList addObject:list.pic];
     }
 
+    NSMutableArray *marr = [[NSMutableArray alloc]init];
+    for (NSInteger i = 0; i < listMarr.count; i ++) {
+        SelectionCellFrame *cellFrame = [SelectionCellFrame new];
+        cellFrame.cellModel = (SelectionDataList *)listMarr[i];
+        [marr addObject:cellFrame];
+    }
+
     KLFMSelectionVC *vc = (KLFMSelectionVC *)VC;
     vc.BannerList = BannerList;
     vc.menuList = menuList;
-    vc.data = listMarr;
+    vc.data = marr;
 
     return @{};
 
