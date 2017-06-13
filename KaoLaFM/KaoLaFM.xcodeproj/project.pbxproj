@@ -22,10 +22,6 @@
 		0D352D521ECD493D00447E1B /* SelectionDataList.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D352D4D1ECD493D00447E1B /* SelectionDataList.m */; };
 		0D352D531ECD493D00447E1B /* SelectionResult.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D352D501ECD493D00447E1B /* SelectionResult.m */; };
 		0D352D561ECD4C6600447E1B /* SelectionModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D352D551ECD4C6600447E1B /* SelectionModel.m */; };
-		0D352D5D1ECD627B00447E1B /* KLFMClassVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D352D5C1ECD627B00447E1B /* KLFMClassVC.m */; };
-		0D352D601ECD62A200447E1B /* KLFMAnchorVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D352D5F1ECD62A200447E1B /* KLFMAnchorVC.m */; };
-		0D352D631ECD62B500447E1B /* KLFMFindVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D352D621ECD62B500447E1B /* KLFMFindVC.m */; };
-		0D352D661ECD62C500447E1B /* KLFMNewsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D352D651ECD62C500447E1B /* KLFMNewsVC.m */; };
 		0D352D761ECD799100447E1B /* KLFMNavigateVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D352D701ECD799100447E1B /* KLFMNavigateVC.m */; };
 		0D352D771ECD799100447E1B /* KLFMNavigateView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D352D751ECD799100447E1B /* KLFMNavigateView.m */; };
 		0D352D7A1ECD79BD00447E1B /* KLFMTabbarReq.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D352D791ECD79BD00447E1B /* KLFMTabbarReq.m */; };
@@ -34,9 +30,7 @@
 		0D352D841ECD7BA400447E1B /* TabbarResult.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D352D811ECD7BA400447E1B /* TabbarResult.m */; };
 		0D5E537F1ED52707009FB1D9 /* KLFMNavBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D5E537E1ED52707009FB1D9 /* KLFMNavBar.m */; };
 		0DB24B111ECC2D0A00ABF4CA /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DB24B101ECC2D0A00ABF4CA /* main.m */; };
-		0DB24B1A1ECC2D0A00ABF4CA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0DB24B181ECC2D0A00ABF4CA /* Main.storyboard */; };
 		0DB24B1C1ECC2D0A00ABF4CA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0DB24B1B1ECC2D0A00ABF4CA /* Assets.xcassets */; };
-		0DB24B1F1ECC2D0A00ABF4CA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0DB24B1D1ECC2D0A00ABF4CA /* LaunchScreen.storyboard */; };
 		0DB24B2A1ECC2D0B00ABF4CA /* KaoLaFMTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DB24B291ECC2D0B00ABF4CA /* KaoLaFMTests.m */; };
 		0DB24B351ECC2D0B00ABF4CA /* KaoLaFMUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DB24B341ECC2D0B00ABF4CA /* KaoLaFMUITests.m */; };
 		0DB24B5B1ECC315800ABF4CA /* BaseTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DB24B481ECC315800ABF4CA /* BaseTableViewController.m */; };
@@ -51,6 +45,10 @@
 		64853D991ED477A800D05788 /* HomeTJMenuView.m in Sources */ = {isa = PBXBuildFile; fileRef = 64853D981ED477A800D05788 /* HomeTJMenuView.m */; };
 		64C370D81ED31D0A00EC366D /* SelectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 64C370D71ED31D0A00EC366D /* SelectionCell.m */; };
 		64C370DB1ED3271300EC366D /* SelectionCellFrame.m in Sources */ = {isa = PBXBuildFile; fileRef = 64C370DA1ED3271300EC366D /* SelectionCellFrame.m */; };
+		64CEE6331EEBFA62005039FB /* KLFMViewVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 64CEE6321EEBFA62005039FB /* KLFMViewVC.m */; };
+		64CEE6361EEC0E1A005039FB /* BaseNavigationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 64CEE6351EEC0E1A005039FB /* BaseNavigationViewController.m */; };
+		64CEE63C1EEC2099005039FB /* KLFMOtherVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 64CEE63B1EEC2099005039FB /* KLFMOtherVC.m */; };
+		64E99F651EECFC0200CBC205 /* MainTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 64E99F641EECFC0200CBC205 /* MainTabBarController.m */; };
 		64F927181ED0775900C2F424 /* KLFMLauchMovieVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 64F927151ED0775900C2F424 /* KLFMLauchMovieVC.m */; };
 /* End PBXBuildFile section */
 
@@ -105,14 +103,6 @@
 		0D352D501ECD493D00447E1B /* SelectionResult.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelectionResult.m; sourceTree = "<group>"; };
 		0D352D541ECD4C6600447E1B /* SelectionModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelectionModel.h; sourceTree = "<group>"; };
 		0D352D551ECD4C6600447E1B /* SelectionModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelectionModel.m; sourceTree = "<group>"; };
-		0D352D5B1ECD627B00447E1B /* KLFMClassVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KLFMClassVC.h; sourceTree = "<group>"; };
-		0D352D5C1ECD627B00447E1B /* KLFMClassVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KLFMClassVC.m; sourceTree = "<group>"; };
-		0D352D5E1ECD62A200447E1B /* KLFMAnchorVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KLFMAnchorVC.h; sourceTree = "<group>"; };
-		0D352D5F1ECD62A200447E1B /* KLFMAnchorVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KLFMAnchorVC.m; sourceTree = "<group>"; };
-		0D352D611ECD62B500447E1B /* KLFMFindVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KLFMFindVC.h; sourceTree = "<group>"; };
-		0D352D621ECD62B500447E1B /* KLFMFindVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KLFMFindVC.m; sourceTree = "<group>"; };
-		0D352D641ECD62C500447E1B /* KLFMNewsVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KLFMNewsVC.h; sourceTree = "<group>"; };
-		0D352D651ECD62C500447E1B /* KLFMNewsVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KLFMNewsVC.m; sourceTree = "<group>"; };
 		0D352D6F1ECD799100447E1B /* KLFMNavigateVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KLFMNavigateVC.h; sourceTree = "<group>"; };
 		0D352D701ECD799100447E1B /* KLFMNavigateVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KLFMNavigateVC.m; sourceTree = "<group>"; };
 		0D352D741ECD799100447E1B /* KLFMNavigateView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KLFMNavigateView.h; sourceTree = "<group>"; };
@@ -130,9 +120,7 @@
 		0D5E537E1ED52707009FB1D9 /* KLFMNavBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KLFMNavBar.m; sourceTree = "<group>"; };
 		0DB24B0C1ECC2D0A00ABF4CA /* KaoLaFM.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KaoLaFM.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0DB24B101ECC2D0A00ABF4CA /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		0DB24B191ECC2D0A00ABF4CA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		0DB24B1B1ECC2D0A00ABF4CA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		0DB24B1E1ECC2D0A00ABF4CA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0DB24B201ECC2D0A00ABF4CA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0DB24B251ECC2D0B00ABF4CA /* KaoLaFMTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KaoLaFMTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0DB24B291ECC2D0B00ABF4CA /* KaoLaFMTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KaoLaFMTests.m; sourceTree = "<group>"; };
@@ -161,6 +149,14 @@
 		64C370D71ED31D0A00EC366D /* SelectionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelectionCell.m; sourceTree = "<group>"; };
 		64C370D91ED3271300EC366D /* SelectionCellFrame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelectionCellFrame.h; sourceTree = "<group>"; };
 		64C370DA1ED3271300EC366D /* SelectionCellFrame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelectionCellFrame.m; sourceTree = "<group>"; };
+		64CEE6311EEBFA62005039FB /* KLFMViewVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KLFMViewVC.h; sourceTree = "<group>"; };
+		64CEE6321EEBFA62005039FB /* KLFMViewVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KLFMViewVC.m; sourceTree = "<group>"; };
+		64CEE6341EEC0E1A005039FB /* BaseNavigationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseNavigationViewController.h; sourceTree = "<group>"; };
+		64CEE6351EEC0E1A005039FB /* BaseNavigationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseNavigationViewController.m; sourceTree = "<group>"; };
+		64CEE63A1EEC2099005039FB /* KLFMOtherVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KLFMOtherVC.h; sourceTree = "<group>"; };
+		64CEE63B1EEC2099005039FB /* KLFMOtherVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KLFMOtherVC.m; sourceTree = "<group>"; };
+		64E99F631EECFC0200CBC205 /* MainTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainTabBarController.h; sourceTree = "<group>"; };
+		64E99F641EECFC0200CBC205 /* MainTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainTabBarController.m; sourceTree = "<group>"; };
 		64F927141ED0775900C2F424 /* KLFMLauchMovieVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KLFMLauchMovieVC.h; sourceTree = "<group>"; };
 		64F927151ED0775900C2F424 /* KLFMLauchMovieVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KLFMLauchMovieVC.m; sourceTree = "<group>"; };
 		CB4B633E6392EED9648BAD4C /* Pods-KaoLaFM.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KaoLaFM.debug.xcconfig"; path = "Pods/Target Support Files/Pods-KaoLaFM/Pods-KaoLaFM.debug.xcconfig"; sourceTree = "<group>"; };
@@ -211,6 +207,10 @@
 			children = (
 				0D352D1B1ECD347500447E1B /* KLFMSelectionVC.h */,
 				0D352D1C1ECD347500447E1B /* KLFMSelectionVC.m */,
+				64CEE6311EEBFA62005039FB /* KLFMViewVC.h */,
+				64CEE6321EEBFA62005039FB /* KLFMViewVC.m */,
+				64CEE63A1EEC2099005039FB /* KLFMOtherVC.h */,
+				64CEE63B1EEC2099005039FB /* KLFMOtherVC.m */,
 			);
 			path = Control;
 			sourceTree = "<group>";
@@ -293,42 +293,6 @@
 			path = DataModel;
 			sourceTree = "<group>";
 		};
-		0D352D571ECD623200447E1B /* Class */ = {
-			isa = PBXGroup;
-			children = (
-				0D352D5B1ECD627B00447E1B /* KLFMClassVC.h */,
-				0D352D5C1ECD627B00447E1B /* KLFMClassVC.m */,
-			);
-			path = Class;
-			sourceTree = "<group>";
-		};
-		0D352D581ECD623200447E1B /* Anchor */ = {
-			isa = PBXGroup;
-			children = (
-				0D352D5E1ECD62A200447E1B /* KLFMAnchorVC.h */,
-				0D352D5F1ECD62A200447E1B /* KLFMAnchorVC.m */,
-			);
-			path = Anchor;
-			sourceTree = "<group>";
-		};
-		0D352D591ECD623200447E1B /* Find */ = {
-			isa = PBXGroup;
-			children = (
-				0D352D611ECD62B500447E1B /* KLFMFindVC.h */,
-				0D352D621ECD62B500447E1B /* KLFMFindVC.m */,
-			);
-			path = Find;
-			sourceTree = "<group>";
-		};
-		0D352D5A1ECD623200447E1B /* News */ = {
-			isa = PBXGroup;
-			children = (
-				0D352D641ECD62C500447E1B /* KLFMNewsVC.h */,
-				0D352D651ECD62C500447E1B /* KLFMNewsVC.m */,
-			);
-			path = News;
-			sourceTree = "<group>";
-		};
 		0D352D6D1ECD799100447E1B /* KLFMTabbar */ = {
 			isa = PBXGroup;
 			children = (
@@ -343,6 +307,8 @@
 		0D352D6E1ECD799100447E1B /* Control */ = {
 			isa = PBXGroup;
 			children = (
+				64E99F631EECFC0200CBC205 /* MainTabBarController.h */,
+				64E99F641EECFC0200CBC205 /* MainTabBarController.m */,
 				0D352D6F1ECD799100447E1B /* KLFMNavigateVC.h */,
 				0D352D701ECD799100447E1B /* KLFMNavigateVC.m */,
 			);
@@ -410,9 +376,7 @@
 				0D352D231ECD3E5400447E1B /* Tools */,
 				0D352D111ECD343200447E1B /* AppDelegate */,
 				0DB24B421ECC315800ABF4CA /* Class */,
-				0DB24B181ECC2D0A00ABF4CA /* Main.storyboard */,
 				0DB24B1B1ECC2D0A00ABF4CA /* Assets.xcassets */,
-				0DB24B1D1ECC2D0A00ABF4CA /* LaunchScreen.storyboard */,
 				0DB24B201ECC2D0A00ABF4CA /* Info.plist */,
 				0DB24B0F1ECC2D0A00ABF4CA /* Supporting Files */,
 			);
@@ -449,10 +413,6 @@
 			isa = PBXGroup;
 			children = (
 				0D352D6D1ECD799100447E1B /* KLFMTabbar */,
-				0D352D571ECD623200447E1B /* Class */,
-				0D352D581ECD623200447E1B /* Anchor */,
-				0D352D591ECD623200447E1B /* Find */,
-				0D352D5A1ECD623200447E1B /* News */,
 				0DB24B621ECC336D00ABF4CA /* Selection */,
 				0DB24B431ECC315800ABF4CA /* Base */,
 			);
@@ -472,6 +432,8 @@
 		0DB24B441ECC315800ABF4CA /* Control */ = {
 			isa = PBXGroup;
 			children = (
+				64CEE6341EEC0E1A005039FB /* BaseNavigationViewController.h */,
+				64CEE6351EEC0E1A005039FB /* BaseNavigationViewController.m */,
 				0DB24B471ECC315800ABF4CA /* BaseTableViewController.h */,
 				0DB24B481ECC315800ABF4CA /* BaseTableViewController.m */,
 				0DB24B491ECC315800ABF4CA /* BaseViewController.h */,
@@ -507,8 +469,8 @@
 		0DB24B621ECC336D00ABF4CA /* Selection */ = {
 			isa = PBXGroup;
 			children = (
-				64C370D51ED31CD500EC366D /* View */,
 				0D352D1A1ECD347500447E1B /* Control */,
+				64C370D51ED31CD500EC366D /* View */,
 				0D352D1D1ECD347500447E1B /* Model */,
 				0D352D1E1ECD347500447E1B /* Request */,
 			);
@@ -666,12 +628,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0DB24B1F1ECC2D0A00ABF4CA /* LaunchScreen.storyboard in Resources */,
 				0D352D181ECD343200447E1B /* InfoPlist.strings in Resources */,
 				640FB24B1ED12E3C008036F7 /* 02.3gp in Resources */,
 				640FB24E1ED13240008036F7 /* 05.3gp in Resources */,
 				0DB24B1C1ECC2D0A00ABF4CA /* Assets.xcassets in Resources */,
-				0DB24B1A1ECC2D0A00ABF4CA /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -746,8 +706,8 @@
 			files = (
 				0D352D221ECD378500447E1B /* KLFMSelectionReq.m in Sources */,
 				0D352D511ECD493D00447E1B /* SelectionBaseClass.m in Sources */,
+				64E99F651EECFC0200CBC205 /* MainTabBarController.m in Sources */,
 				0D352D371ECD3E5400447E1B /* CycleBannerCell.m in Sources */,
-				0D352D631ECD62B500447E1B /* KLFMFindVC.m in Sources */,
 				0DB24B601ECC315800ABF4CA /* BaseTableViewCell.m in Sources */,
 				0D352D7A1ECD79BD00447E1B /* KLFMTabbarReq.m in Sources */,
 				64C370DB1ED3271300EC366D /* SelectionCellFrame.m in Sources */,
@@ -757,7 +717,6 @@
 				0D352D1F1ECD347500447E1B /* KLFMSelectionVC.m in Sources */,
 				0D352D761ECD799100447E1B /* KLFMNavigateVC.m in Sources */,
 				0D352D771ECD799100447E1B /* KLFMNavigateView.m in Sources */,
-				0D352D661ECD62C500447E1B /* KLFMNewsVC.m in Sources */,
 				0DB24B5C1ECC315800ABF4CA /* BaseViewController.m in Sources */,
 				0D5E537F1ED52707009FB1D9 /* KLFMNavBar.m in Sources */,
 				0D352D3B1ECD3E5400447E1B /* singleton.m in Sources */,
@@ -765,17 +724,18 @@
 				0DB24B111ECC2D0A00ABF4CA /* main.m in Sources */,
 				0D352D521ECD493D00447E1B /* SelectionDataList.m in Sources */,
 				0D352D831ECD7BA400447E1B /* TabbarDataList.m in Sources */,
+				64CEE63C1EEC2099005039FB /* KLFMOtherVC.m in Sources */,
+				64CEE6361EEC0E1A005039FB /* BaseNavigationViewController.m in Sources */,
 				0D352D191ECD343200447E1B /* KLFMAppDelegate.m in Sources */,
 				0D352D3A1ECD3E5400447E1B /* HelperTools.m in Sources */,
 				0D352D361ECD3E5400447E1B /* UIView+Addition.m in Sources */,
 				0D352D821ECD7BA400447E1B /* TabbarBaseClass.m in Sources */,
-				0D352D5D1ECD627B00447E1B /* KLFMClassVC.m in Sources */,
 				0D352D391ECD3E5400447E1B /* Factory.m in Sources */,
 				0DB24B5E1ECC315800ABF4CA /* BaseTableHeaderFooterView.m in Sources */,
 				0DB24B5D1ECC315800ABF4CA /* BaseRequest.m in Sources */,
 				64C370D81ED31D0A00EC366D /* SelectionCell.m in Sources */,
+				64CEE6331EEBFA62005039FB /* KLFMViewVC.m in Sources */,
 				0D352D561ECD4C6600447E1B /* SelectionModel.m in Sources */,
-				0D352D601ECD62A200447E1B /* KLFMAnchorVC.m in Sources */,
 				64F927181ED0775900C2F424 /* KLFMLauchMovieVC.m in Sources */,
 				0DB24B5B1ECC315800ABF4CA /* BaseTableViewController.m in Sources */,
 				0D352D381ECD3E5400447E1B /* CycleBannerView.m in Sources */,
@@ -813,25 +773,6 @@
 			targetProxy = 0DB24B311ECC2D0B00ABF4CA /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
-
-/* Begin PBXVariantGroup section */
-		0DB24B181ECC2D0A00ABF4CA /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				0DB24B191ECC2D0A00ABF4CA /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		0DB24B1D1ECC2D0A00ABF4CA /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				0DB24B1E1ECC2D0A00ABF4CA /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		0DB24B371ECC2D0B00ABF4CA /* Debug */ = {

@@ -18,7 +18,7 @@
     
     if (self = [super initWithFrame:frame]) {
         
-        UIImageView *imgView = [[UIImageView alloc] initWithFrame:CGRectMake(0, - self.height/3, self.width, self.height)];
+        UIImageView *imgView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, self.width, self.height)];
         [self addSubview:imgView];
         self.imgView = imgView;
     }
@@ -26,15 +26,17 @@
 }
 
 - (void)setCellDataWithUrl:(NSString *)imgUrl {
-    if ([imgUrl hasPrefix:@"http"]) {
-        [self.imgView sd_setImageWithURL:[NSURL URLWithString:imgUrl] placeholderImage:nil];
-    } else {
-        UIImage *image = [UIImage imageNamed:imgUrl];
-        if (!image) {
-            [UIImage imageWithContentsOfFile:imgUrl];
-        }
-        self.imgView.image = image;
-    }
+    [self.imgView sd_setImageWithURL:[NSURL URLWithString:imgUrl]];
+
+//    if ([imgUrl hasPrefix:@"http"]) {
+//        [self.imgView sd_setImageWithURL:[NSURL URLWithString:imgUrl] placeholderImage:nil];
+//    } else {
+//        UIImage *image = [UIImage imageNamed:imgUrl];
+//        if (!image) {
+//            [UIImage imageWithContentsOfFile:imgUrl];
+//        }
+//        self.imgView.image = image;
+//    }
 }
 
 @end

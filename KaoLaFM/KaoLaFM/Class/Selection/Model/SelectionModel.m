@@ -25,6 +25,14 @@
     for (NSDictionary *dic in baseModel.result.dataList) {
                 SelectionDataList *list = [SelectionDataList modelObjectWithDictionary:dic];
                 [listMarr addObject:list];
+        DDLog(@"%@-%.0f-%.0f-%.0f-%.0f",list.name,list.hasmore,list.moreType,list.componentType,list.contentType);
+        /*
+         hasmore = 1 右上角有按钮   =0 没有按钮
+         
+         componentType = 3 一行3个  =29 单列(换一换按钮) =27专题活动商城  =32自定义（频道自选）
+         
+         */
+
     }
     //顶部滚动图片
     SelectionDataList *SelectionData = (SelectionDataList *)[listMarr firstObject];
@@ -47,7 +55,6 @@
     KLFMSelectionVC *vc = (KLFMSelectionVC *)VC;
     vc.BannerList = BannerList;
     vc.menuList = menuList;
-
     vc.data = listMarr;
 
     return @{};

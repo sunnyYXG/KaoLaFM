@@ -9,7 +9,7 @@
 #import "KLFMLauchMovieVC.h"
 #import <AVFoundation/AVFoundation.h>
 #import "KLFMAppDelegate.h"
-
+#import "MainTabBarController.h"
 #define kIsFirstLauchApp @"kIsFirstLauchApp"
 
 @interface KLFMLauchMovieVC ()
@@ -163,8 +163,13 @@
 //进入主界面
 - (void)enterMain {
     KLFMAppDelegate *delegate = (KLFMAppDelegate *)[UIApplication sharedApplication].delegate;
-    UIViewController *main = [[UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]] instantiateInitialViewController];
-    delegate.window.rootViewController = main;
+//    UIViewController *main = [[UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]] instantiateInitialViewController];
+    
+//    UIWindow *window = [UIApplication sharedApplication].keyWindow;
+    MainTabBarController *tabbar = [[MainTabBarController alloc] init];
+//    window.rootViewController = tabbar;
+
+    delegate.window.rootViewController = tabbar;
     [delegate.window makeKeyWindow];
 }
 

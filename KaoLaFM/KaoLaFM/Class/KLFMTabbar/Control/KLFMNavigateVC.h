@@ -11,6 +11,7 @@
 
 @interface KLFMNavigateVC : BaseViewController
 
+
 @property (nonatomic, assign)   BOOL        scrollAnimation;            // Default value: NO
 @property (nonatomic, assign)   BOOL        mainViewBounces;            // Default value: NO
 

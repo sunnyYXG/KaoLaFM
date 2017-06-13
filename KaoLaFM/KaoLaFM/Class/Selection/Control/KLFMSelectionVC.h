@@ -18,7 +18,7 @@
 @property (nonatomic) SelectionBaseClass *baseModel;
 
 /**
- *  顶部广告图片轮播
+ *  顶部广告图片轮播 图片地址
  */
 @property (nonatomic)NSArray *BannerList;
 

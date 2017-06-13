@@ -19,7 +19,8 @@
 
 #import "CycleBannerView.h"
 #import "HomeTJMenuView.h"
-@interface KLFMSelectionVC ()<HomeTJMenuViewDelegate>
+#import "KLFMViewVC.h"
+@interface KLFMSelectionVC ()
 
 @end
 
@@ -46,10 +47,13 @@
 }
 -(HomeTJMenuView *)TJMenuView{
     if (!_TJMenuView) {
-        _TJMenuView = [[HomeTJMenuView alloc]initWithFrame:CGRectMake(0, self.bannerView.bottom - self.bannerView.height/3, SCREEN_WIDTH, 100)];
-        _TJMenuView.delegate = self;
+        _TJMenuView = [[HomeTJMenuView alloc]initWithFrame:CGRectMake(0, self.bannerView.bottom, SCREEN_WIDTH, 100)];
+//        _TJMenuView.delegate = self;
+        WEAK_BLOCK_SELF(KLFMSelectionVC);
         _TJMenuView.itemsBlock = ^(NSInteger index) {
-
+            DDLog(@"dinjia");
+            
+            [block_self pushVc:[KLFMViewVC new] userInfo:nil];
         };
     }
     return _TJMenuView;
@@ -67,7 +71,7 @@
 #pragma mark 首页轮播图
 - (void)initBannerView
 {
-    UIView *headerView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_WIDTH * 0.37 + 100)];
+    UIView *headerView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_WIDTH * 0.55 + 100)];
     
     [headerView addSubview:self.bannerView];
     [headerView addSubview:self.TJMenuView];
@@ -87,7 +91,7 @@
     if (!self.request) return;
     WEAK_BLOCK_SELF(KLFMSelectionVC);
     [self.request yxg_sendRequestWithCompletion:^(id response, BOOL success, NSString *message) {
-        
+        [self.tableView.mj_header endRefreshing];
         self.baseModel = (SelectionBaseClass *)[SelectionBaseClass yy_modelWithJSON:response];
         [SelectionModel ModelResolver:block_self.baseModel VC:block_self];
         

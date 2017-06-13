@@ -7,18 +7,16 @@
 //
 
 #import "KLFMNavigateVC.h"
-#import "KLFMNewsVC.h"
 #import "KLFMSelectionVC.h"
-#import "KLFMFindVC.h"
-#import "KLFMAnchorVC.h"
-#import "KLFMClassVC.h"
+#import "KLFMNavBar.h"
+#import "BaseNavigationViewController.h"
 
 #import "KLFMNavigateView.h"
 
 #import "KLFMTabbarReq.h"
 
 #import "TabbarDataModels.h"
-
+#import "KLFMOtherVC.h"
 @interface KLFMNavigateVC ()<UIScrollViewDelegate,SCNavTabBarDelegate>
 {
     NSInteger       _currentIndex;
@@ -41,6 +39,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.edgesForExtendedLayout = UIRectEdgeNone;
+    [self.view addSubview:self.navBar];
+    self.navigationController.navigationBar.hidden = YES;
 
 }
 
@@ -59,6 +60,7 @@
         for (NSDictionary *dic in block_self.baseModel.result.dataList) {
             TabbarDataList *list = [TabbarDataList modelObjectWithDictionary:dic];
             [block_self.navBars addObject:list];
+
         }
         
         [block_self initControl];
@@ -72,16 +74,26 @@
 -(void)initControl
 {
     
-    NSArray *arr = @[[KLFMNewsVC description],[KLFMSelectionVC description],[KLFMClassVC description],[KLFMFindVC description],[KLFMAnchorVC description]];
-    
     NSMutableArray *viewArray = [NSMutableArray array];
     
     
-    for (NSInteger i =0; i < arr.count; i ++) {
+    for (NSInteger i =0; i < _navBars.count; i ++) {
         TabbarDataList *list = _navBars[i];
-        [viewArray addObject:[self addChildViewControllerWithClassname:arr[i] title:list.name]];
+        UIViewController *vc;
+        NSString *className;
+        if (i == 1) {
+            vc = [KLFMSelectionVC new];
+            className = [KLFMSelectionVC description];
+        }else{
+            vc = [KLFMOtherVC new];
+            className = [KLFMOtherVC description];
+
+        }
+        
+        [viewArray addObject:[self addChildViewControllerWithClassname:className title:list.name]];
     }
     
+
     _subViewControllers = [NSArray array];
     _subViewControllers = viewArray;
 }
@@ -165,10 +177,29 @@
     }
 }
 
+
+#pragma mark - KLFMNavBarDelegate
+-(void)touchHeadImage{
+//    [self pop];
+//    DDLog(@"dianji");
+}
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+-(void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    self.tabBarController.tabBar.hidden = YES;
+//    [self.navigationController setNavigationBarHidden:YES];
+}
+
+//-(void)viewWillDisappear:(BOOL)animated
+//{
+//    [super viewWillDisappear:animated];
+//    [self.navigationController setNavigationBarHidden:NO];
+//}
 
 /*
 #pragma mark - Navigation
