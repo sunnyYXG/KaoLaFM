@@ -19,7 +19,7 @@
 }
 
 -(void)setCellModel:(SelectionDataList *)cellModel{
-    if(!cellModel) return;
+    if(_cellModel == cellModel && _cellModel) return;
     _cellModel = cellModel;
     self.cellHeight = 40;
     [self handelModelWithComponentType:cellModel.componentType withHasmore:cellModel.hasmore];
@@ -49,7 +49,20 @@
 }
 
 - (void)createFrameComponentType_Single:(SelectionDataList *)model{
+    CGFloat _y = 0;
+    CGFloat _w = (SCREEN_WIDTH - 40)/3;
+    CGFloat _h = _w + _w/3;
     
+    for (NSInteger i = 0; i < model.dataList.count; i ++) {
+        _y = i%3;
+        CGRect tagViewRect = CGRectMake(10, 60 + _y * (_h + 10), _w, _h);
+        [self.mArrRects addObject:[HelperTools withFrame:tagViewRect]];
+    }
+    _y++;
+    self.cellHeight = self.titleRect.origin.y * 2 + self.titleRect.size.height + _y * (_h + 10) + 20;
+    
+    self.lineRect = CGRectMake(0, self.cellHeight - 10, SCREEN_WIDTH, 10);
+
 }
 
 - (void)createFrameComponentType_Three:(SelectionDataList *)model{
@@ -66,11 +79,29 @@
         [self.mArrRects addObject:[HelperTools withFrame:tagViewRect]];
     }
     _y++;
-    self.cellHeight = self.titleRect.origin.y * 2 + self.titleRect.size.height + _y * (_h + 10);
+    self.cellHeight = self.titleRect.origin.y * 2 + self.titleRect.size.height + _y * (_h + 10) + 20;
+    
+    self.lineRect = CGRectMake(0, self.cellHeight - 10, SCREEN_WIDTH, 10);
 }
 
 - (void)createFrameComponentType_Project:(SelectionDataList *)model{
     
+    CGFloat _w = 60;
+    CGFloat _h = _w;
+    CGFloat _bottom = (SCREEN_WIDTH-3*_w)/3;
+    CGFloat _x = 0;
+
+    for (NSInteger i = 0; i < model.dataList.count; i ++) {
+
+        _x = _bottom/2 * i;
+        CGRect rect = CGRectMake(_bottom + i * _h + _x, 10, _w, _h);
+        [self.mArrRects addObject:[HelperTools withFrame:rect]];
+    }
+    
+    self.cellHeight = 120;
+    
+    self.lineRect = CGRectMake(0, self.cellHeight - 10, SCREEN_WIDTH, 10);
+
 }
 
 - (void)createFrameComponentType_Other:(SelectionDataList *)model{

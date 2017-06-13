@@ -45,6 +45,7 @@ typedef NS_ENUM(NSUInteger, SelectionCellDataHasmoreType) {
 @property (nonatomic) NSMutableArray *mArrRects;
 
 @property (nonatomic) CGRect titleRect;
+@property (nonatomic) CGRect lineRect;
 @property (nonatomic) CGFloat cellHeight;
 
 @end

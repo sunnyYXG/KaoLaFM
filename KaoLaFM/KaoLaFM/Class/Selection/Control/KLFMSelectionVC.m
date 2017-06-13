@@ -122,6 +122,7 @@
 }
 -(BaseTableViewCell *)yxg_cellAtIndexPath:(NSIndexPath *)indexPath{
     SelectionCell *cell = [SelectionCell cellWithTableView:self.tableView identifier:[NSString stringWithFormat:@"cell%ld%ld",indexPath.section,indexPath.row]];
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
     SelectionCellFrame *cellFrame = self.data[indexPath.row];
     cell.cellFrame = cellFrame;
     return cell;
