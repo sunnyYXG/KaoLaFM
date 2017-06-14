@@ -75,5 +75,18 @@
     return [value CGRectValue];
 }
 
++ (NSString *) isBlankString:(NSString *)string {
+    if (string == nil || string == NULL) {
+        return @"";
+    }
+    if ([string isKindOfClass:[NSNull class]]) {
+        return @"";
+    }
+    if ([[string stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]] length]==0) {
+        return @"";
+    }
+    return string;
+}
+
 
 @end

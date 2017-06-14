@@ -7,7 +7,6 @@
 //
 
 #import "BaseViewController.h"
-#import "KLFMNavBar.h"
 
 @interface BaseViewController ()
 
@@ -26,6 +25,12 @@
     return _navBar;
 }
 
+-(playerView *)playerView{
+    if (!_playerView) {
+        _playerView = [[playerView alloc]initWithFrame:CGRectMake(0, SCREEN_HEIGHT - 64, SCREEN_WIDTH, 64)];
+    }
+    return _playerView;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -38,6 +43,7 @@
     [self loadData];
     // Do any additional setup after loading the view, typically from a nib.
 }
+
 
 - (void)dealloc {
     [[NSNotificationCenter defaultCenter] removeObserver:self];
@@ -167,6 +173,9 @@
 {
     [super viewWillAppear:animated];
     [self.navigationController setNavigationBarHidden:YES];
+    
+    [self.view addSubview:self.playerView];
+
 }
 
 -(void)viewWillDisappear:(BOOL)animated

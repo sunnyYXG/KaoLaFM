@@ -28,6 +28,18 @@
 		0D352D821ECD7BA400447E1B /* TabbarBaseClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D352D7C1ECD7BA400447E1B /* TabbarBaseClass.m */; };
 		0D352D831ECD7BA400447E1B /* TabbarDataList.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D352D7E1ECD7BA400447E1B /* TabbarDataList.m */; };
 		0D352D841ECD7BA400447E1B /* TabbarResult.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D352D811ECD7BA400447E1B /* TabbarResult.m */; };
+		0D401B881EF0BF860076CE5D /* ColorHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D401B871EF0BF860076CE5D /* ColorHelper.m */; };
+		0D401B8B1EF1036A0076CE5D /* playerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D401B8A1EF1036A0076CE5D /* playerView.m */; };
+		0D401BA21EF1091D0076CE5D /* KLFMSubscribeVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D401BA11EF1091D0076CE5D /* KLFMSubscribeVC.m */; };
+		0D401BA81EF109780076CE5D /* KLFMDiscoverVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D401BA71EF109780076CE5D /* KLFMDiscoverVC.m */; };
+		0D401BAB1EF1099D0076CE5D /* KLFMAnchorVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D401BAA1EF1099D0076CE5D /* KLFMAnchorVC.m */; };
+		0D401BB31EF10EEA0076CE5D /* KLFMCategoryVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D401BAF1EF10EEA0076CE5D /* KLFMCategoryVC.m */; };
+		0D401BB61EF10F9A0076CE5D /* KLFMCategoryReq.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D401BB51EF10F9A0076CE5D /* KLFMCategoryReq.m */; };
+		0D401BBF1EF112FF0076CE5D /* CategoryBaseClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D401BB91EF112FF0076CE5D /* CategoryBaseClass.m */; };
+		0D401BC01EF112FF0076CE5D /* CategoryDataList.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D401BBB1EF112FF0076CE5D /* CategoryDataList.m */; };
+		0D401BC11EF112FF0076CE5D /* CategoryResult.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D401BBE1EF112FF0076CE5D /* CategoryResult.m */; };
+		0D401BC41EF113CD0076CE5D /* CategoryModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D401BC31EF113CD0076CE5D /* CategoryModel.m */; };
+		0D401BC71EF121050076CE5D /* CategoryCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D401BC61EF121050076CE5D /* CategoryCell.m */; };
 		0D5E537F1ED52707009FB1D9 /* KLFMNavBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D5E537E1ED52707009FB1D9 /* KLFMNavBar.m */; };
 		0DB24B111ECC2D0A00ABF4CA /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DB24B101ECC2D0A00ABF4CA /* main.m */; };
 		0DB24B1C1ECC2D0A00ABF4CA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0DB24B1B1ECC2D0A00ABF4CA /* Assets.xcassets */; };
@@ -116,6 +128,31 @@
 		0D352D7F1ECD7BA400447E1B /* TabbarDataModels.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TabbarDataModels.h; sourceTree = "<group>"; };
 		0D352D801ECD7BA400447E1B /* TabbarResult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TabbarResult.h; sourceTree = "<group>"; };
 		0D352D811ECD7BA400447E1B /* TabbarResult.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TabbarResult.m; sourceTree = "<group>"; };
+		0D401B861EF0BF860076CE5D /* ColorHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ColorHelper.h; sourceTree = "<group>"; };
+		0D401B871EF0BF860076CE5D /* ColorHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ColorHelper.m; sourceTree = "<group>"; };
+		0D401B891EF1036A0076CE5D /* playerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = playerView.h; sourceTree = "<group>"; };
+		0D401B8A1EF1036A0076CE5D /* playerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = playerView.m; sourceTree = "<group>"; };
+		0D401BA01EF1091D0076CE5D /* KLFMSubscribeVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KLFMSubscribeVC.h; sourceTree = "<group>"; };
+		0D401BA11EF1091D0076CE5D /* KLFMSubscribeVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KLFMSubscribeVC.m; sourceTree = "<group>"; };
+		0D401BA61EF109780076CE5D /* KLFMDiscoverVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KLFMDiscoverVC.h; sourceTree = "<group>"; };
+		0D401BA71EF109780076CE5D /* KLFMDiscoverVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KLFMDiscoverVC.m; sourceTree = "<group>"; };
+		0D401BA91EF1099D0076CE5D /* KLFMAnchorVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KLFMAnchorVC.h; sourceTree = "<group>"; };
+		0D401BAA1EF1099D0076CE5D /* KLFMAnchorVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KLFMAnchorVC.m; sourceTree = "<group>"; };
+		0D401BAE1EF10EEA0076CE5D /* KLFMCategoryVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KLFMCategoryVC.h; sourceTree = "<group>"; };
+		0D401BAF1EF10EEA0076CE5D /* KLFMCategoryVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KLFMCategoryVC.m; sourceTree = "<group>"; };
+		0D401BB41EF10F9A0076CE5D /* KLFMCategoryReq.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KLFMCategoryReq.h; sourceTree = "<group>"; };
+		0D401BB51EF10F9A0076CE5D /* KLFMCategoryReq.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KLFMCategoryReq.m; sourceTree = "<group>"; };
+		0D401BB81EF112FF0076CE5D /* CategoryBaseClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CategoryBaseClass.h; sourceTree = "<group>"; };
+		0D401BB91EF112FF0076CE5D /* CategoryBaseClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CategoryBaseClass.m; sourceTree = "<group>"; };
+		0D401BBA1EF112FF0076CE5D /* CategoryDataList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CategoryDataList.h; sourceTree = "<group>"; };
+		0D401BBB1EF112FF0076CE5D /* CategoryDataList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CategoryDataList.m; sourceTree = "<group>"; };
+		0D401BBC1EF112FF0076CE5D /* CategoryDataModels.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CategoryDataModels.h; sourceTree = "<group>"; };
+		0D401BBD1EF112FF0076CE5D /* CategoryResult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CategoryResult.h; sourceTree = "<group>"; };
+		0D401BBE1EF112FF0076CE5D /* CategoryResult.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CategoryResult.m; sourceTree = "<group>"; };
+		0D401BC21EF113CD0076CE5D /* CategoryModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CategoryModel.h; sourceTree = "<group>"; };
+		0D401BC31EF113CD0076CE5D /* CategoryModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CategoryModel.m; sourceTree = "<group>"; };
+		0D401BC51EF121050076CE5D /* CategoryCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CategoryCell.h; sourceTree = "<group>"; };
+		0D401BC61EF121050076CE5D /* CategoryCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CategoryCell.m; sourceTree = "<group>"; };
 		0D5E537D1ED52707009FB1D9 /* KLFMNavBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KLFMNavBar.h; sourceTree = "<group>"; };
 		0D5E537E1ED52707009FB1D9 /* KLFMNavBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KLFMNavBar.m; sourceTree = "<group>"; };
 		0DB24B0C1ECC2D0A00ABF4CA /* KaoLaFM.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KaoLaFM.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -269,6 +306,8 @@
 		0D352D2E1ECD3E5400447E1B /* Hepler */ = {
 			isa = PBXGroup;
 			children = (
+				0D401B861EF0BF860076CE5D /* ColorHelper.h */,
+				0D401B871EF0BF860076CE5D /* ColorHelper.m */,
 				0D352D2F1ECD3E5400447E1B /* Factory.h */,
 				0D352D301ECD3E5400447E1B /* Factory.m */,
 				0D352D311ECD3E5400447E1B /* HelperTools.h */,
@@ -347,6 +386,192 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		0D401B8C1EF108630076CE5D /* Subscribe */ = {
+			isa = PBXGroup;
+			children = (
+				0D401B8D1EF108630076CE5D /* Control */,
+				0D401B8E1EF108630076CE5D /* Model */,
+				0D401B8F1EF108630076CE5D /* Request */,
+				0D401B901EF108630076CE5D /* View */,
+			);
+			name = Subscribe;
+			path = KLFMTabbar/Subscribe;
+			sourceTree = "<group>";
+		};
+		0D401B8D1EF108630076CE5D /* Control */ = {
+			isa = PBXGroup;
+			children = (
+				0D401BA01EF1091D0076CE5D /* KLFMSubscribeVC.h */,
+				0D401BA11EF1091D0076CE5D /* KLFMSubscribeVC.m */,
+			);
+			path = Control;
+			sourceTree = "<group>";
+		};
+		0D401B8E1EF108630076CE5D /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		0D401B8F1EF108630076CE5D /* Request */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Request;
+			sourceTree = "<group>";
+		};
+		0D401B901EF108630076CE5D /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		0D401B911EF108830076CE5D /* anchor */ = {
+			isa = PBXGroup;
+			children = (
+				0D401B921EF108830076CE5D /* Control */,
+				0D401B931EF108830076CE5D /* Model */,
+				0D401B941EF108830076CE5D /* Request */,
+				0D401B951EF108830076CE5D /* View */,
+			);
+			path = anchor;
+			sourceTree = "<group>";
+		};
+		0D401B921EF108830076CE5D /* Control */ = {
+			isa = PBXGroup;
+			children = (
+				0D401BA91EF1099D0076CE5D /* KLFMAnchorVC.h */,
+				0D401BAA1EF1099D0076CE5D /* KLFMAnchorVC.m */,
+			);
+			path = Control;
+			sourceTree = "<group>";
+		};
+		0D401B931EF108830076CE5D /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		0D401B941EF108830076CE5D /* Request */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Request;
+			sourceTree = "<group>";
+		};
+		0D401B951EF108830076CE5D /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		0D401B9B1EF108830076CE5D /* discover */ = {
+			isa = PBXGroup;
+			children = (
+				0D401B9C1EF108830076CE5D /* Control */,
+				0D401B9D1EF108830076CE5D /* Model */,
+				0D401B9E1EF108830076CE5D /* Request */,
+				0D401B9F1EF108830076CE5D /* View */,
+			);
+			path = discover;
+			sourceTree = "<group>";
+		};
+		0D401B9C1EF108830076CE5D /* Control */ = {
+			isa = PBXGroup;
+			children = (
+				0D401BA61EF109780076CE5D /* KLFMDiscoverVC.h */,
+				0D401BA71EF109780076CE5D /* KLFMDiscoverVC.m */,
+			);
+			path = Control;
+			sourceTree = "<group>";
+		};
+		0D401B9D1EF108830076CE5D /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		0D401B9E1EF108830076CE5D /* Request */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Request;
+			sourceTree = "<group>";
+		};
+		0D401B9F1EF108830076CE5D /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		0D401BAC1EF10EEA0076CE5D /* category */ = {
+			isa = PBXGroup;
+			children = (
+				0D401BAD1EF10EEA0076CE5D /* Control */,
+				0D401BB01EF10EEA0076CE5D /* Model */,
+				0D401BB11EF10EEA0076CE5D /* Request */,
+				0D401BB21EF10EEA0076CE5D /* View */,
+			);
+			path = category;
+			sourceTree = "<group>";
+		};
+		0D401BAD1EF10EEA0076CE5D /* Control */ = {
+			isa = PBXGroup;
+			children = (
+				0D401BAE1EF10EEA0076CE5D /* KLFMCategoryVC.h */,
+				0D401BAF1EF10EEA0076CE5D /* KLFMCategoryVC.m */,
+			);
+			path = Control;
+			sourceTree = "<group>";
+		};
+		0D401BB01EF10EEA0076CE5D /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				0D401BB71EF112FF0076CE5D /* DataModel */,
+				0D401BC21EF113CD0076CE5D /* CategoryModel.h */,
+				0D401BC31EF113CD0076CE5D /* CategoryModel.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		0D401BB11EF10EEA0076CE5D /* Request */ = {
+			isa = PBXGroup;
+			children = (
+				0D401BB41EF10F9A0076CE5D /* KLFMCategoryReq.h */,
+				0D401BB51EF10F9A0076CE5D /* KLFMCategoryReq.m */,
+			);
+			path = Request;
+			sourceTree = "<group>";
+		};
+		0D401BB21EF10EEA0076CE5D /* View */ = {
+			isa = PBXGroup;
+			children = (
+				0D401BC51EF121050076CE5D /* CategoryCell.h */,
+				0D401BC61EF121050076CE5D /* CategoryCell.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		0D401BB71EF112FF0076CE5D /* DataModel */ = {
+			isa = PBXGroup;
+			children = (
+				0D401BB81EF112FF0076CE5D /* CategoryBaseClass.h */,
+				0D401BB91EF112FF0076CE5D /* CategoryBaseClass.m */,
+				0D401BBA1EF112FF0076CE5D /* CategoryDataList.h */,
+				0D401BBB1EF112FF0076CE5D /* CategoryDataList.m */,
+				0D401BBC1EF112FF0076CE5D /* CategoryDataModels.h */,
+				0D401BBD1EF112FF0076CE5D /* CategoryResult.h */,
+				0D401BBE1EF112FF0076CE5D /* CategoryResult.m */,
+			);
+			path = DataModel;
+			sourceTree = "<group>";
+		};
 		0DB24B031ECC2D0A00ABF4CA = {
 			isa = PBXGroup;
 			children = (
@@ -413,7 +638,11 @@
 			isa = PBXGroup;
 			children = (
 				0D352D6D1ECD799100447E1B /* KLFMTabbar */,
+				0D401B8C1EF108630076CE5D /* Subscribe */,
 				0DB24B621ECC336D00ABF4CA /* Selection */,
+				0D401BAC1EF10EEA0076CE5D /* category */,
+				0D401B9B1EF108830076CE5D /* discover */,
+				0D401B911EF108830076CE5D /* anchor */,
 				0DB24B431ECC315800ABF4CA /* Base */,
 			);
 			path = Class;
@@ -462,6 +691,8 @@
 				0DB24B541ECC315800ABF4CA /* BaseTableViewCell.m */,
 				0D5E537D1ED52707009FB1D9 /* KLFMNavBar.h */,
 				0D5E537E1ED52707009FB1D9 /* KLFMNavBar.m */,
+				0D401B891EF1036A0076CE5D /* playerView.h */,
+				0D401B8A1EF1036A0076CE5D /* playerView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -711,30 +942,42 @@
 				0DB24B601ECC315800ABF4CA /* BaseTableViewCell.m in Sources */,
 				0D352D7A1ECD79BD00447E1B /* KLFMTabbarReq.m in Sources */,
 				64C370DB1ED3271300EC366D /* SelectionCellFrame.m in Sources */,
+				0D401BC71EF121050076CE5D /* CategoryCell.m in Sources */,
 				0DB24B5F1ECC315800ABF4CA /* BaseTableView.m in Sources */,
 				0D352D531ECD493D00447E1B /* SelectionResult.m in Sources */,
+				0D401BBF1EF112FF0076CE5D /* CategoryBaseClass.m in Sources */,
 				0D352D841ECD7BA400447E1B /* TabbarResult.m in Sources */,
 				0D352D1F1ECD347500447E1B /* KLFMSelectionVC.m in Sources */,
 				0D352D761ECD799100447E1B /* KLFMNavigateVC.m in Sources */,
 				0D352D771ECD799100447E1B /* KLFMNavigateView.m in Sources */,
+				0D401BA81EF109780076CE5D /* KLFMDiscoverVC.m in Sources */,
 				0DB24B5C1ECC315800ABF4CA /* BaseViewController.m in Sources */,
+				0D401BC11EF112FF0076CE5D /* CategoryResult.m in Sources */,
+				0D401BC01EF112FF0076CE5D /* CategoryDataList.m in Sources */,
+				0D401BB61EF10F9A0076CE5D /* KLFMCategoryReq.m in Sources */,
 				0D5E537F1ED52707009FB1D9 /* KLFMNavBar.m in Sources */,
 				0D352D3B1ECD3E5400447E1B /* singleton.m in Sources */,
 				0D352D351ECD3E5400447E1B /* NSString+Extension.m in Sources */,
 				0DB24B111ECC2D0A00ABF4CA /* main.m in Sources */,
 				0D352D521ECD493D00447E1B /* SelectionDataList.m in Sources */,
+				0D401BB31EF10EEA0076CE5D /* KLFMCategoryVC.m in Sources */,
 				0D352D831ECD7BA400447E1B /* TabbarDataList.m in Sources */,
 				64CEE63C1EEC2099005039FB /* KLFMOtherVC.m in Sources */,
+				0D401BAB1EF1099D0076CE5D /* KLFMAnchorVC.m in Sources */,
 				64CEE6361EEC0E1A005039FB /* BaseNavigationViewController.m in Sources */,
 				0D352D191ECD343200447E1B /* KLFMAppDelegate.m in Sources */,
 				0D352D3A1ECD3E5400447E1B /* HelperTools.m in Sources */,
 				0D352D361ECD3E5400447E1B /* UIView+Addition.m in Sources */,
 				0D352D821ECD7BA400447E1B /* TabbarBaseClass.m in Sources */,
+				0D401BA21EF1091D0076CE5D /* KLFMSubscribeVC.m in Sources */,
 				0D352D391ECD3E5400447E1B /* Factory.m in Sources */,
 				0DB24B5E1ECC315800ABF4CA /* BaseTableHeaderFooterView.m in Sources */,
 				0DB24B5D1ECC315800ABF4CA /* BaseRequest.m in Sources */,
+				0D401B8B1EF1036A0076CE5D /* playerView.m in Sources */,
+				0D401B881EF0BF860076CE5D /* ColorHelper.m in Sources */,
 				64C370D81ED31D0A00EC366D /* SelectionCell.m in Sources */,
 				64CEE6331EEBFA62005039FB /* KLFMViewVC.m in Sources */,
+				0D401BC41EF113CD0076CE5D /* CategoryModel.m in Sources */,
 				0D352D561ECD4C6600447E1B /* SelectionModel.m in Sources */,
 				64F927181ED0775900C2F424 /* KLFMLauchMovieVC.m in Sources */,
 				0DB24B5B1ECC315800ABF4CA /* BaseTableViewController.m in Sources */,

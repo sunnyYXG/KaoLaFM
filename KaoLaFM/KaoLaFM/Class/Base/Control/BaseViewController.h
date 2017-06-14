@@ -8,13 +8,15 @@
 
 #import <UIKit/UIKit.h>
 #import "KLFMNavBar.h"
+#import "playerView.h"
+
 @class BaseRequest,KLFMNavigateView;
 
 @interface BaseViewController : UIViewController<KLFMNavBarDelegate>
 
 @property (nonatomic) BaseRequest *request;
 
-
+@property (nonatomic) playerView *playerView;
 @property (nonatomic,strong) KLFMNavBar *navBar;
 
 

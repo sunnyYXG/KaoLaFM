@@ -20,6 +20,7 @@
 #import "HelperTools.h"
 #import "UIView+Addition.h"
 #import "NSString+Extension.h"
+#import "ColorHelper.h"
 /**
  *  第三方头文件导入
  */
@@ -35,5 +36,7 @@
 #import "MJRefresh.h"
 #import "SVProgressHUD.h"
 //
+
+
 
 #endif /* PrefixHeader_pch */

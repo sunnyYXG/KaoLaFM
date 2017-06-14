@@ -9,6 +9,7 @@
 #import "BaseTableViewCell.h"
 @class SelectionDataList,SelectionCellFrame;
 
+
 @interface SelectionCell : BaseTableViewCell
 
 @property (nonatomic) SelectionDataList *cellModel;

@@ -46,6 +46,8 @@ typedef NS_ENUM(NSUInteger, SelectionCellDataHasmoreType) {
 
 @property (nonatomic) CGRect titleRect;
 @property (nonatomic) CGRect lineRect;
+@property (nonatomic) CGRect hasmoreRect;
+
 @property (nonatomic) CGFloat cellHeight;
 
 @end

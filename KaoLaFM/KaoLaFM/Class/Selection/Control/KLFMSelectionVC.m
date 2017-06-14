@@ -64,7 +64,7 @@
     self.tableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
         [self loadData];
     }];
-    CGRect frame = CGRectMake(0, 0, SCREEN_WIDTH, self.tableView.height - 108);
+    CGRect frame = CGRectMake(0, 0, SCREEN_WIDTH, self.tableView.height - 108 - 64);
     self.tableView.frame = frame;
 
     [self initBannerView];
@@ -131,7 +131,6 @@
     SelectionCellFrame *cellFrame = self.data[indexPath.row];
     return cellFrame.cellHeight;
 }
-
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.

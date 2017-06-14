@@ -22,4 +22,6 @@
 
 + (NSValue *)withFrame:(CGRect)frame;
 + (CGRect)withNSValue:(NSValue *)value;
+
++ (NSString *) isBlankString:(NSString *)string;
 @end

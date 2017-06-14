@@ -7,7 +7,6 @@
 //
 
 #import "KLFMNavigateVC.h"
-#import "KLFMSelectionVC.h"
 #import "KLFMNavBar.h"
 #import "BaseNavigationViewController.h"
 
@@ -16,6 +15,12 @@
 #import "KLFMTabbarReq.h"
 
 #import "TabbarDataModels.h"
+
+#import "KLFMSelectionVC.h"
+#import "KLFMSubscribeVC.h"
+#import "KLFMCategoryVC.h"
+#import "KLFMDiscoverVC.h"
+#import "KLFMAnchorVC.h"
 #import "KLFMOtherVC.h"
 @interface KLFMNavigateVC ()<UIScrollViewDelegate,SCNavTabBarDelegate>
 {
@@ -76,21 +81,22 @@
     
     NSMutableArray *viewArray = [NSMutableArray array];
     
+    NSArray *classNames = @[[KLFMSubscribeVC description],[KLFMSelectionVC description],[KLFMCategoryVC description],[KLFMDiscoverVC description],[KLFMAnchorVC description]];
     
     for (NSInteger i =0; i < _navBars.count; i ++) {
         TabbarDataList *list = _navBars[i];
-        UIViewController *vc;
-        NSString *className;
-        if (i == 1) {
-            vc = [KLFMSelectionVC new];
-            className = [KLFMSelectionVC description];
-        }else{
-            vc = [KLFMOtherVC new];
-            className = [KLFMOtherVC description];
-
-        }
+//        UIViewController *vc;
+//        NSString *className;
+//        if (i == 1) {
+//            vc = [KLFMSelectionVC new];
+//            className = [KLFMSelectionVC description];
+//        }else{
+//            vc = [KLFMOtherVC new];
+//            className = [KLFMOtherVC description];
+//
+//        }
         
-        [viewArray addObject:[self addChildViewControllerWithClassname:className title:list.name]];
+        [viewArray addObject:[self addChildViewControllerWithClassname:classNames[i] title:list.name]];
     }
     
 
