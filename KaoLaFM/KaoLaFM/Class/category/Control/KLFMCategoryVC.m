@@ -23,6 +23,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    CGRect frame = CGRectMake(0, 0, SCREEN_WIDTH, self.tableView.height - 108 - playerViewHeight);
+    self.tableView.frame = frame;
+
     // Do any additional setup after loading the view.
 }
 
@@ -97,31 +100,33 @@
     CategoryCell *cell = [CategoryCell cellWithTableView:self.tableView identifier:[NSString stringWithFormat:@"cell%ld%ld",indexPath.section,indexPath.row]];
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     cell.delegate = self;
+    cell.backgroundColor = tableViewBackColor;
     CategoryCellFrame *cellFrame = self.hotArr[indexPath.row];
     cell.cellFrame = cellFrame;
     return cell;
 }
 
 
-//@{改变cell高度
--(void)changeCellHieght:(UIView *)view{
+#pragma mark - CategoryCellChangeHeightDelegate
+#pragma mark - 调高cell的高度
+-(void)heightenCellHieght:(UIButton *)button{
     
-    CategoryCell * cell = (CategoryCell *)[[view superview] superview];
+    CategoryCell * cell = (CategoryCell *)[[button superview] superview];
     NSIndexPath * path = [self.tableView indexPathForCell:cell];
     
     CategoryCellFrame *cellFrame = self.hotArr[path.row];
-    cellFrame.cellHeight = cellFrame.cellHeightB;
+    cellFrame.cellHeight = cellFrame.cellHeighten;
     [self.tableView beginUpdates];
     [self.tableView endUpdates];
     
 }
-
--(void)changeCellHieghtRight:(UIButton *)button{
+#pragma mark - 调低cell的高度
+-(void)subtractCellHieght:(UIButton *)button{
     CategoryCell * cell = (CategoryCell *)[button superview];
     NSIndexPath * path = [self.tableView indexPathForCell:cell];
     
     CategoryCellFrame *cellFrame = self.hotArr[path.row];
-    cellFrame.cellHeight = cellFrame.cellHeightA;
+    cellFrame.cellHeight = cellFrame.cellSubtract;
     [self.tableView beginUpdates];
     [self.tableView endUpdates];
 

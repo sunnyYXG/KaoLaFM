@@ -1,9 +1,9 @@
 //
-//  AppHelper.m
-//  CNTaiPingEhome
+//  ColorHelper.m
+//  KaoLaFM
 //
-//  Created by jiangchao on 16/1/26.
-//  Copyright © 2016年 cntaiping. All rights reserved.
+//  Created by rongyun on 2017/6/14.
+//  Copyright © 2017年 YXGang. All rights reserved.
 //
 
 #import "ColorHelper.h"
@@ -128,14 +128,14 @@
 @end
 
 
-@implementation NSString (AppHelper)
+@implementation NSString (ColorHelper)
 - (BOOL)isBlankOrNil
 {
     return !self || self == nil || self.length == 0;
 }
 @end
 
-@implementation UIImage (AppHelper)
+@implementation UIImage (ColorHelper)
 - (UIImage *)scaleToSize:(CGSize)size{
     // 创建一个bitmap的context
     // 并把它设置成为当前正在使用的context

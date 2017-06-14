@@ -27,7 +27,8 @@
 
 -(playerView *)playerView{
     if (!_playerView) {
-        _playerView = [[playerView alloc]initWithFrame:CGRectMake(0, SCREEN_HEIGHT - 64, SCREEN_WIDTH, 64)];
+        _playerView = [[playerView alloc]initWithFrame:CGRectMake(0, SCREEN_HEIGHT - playerViewHeight, SCREEN_WIDTH, playerViewHeight)];
+        _playerView.backgroundColor = [UIColor orangeColor];
     }
     return _playerView;
 }

@@ -13,8 +13,8 @@
 
 @property (nonatomic) CategoryDataList *cellModel;
 @property (nonatomic) CGFloat cellHeight;
-@property (nonatomic) CGFloat cellHeightA;
-@property (nonatomic) CGFloat cellHeightB;
+@property (nonatomic) CGFloat cellSubtract;//cell高度 -- 低
+@property (nonatomic) CGFloat cellHeighten;//cell高度 -- 高
 
 @property (nonatomic) CGRect leftIconRectA;
 @property (nonatomic) CGRect leftIconRectB;

@@ -11,9 +11,6 @@
 #import "SelectionDataList.h"
 
 
-#define rnameColor  [UIColor colorWithRed:68/255.0 green:68/255.0 blue:68/255.0 alpha:1/1.0]
-#define albumNameColor  [UIColor colorWithRed:165/255.0 green:165/255.0 blue:165/255.0 alpha:1/1.0]
-#define reportColor  [UIColor colorWithRed:115/255.0 green:204/255.0 blue:178/255.0 alpha:1/1.0]
 
 @implementation SelectionCell
 

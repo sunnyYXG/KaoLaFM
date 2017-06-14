@@ -12,7 +12,7 @@
 
 #import "BaseDefine.h"
 #import "BaseUrl.h"
-
+#import "publicDefine.h"
 
 //#import "BaseTableViewCell.h"
 #import "BaseRequest.h"
@@ -25,6 +25,7 @@
  *  第三方头文件导入
  */
 #import "UIImageView+WebCache.h"
+#import <SDWebImage/UIButton+WebCache.h>
 #import "SDWebImageManager.h"
 #import "SDWebImageDownloader.h"
 

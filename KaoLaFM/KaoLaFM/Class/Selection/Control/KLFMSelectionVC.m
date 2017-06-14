@@ -64,7 +64,7 @@
     self.tableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
         [self loadData];
     }];
-    CGRect frame = CGRectMake(0, 0, SCREEN_WIDTH, self.tableView.height - 108 - 64);
+    CGRect frame = CGRectMake(0, 0, SCREEN_WIDTH, self.tableView.height - 108 - playerViewHeight);
     self.tableView.frame = frame;
 
     [self initBannerView];

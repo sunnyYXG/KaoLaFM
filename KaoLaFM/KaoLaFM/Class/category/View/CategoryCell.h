@@ -11,13 +11,15 @@
 
 @protocol CategoryCellChangeHeightDelegate <NSObject>
 
--(void)changeCellHieght:(UIView *)view;
+//将cell的高度 调高
+-(void)heightenCellHieght:(UIButton *)button;
 
--(void)changeCellHieghtRight:(UIButton *)button;
+//将cell的高度 调低
+-(void)subtractCellHieght:(UIButton *)button;
 
 @end
 
-@interface CategoryCell : BaseTableViewCell<UIGestureRecognizerDelegate>
+@interface CategoryCell : BaseTableViewCell
 
 @property (nonatomic) id<CategoryCellChangeHeightDelegate> delegate;
 @property (nonatomic) CategoryCellFrame *cellFrame;

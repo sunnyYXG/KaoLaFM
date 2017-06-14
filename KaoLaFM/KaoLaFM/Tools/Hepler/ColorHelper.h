@@ -1,9 +1,9 @@
 //
-//  AppHelper.h
-//  CNTaiPingEhome
+//  ColorHelper.h
+//  KaoLaFM
 //
-//  Created by jiangchao on 16/1/26.
-//  Copyright © 2016年 cntaiping. All rights reserved.
+//  Created by rongyun on 2017/6/14.
+//  Copyright © 2017年 YXGang. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
@@ -57,13 +57,13 @@
 
 @end
 
-@interface NSString (AppHelper)
+@interface NSString (ColorHelper)
 
 - (BOOL)isBlankOrNil;
 
 @end
 
-@interface UIImage (AppHelper)
+@interface UIImage (ColorHelper)
 
 - (UIImage *)scaleToSize:(CGSize)size;
 

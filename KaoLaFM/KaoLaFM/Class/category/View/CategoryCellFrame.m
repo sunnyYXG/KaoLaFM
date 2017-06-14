@@ -21,8 +21,8 @@
     self.leftIconRectB = CGRectMake(0, 0, SCREEN_WIDTH/4, _h * n);
 
     self.cellHeight = _h + 5;
-    self.cellHeightA = self.cellHeight;
-    self.cellHeightB = _h * n + 5;
+    self.cellSubtract = self.cellHeight;
+    self.cellHeighten = _h * n + 5;
 
 }
 

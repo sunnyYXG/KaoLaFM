@@ -185,6 +185,7 @@
 		640FB24D1ED13240008036F7 /* 05.3gp */ = {isa = PBXFileReference; lastKnownFileType = file; path = 05.3gp; sourceTree = "<group>"; };
 		64853D971ED477A800D05788 /* HomeTJMenuView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeTJMenuView.h; sourceTree = "<group>"; };
 		64853D981ED477A800D05788 /* HomeTJMenuView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeTJMenuView.m; sourceTree = "<group>"; };
+		64B6CE341EF169900055DBA8 /* publicDefine.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = publicDefine.h; sourceTree = "<group>"; };
 		64C370D61ED31D0A00EC366D /* SelectionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelectionCell.h; sourceTree = "<group>"; };
 		64C370D71ED31D0A00EC366D /* SelectionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelectionCell.m; sourceTree = "<group>"; };
 		64C370D91ED3271300EC366D /* SelectionCellFrame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelectionCellFrame.h; sourceTree = "<group>"; };
@@ -233,6 +234,7 @@
 			isa = PBXGroup;
 			children = (
 				0D352D121ECD343200447E1B /* BaseDefine.h */,
+				64B6CE341EF169900055DBA8 /* publicDefine.h */,
 				0D352D131ECD343200447E1B /* BaseUrl.h */,
 				0D352D141ECD343200447E1B /* InfoPlist.strings */,
 				0D352D151ECD343200447E1B /* KLFMAppDelegate.h */,

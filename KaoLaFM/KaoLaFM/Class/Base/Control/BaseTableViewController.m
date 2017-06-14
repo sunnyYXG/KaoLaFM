@@ -38,7 +38,8 @@
         _tableView = tab;
         tab.dataSource = self;
         tab.delegate = self;
-        tab.backgroundColor = [UIColor colorWithRed:0.94f green:0.94f blue:0.94f alpha:1.00f];
+//        tab.backgroundColor = [UIColor colorWithRed:0.94f green:0.94f blue:0.94f alpha:1.00f];
+        tab.backgroundColor = tableViewBackColor;
         tab.separatorColor = [UIColor grayColor];
         tab.separatorStyle = UITableViewCellSeparatorStyleNone;
     }
