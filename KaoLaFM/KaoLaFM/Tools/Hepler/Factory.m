@@ -11,17 +11,15 @@
 @implementation Factory
 
 + (UIButton *)createButtonWithTitle:(NSString *)title
-                              frame:(CGRect)frame
                              target:(id)target
                            selector:(SEL)selector {
     
-    return [self createButtonWithTitle:title frame:frame titleFont:14.F textColor:[UIColor blackColor] backgroundColor:[UIColor colorWithRed:0.3f green:0.8f blue:1.f alpha:1.f] target:target selector:selector];
+    return [self createButtonWithTitle:title titleFont:14.F textColor:[UIColor blackColor] backgroundColor:[UIColor colorWithRed:0.3f green:0.8f blue:1.f alpha:1.f] target:target selector:selector];
 }
 
-+ (UIButton *)createButtonWithTitle:(NSString *)title frame:(CGRect)frame titleFont:(CGFloat)size textColor:(UIColor *)textColor backgroundColor:(UIColor *)bgColor target:(id)target selector:(SEL)selector{
++ (UIButton *)createButtonWithTitle:(NSString *)title  titleFont:(CGFloat)size textColor:(UIColor *)textColor backgroundColor:(UIColor *)bgColor target:(id)target selector:(SEL)selector{
     
     UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
-    button.frame = frame;
     button.layer.cornerRadius = 3.f;
     button.layer.masksToBounds = YES;
     button.titleLabel.font=[UIFont systemFontOfSize:size];
@@ -32,35 +30,36 @@
     return button;
 }
 
-+ (UILabel *)createLabelWithTitle:(NSString *)title frame:(CGRect)frame {
-    return [self createLabelWithTitle:title frame:frame fontSize:14.f];
++ (UILabel *)createLabelWithTitle:(NSString *)title  {
+    return [self createLabelWithTitle:title fontSize:14.f];
 }
 
-+ (UILabel *)createLabelWithTitle:(NSString *)title frame:(CGRect)frame textColor:(UIColor *)color {
-    return [self createLabelWithTitle:title frame:frame textColor:color fontSize:14.f];
++ (UILabel *)createLabelWithTitle:(NSString *)title  textColor:(UIColor *)color {
+    return [self createLabelWithTitle:title textColor:color fontSize:14.f textAlignment:NSTextAlignmentLeft];
 }
 
-+ (UILabel *)createLabelWithTitle:(NSString *)title frame:(CGRect)frame fontSize:(CGFloat)size {
-    return [self createLabelWithTitle:title frame:frame textColor:[UIColor blackColor] fontSize:size];
++ (UILabel *)createLabelWithTitle:(NSString *)title  fontSize:(CGFloat)size {
+    return [self createLabelWithTitle:title textColor:[UIColor blackColor] fontSize:size textAlignment:NSTextAlignmentLeft];
 }
 
-+ (UILabel *)createLabelWithTitle:(NSString *)title frame:(CGRect)frame textColor:(UIColor *)color fontSize:(CGFloat)size {
-    UILabel *label = [[UILabel alloc] initWithFrame:frame];
++ (UILabel *)createLabelWithTitle:(NSString *)title  textColor:(UIColor *)color fontSize:(CGFloat)size textAlignment:(NSTextAlignment)textAlignment{
+    UILabel *label = [[UILabel alloc] init];
     label.text = title;
     label.textColor = color;
+    label.textAlignment = textAlignment;
     label.font = [UIFont systemFontOfSize:size];
     return label;
 }
 
-+ (UIView *)createViewWithBackgroundColor:(UIColor *)color frame:(CGRect)frame {
-    UIView *view = [[UIView alloc] initWithFrame:frame];
++ (UIView *)createViewWithBackgroundColor:(UIColor *)color  {
+    UIView *view = [[UIView alloc] init];
     view.backgroundColor = color;
     return view;
 }
 
 
-+ (UITextField *)createFieldWithText:(NSString *)text frame:(CGRect)frame placeholder:(NSString *)placeholder textColor:(UIColor *)color borderStyle:(UITextBorderStyle)borderStyle {
-    UITextField *textField = [[UITextField alloc] initWithFrame:frame];
++ (UITextField *)createFieldWithText:(NSString *)text  placeholder:(NSString *)placeholder textColor:(UIColor *)color borderStyle:(UITextBorderStyle)borderStyle {
+    UITextField *textField = [[UITextField alloc] init];
     textField.placeholder = placeholder;
     textField.borderStyle = borderStyle;
     textField.text = text;

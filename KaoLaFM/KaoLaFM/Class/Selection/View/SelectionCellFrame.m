@@ -70,7 +70,7 @@
     CGFloat _y = 0;
     CGFloat _x = 0;
     CGFloat _w = (SCREEN_WIDTH - 40)/3;
-    CGFloat _h = _w + _w/3;
+    CGFloat _h = _w + _w/3 + 20;
     
     for (NSInteger i = 0; i < model.dataList.count; i ++) {
         _x = i%3;
