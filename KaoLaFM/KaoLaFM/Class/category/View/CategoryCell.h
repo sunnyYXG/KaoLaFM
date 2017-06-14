@@ -7,15 +7,19 @@
 //
 
 #import "BaseTableViewCell.h"
+#import "CategoryCellFrame.h"
 
 @protocol CategoryCellChangeHeightDelegate <NSObject>
 
--(void)changeCellHieght:(UIButton *)button;
+-(void)changeCellHieght:(UIView *)view;
+
+-(void)changeCellHieghtRight:(UIButton *)button;
 
 @end
 
-@interface CategoryCell : BaseTableViewCell
+@interface CategoryCell : BaseTableViewCell<UIGestureRecognizerDelegate>
 
 @property (nonatomic) id<CategoryCellChangeHeightDelegate> delegate;
+@property (nonatomic) CategoryCellFrame *cellFrame;
 
 @end

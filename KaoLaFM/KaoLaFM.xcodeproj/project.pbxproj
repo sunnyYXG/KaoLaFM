@@ -40,6 +40,7 @@
 		0D401BC11EF112FF0076CE5D /* CategoryResult.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D401BBE1EF112FF0076CE5D /* CategoryResult.m */; };
 		0D401BC41EF113CD0076CE5D /* CategoryModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D401BC31EF113CD0076CE5D /* CategoryModel.m */; };
 		0D401BC71EF121050076CE5D /* CategoryCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D401BC61EF121050076CE5D /* CategoryCell.m */; };
+		0D401BCA1EF1244E0076CE5D /* CategoryCellFrame.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D401BC91EF1244E0076CE5D /* CategoryCellFrame.m */; };
 		0D5E537F1ED52707009FB1D9 /* KLFMNavBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D5E537E1ED52707009FB1D9 /* KLFMNavBar.m */; };
 		0DB24B111ECC2D0A00ABF4CA /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DB24B101ECC2D0A00ABF4CA /* main.m */; };
 		0DB24B1C1ECC2D0A00ABF4CA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0DB24B1B1ECC2D0A00ABF4CA /* Assets.xcassets */; };
@@ -153,6 +154,8 @@
 		0D401BC31EF113CD0076CE5D /* CategoryModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CategoryModel.m; sourceTree = "<group>"; };
 		0D401BC51EF121050076CE5D /* CategoryCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CategoryCell.h; sourceTree = "<group>"; };
 		0D401BC61EF121050076CE5D /* CategoryCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CategoryCell.m; sourceTree = "<group>"; };
+		0D401BC81EF1244E0076CE5D /* CategoryCellFrame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CategoryCellFrame.h; sourceTree = "<group>"; };
+		0D401BC91EF1244E0076CE5D /* CategoryCellFrame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CategoryCellFrame.m; sourceTree = "<group>"; };
 		0D5E537D1ED52707009FB1D9 /* KLFMNavBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KLFMNavBar.h; sourceTree = "<group>"; };
 		0D5E537E1ED52707009FB1D9 /* KLFMNavBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KLFMNavBar.m; sourceTree = "<group>"; };
 		0DB24B0C1ECC2D0A00ABF4CA /* KaoLaFM.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KaoLaFM.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -554,6 +557,8 @@
 			children = (
 				0D401BC51EF121050076CE5D /* CategoryCell.h */,
 				0D401BC61EF121050076CE5D /* CategoryCell.m */,
+				0D401BC81EF1244E0076CE5D /* CategoryCellFrame.h */,
+				0D401BC91EF1244E0076CE5D /* CategoryCellFrame.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -944,6 +949,7 @@
 				64C370DB1ED3271300EC366D /* SelectionCellFrame.m in Sources */,
 				0D401BC71EF121050076CE5D /* CategoryCell.m in Sources */,
 				0DB24B5F1ECC315800ABF4CA /* BaseTableView.m in Sources */,
+				0D401BCA1EF1244E0076CE5D /* CategoryCellFrame.m in Sources */,
 				0D352D531ECD493D00447E1B /* SelectionResult.m in Sources */,
 				0D401BBF1EF112FF0076CE5D /* CategoryBaseClass.m in Sources */,
 				0D352D841ECD7BA400447E1B /* TabbarResult.m in Sources */,

@@ -9,6 +9,8 @@
 #import "CategoryModel.h"
 #import "KLFMCategoryVC.h"
 #import "CategoryDataModels.h"
+#import "CategoryCellFrame.h"
+
 @implementation CategoryModel
 
 + (void)ModelResolver:(CategoryBaseClass *)baseModel VC:(UIViewController *)VC{
@@ -17,7 +19,9 @@
     
     for (NSDictionary *dic in baseModel.result.dataList) {
         CategoryDataList *list = (CategoryDataList *)[CategoryDataList yy_modelWithDictionary:dic];
-        [marr addObject:list];
+        CategoryCellFrame *cellFrame = [CategoryCellFrame new];
+        cellFrame.cellModel = list;
+        [marr addObject:cellFrame];
     }
     
     KLFMCategoryVC *vc = (KLFMCategoryVC *)VC;
