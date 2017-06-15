@@ -24,4 +24,6 @@
 + (CGRect)withNSValue:(NSValue *)value;
 
 + (NSString *) isBlankString:(NSString *)string;
+
++ (NSArray *)rectWithCreateUIWithLeft:(CGFloat)left top:(CGFloat)top num:(NSInteger)n width:(CGFloat)w height:(CGFloat)h Vertical:(CGFloat)vBottom Horizontal:(CGFloat)hBottom  arr:(NSArray *)arr;
 @end

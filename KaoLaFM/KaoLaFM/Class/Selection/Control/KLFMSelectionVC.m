@@ -92,8 +92,10 @@
 
 - (void)loadData{
     if (!self.request) return;
+    [self startProgress];
     WEAK_BLOCK_SELF(KLFMSelectionVC);
     [self.request yxg_sendRequestWithCompletion:^(id response, BOOL success, NSString *message) {
+        [self stopProgress];
         [block_self.tableView.mj_header endRefreshing];
         block_self.baseModel = (SelectionBaseClass *)[SelectionBaseClass yy_modelWithJSON:response];
         [SelectionModel ModelResolver:block_self.baseModel VC:block_self];

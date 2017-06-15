@@ -24,4 +24,11 @@
 @property (nonatomic) id<CategoryCellChangeHeightDelegate> delegate;
 @property (nonatomic) CategoryCellFrame *cellFrame;
 
+@property (nonatomic) UIView *left_bgView;
+@property (nonatomic) UIView *leftView;
+
+//改变cell的布局
+- (void)heighten:(CategoryCellFrame *)cellFrame;
+- (void)subtract:(CategoryCellFrame *)cellFrame;
+
 @end

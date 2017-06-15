@@ -89,4 +89,51 @@
 }
 
 
+/**
+ 返回创建的rect
+
+ @param left 距离父视图 左边距离
+ @param top 距离父视图 顶部距离
+ @param n 每行n个
+ @param w 控件宽度
+ @param h 控件高度
+ @param vBottom 控件 垂直间距
+ @param hBottom 控件 水平间距
+ @param arr 需要创建rect的控件数组
+ @return 返回返回CGRect
+ */
++ (NSArray *)rectWithCreateUIWithLeft:(CGFloat)left top:(CGFloat)top num:(NSInteger)n width:(CGFloat)w height:(CGFloat)h Vertical:(CGFloat)vBottom Horizontal:(CGFloat)hBottom  arr:(NSArray *)arr{
+    CGFloat _y = 0;
+    CGFloat _X = 0;
+    NSMutableArray *rects = [NSMutableArray new];
+    for (NSInteger i = 0; i < arr.count; i ++) {
+        _X = i%n;
+        _y = i/n;
+        
+        CGRect rect = CGRectMake(left + (w+vBottom) * _X, top + _y * (h+hBottom), w, h);
+        NSValue *value = [self withFrame:rect];
+        [rects addObject:value];
+    }
+    return rects;
+}
+
+
+//设置小三角旋转的事件
+//-(void)btnClicked:(UIButton *)titleBtn
+//{
+//    if (!self.isOpen) {
+//        [UIView animateWithDuration:1 animations:^{
+//            titleBtn.imageView.transform = CGAffineTransformMakeRotation(M_PI);
+//        }];
+//        self.open = YES;
+//    }
+//    else
+//    {
+//        [UIView animateWithDuration:1 animations:^{
+//            titleBtn.imageView.transform = CGAffineTransformIdentity;
+//        }];
+//        self.open = NO;
+//    }
+//}
+
 @end

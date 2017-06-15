@@ -43,7 +43,6 @@
 }
 
 - (void)yxg_sendRequestWithCompletion:(NHAPIDicCompletion)completion {
-
     AFHTTPSessionManager *manager = [self createManager];
 //    [manager.requestSerializer setValue:@"application/json"forHTTPHeaderField:@"Accept"];
 //    [manager.requestSerializer setValue:@"JSESSIONID=1syrr72gajqkz1ppqnr1s6fkbc" forHTTPHeaderField:@"Cookie"];

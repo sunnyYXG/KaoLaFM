@@ -13,5 +13,21 @@
 
 @property (nonatomic) CategoryBaseClass *baseModel;
 
+/**
+ 热门分类
+ */
 @property (nonatomic) NSArray *hotArr;
+
+/**
+ 其他分类
+ */
+@property (nonatomic) NSArray *otherArr;
+
+/**
+ 调频
+ */
+@property (nonatomic) NSArray *broadArr;
+
+
+
 @end

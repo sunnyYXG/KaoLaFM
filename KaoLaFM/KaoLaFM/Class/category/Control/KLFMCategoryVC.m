@@ -23,10 +23,13 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.tableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
+        [self loadData];
+    }];
+
     CGRect frame = CGRectMake(0, 0, SCREEN_WIDTH, self.tableView.height - 108 - playerViewHeight);
     self.tableView.frame = frame;
 
-    // Do any additional setup after loading the view.
 }
 
 - (void)initRequest{
@@ -36,10 +39,12 @@
     self.request = req;
 }
 -(void)loadData{
-    
     if (!self.request) return;
+    [self startProgress];
     WEAK_BLOCK_SELF(KLFMCategoryVC);
     [self.request yxg_sendRequestWithCompletion:^(id response, BOOL success, NSString *message) {
+        [self stopProgress];
+        [block_self.tableView.mj_header endRefreshing];
         block_self.baseModel = (CategoryBaseClass *)[CategoryBaseClass yy_modelWithJSON:response];
         [CategoryModel ModelResolver:block_self.baseModel VC:block_self];
     }];
@@ -57,10 +62,10 @@
             return self.hotArr.count;
             break;
         case 1:
-            return 1;
+            return 0;
             break;
         case 2:
-            return 1;
+            return 0;
             break;
 
         default:
@@ -70,7 +75,7 @@
 
 }
 -(NSInteger)yxg_numberOfSections{
-    return 1;
+    return 3;
 }
 -(CGFloat)yxg_cellheightAtIndexPath:(NSIndexPath *)indexPath{
     CategoryCellFrame *cellFrame = self.hotArr[indexPath.row];
@@ -80,21 +85,24 @@
     return nil;
 }
 -(NSString *)yxg_titleForHeaderInSection:(NSInteger)section{
-//    switch (section) {
-//        case 0:
-//            return @"热门分类";
-//            break;
-//        case 1:
-//            return @"其他分类";
-//            break;
-//        case 2:
-//            return @"调频";
-//            break;
-//            
-//        default:
-//            break;
-//    }
+    switch (section) {
+        case 0:
+            return @"热门分类";
+            break;
+        case 1:
+            return @"其他分类";
+            break;
+        case 2:
+            return @"调频";
+            break;
+            
+        default:
+            break;
+    }
     return @"";
+}
+-(CGFloat)yxg_sectionHeaderHeightAtSection:(NSInteger)section{
+    return 40.0f;
 }
 -(BaseTableViewCell *)yxg_cellAtIndexPath:(NSIndexPath *)indexPath{
     CategoryCell *cell = [CategoryCell cellWithTableView:self.tableView identifier:[NSString stringWithFormat:@"cell%ld%ld",indexPath.section,indexPath.row]];
@@ -111,11 +119,12 @@
 #pragma mark - 调高cell的高度
 -(void)heightenCellHieght:(UIButton *)button{
     
-    CategoryCell * cell = (CategoryCell *)[[button superview] superview];
+    CategoryCell * cell = (CategoryCell *)[button superview];
     NSIndexPath * path = [self.tableView indexPathForCell:cell];
     
-    CategoryCellFrame *cellFrame = self.hotArr[path.row];
+    CategoryCellFrame *cellFrame = (CategoryCellFrame *)self.hotArr[path.row];
     cellFrame.cellHeight = cellFrame.cellHeighten;
+    [cell heighten:cellFrame];
     [self.tableView beginUpdates];
     [self.tableView endUpdates];
     
@@ -127,6 +136,7 @@
     
     CategoryCellFrame *cellFrame = self.hotArr[path.row];
     cellFrame.cellHeight = cellFrame.cellSubtract;
+    [cell subtract:cellFrame];
     [self.tableView beginUpdates];
     [self.tableView endUpdates];
 
