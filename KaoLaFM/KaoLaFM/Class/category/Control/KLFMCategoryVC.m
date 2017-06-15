@@ -29,7 +29,8 @@
 
     CGRect frame = CGRectMake(0, 0, SCREEN_WIDTH, self.tableView.height - 108 - playerViewHeight);
     self.tableView.frame = frame;
-
+    self.dataType = CategoryDataType_hot;
+    
 }
 
 - (void)initRequest{
@@ -62,7 +63,7 @@
             return self.hotArr.count;
             break;
         case 1:
-            return 0;
+            return self.otherArr.count;
             break;
         case 2:
             return 0;
@@ -116,9 +117,8 @@
 
 
 #pragma mark - CategoryCellChangeHeightDelegate
-#pragma mark - 调高cell的高度
+#pragma mark - 更新cell的高度
 -(void)heightenCellHieght:(UIButton *)button{
-    
     CategoryCell * cell = (CategoryCell *)[button superview];
     NSIndexPath * path = [self.tableView indexPathForCell:cell];
     
@@ -129,7 +129,7 @@
     [self.tableView endUpdates];
     
 }
-#pragma mark - 调低cell的高度
+#pragma mark - 设置cell的高度 为 默认高度
 -(void)subtractCellHieght:(UIButton *)button{
     CategoryCell * cell = (CategoryCell *)[button superview];
     NSIndexPath * path = [self.tableView indexPathForCell:cell];
