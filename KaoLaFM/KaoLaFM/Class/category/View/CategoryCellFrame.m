@@ -40,4 +40,28 @@
     }
 }
 
+-(void)setBroadModel:(BroadResult *)broadModel{
+    if (_broadModel == broadModel && _broadModel) return;
+    _broadModel = broadModel;
+    
+    NSInteger n = broadModel.dataList.count / 4 + 1;
+    CGFloat w = (SCREEN_WIDTH-3)/4;
+    
+    self.height_default = _h;
+    self.height_update = _h * n/2;
+    
+    self.cellHeight = _h;
+    self.cellSubtract = self.cellHeight;
+    self.cellHeighten = _h * n/2;
+    
+    self.data = broadModel.dataList;
+    self.rects = [HelperTools rectWithCreateUIWithLeft:0 top:0 num:4 width:w height:49 Vertical:1 Horizontal:1 arr:self.data];
+    self.subBtnRect = CGRectMake(SCREEN_WIDTH - w,  (n-1) * 50, w, 49);
+    if (broadModel.dataList.count > 6) {
+        self.is_heighten = YES;
+    }
+
+
+}
+
 @end

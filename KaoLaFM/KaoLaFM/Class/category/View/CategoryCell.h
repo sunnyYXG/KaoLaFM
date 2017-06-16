@@ -11,11 +11,7 @@
 
 @protocol CategoryCellChangeHeightDelegate <NSObject>
 
-//将cell的高度 调高
--(void)heightenCellHieght:(UIButton *)button;
-
-//将cell的高度 调低
--(void)subtractCellHieght:(UIButton *)button;
+-(void)hotCellHieght_change:(UIButton *)button;
 
 @end
 

@@ -8,10 +8,14 @@
 
 #import <Foundation/Foundation.h>
 #import "CategoryDataList.h"
+#import "BroadDataModels.h"
 
 @interface CategoryCellFrame : NSObject
 
 @property (nonatomic) CategoryDataList *cellModel;
+
+@property (nonatomic) BroadResult *broadModel;
+
 @property (nonatomic) CGFloat cellHeight;
 @property (nonatomic) CGFloat cellSubtract;//cell高度 -- 低
 @property (nonatomic) CGFloat cellHeighten;//cell高度 -- 高

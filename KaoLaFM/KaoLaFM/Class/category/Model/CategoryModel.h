@@ -7,10 +7,14 @@
 //
 
 #import <Foundation/Foundation.h>
-@class CategoryBaseClass;
+#import "KLFMCategoryVC.h"
+@class CategoryBaseClass,BroadBaseClass;
 
 @interface CategoryModel : NSObject
 
-+ (void)ModelResolver:(CategoryBaseClass *)baseModel VC:(UIViewController *)VC;
++ (void)ModelResolver:(CategoryBaseClass *)baseModel VC:(UIViewController *)VC type:(CategoryDataComponentType)dataType;
+
+
++ (void)ModelResolverWithBroadModel:(BroadBaseClass *)broadModel VC:(UIViewController *)VC;
 
 @end

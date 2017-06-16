@@ -52,6 +52,11 @@
 		0DB24B5E1ECC315800ABF4CA /* BaseTableHeaderFooterView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DB24B501ECC315800ABF4CA /* BaseTableHeaderFooterView.m */; };
 		0DB24B5F1ECC315800ABF4CA /* BaseTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DB24B521ECC315800ABF4CA /* BaseTableView.m */; };
 		0DB24B601ECC315800ABF4CA /* BaseTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DB24B541ECC315800ABF4CA /* BaseTableViewCell.m */; };
+		0DDFE8B21EF36EB400BDE04B /* CategoryOtherCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DDFE8B11EF36EB400BDE04B /* CategoryOtherCell.m */; };
+		0DDFE8B51EF37B8700BDE04B /* CategoryBroadCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DDFE8B41EF37B8700BDE04B /* CategoryBroadCell.m */; };
+		0DDFE8C11EF37CD500BDE04B /* BroadBaseClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DDFE8BB1EF37CD500BDE04B /* BroadBaseClass.m */; };
+		0DDFE8C21EF37CD500BDE04B /* BroadDataList.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DDFE8BD1EF37CD500BDE04B /* BroadDataList.m */; };
+		0DDFE8C31EF37CD500BDE04B /* BroadResult.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DDFE8C01EF37CD500BDE04B /* BroadResult.m */; };
 		2D8132F5BB7DD3E7E194207E /* libPods-KaoLaFM.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E0B1FDF5DB2AEF51F75978F6 /* libPods-KaoLaFM.a */; };
 		640FB24B1ED12E3C008036F7 /* 02.3gp in Resources */ = {isa = PBXBuildFile; fileRef = 640FB2491ED12E3C008036F7 /* 02.3gp */; };
 		640FB24E1ED13240008036F7 /* 05.3gp in Resources */ = {isa = PBXBuildFile; fileRef = 640FB24D1ED13240008036F7 /* 05.3gp */; };
@@ -180,6 +185,17 @@
 		0DB24B521ECC315800ABF4CA /* BaseTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseTableView.m; sourceTree = "<group>"; };
 		0DB24B531ECC315800ABF4CA /* BaseTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseTableViewCell.h; sourceTree = "<group>"; };
 		0DB24B541ECC315800ABF4CA /* BaseTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseTableViewCell.m; sourceTree = "<group>"; };
+		0DDFE8B01EF36EB400BDE04B /* CategoryOtherCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CategoryOtherCell.h; sourceTree = "<group>"; };
+		0DDFE8B11EF36EB400BDE04B /* CategoryOtherCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CategoryOtherCell.m; sourceTree = "<group>"; };
+		0DDFE8B31EF37B8700BDE04B /* CategoryBroadCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CategoryBroadCell.h; sourceTree = "<group>"; };
+		0DDFE8B41EF37B8700BDE04B /* CategoryBroadCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CategoryBroadCell.m; sourceTree = "<group>"; };
+		0DDFE8BA1EF37CD500BDE04B /* BroadBaseClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BroadBaseClass.h; sourceTree = "<group>"; };
+		0DDFE8BB1EF37CD500BDE04B /* BroadBaseClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BroadBaseClass.m; sourceTree = "<group>"; };
+		0DDFE8BC1EF37CD500BDE04B /* BroadDataList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BroadDataList.h; sourceTree = "<group>"; };
+		0DDFE8BD1EF37CD500BDE04B /* BroadDataList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BroadDataList.m; sourceTree = "<group>"; };
+		0DDFE8BE1EF37CD500BDE04B /* BroadDataModels.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BroadDataModels.h; sourceTree = "<group>"; };
+		0DDFE8BF1EF37CD500BDE04B /* BroadResult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BroadResult.h; sourceTree = "<group>"; };
+		0DDFE8C01EF37CD500BDE04B /* BroadResult.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BroadResult.m; sourceTree = "<group>"; };
 		1644424F9F813B9E3FD963A3 /* Pods-KaoLaFM.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KaoLaFM.release.xcconfig"; path = "Pods/Target Support Files/Pods-KaoLaFM/Pods-KaoLaFM.release.xcconfig"; sourceTree = "<group>"; };
 		640FB2491ED12E3C008036F7 /* 02.3gp */ = {isa = PBXFileReference; lastKnownFileType = file; path = 02.3gp; sourceTree = "<group>"; };
 		640FB24D1ED13240008036F7 /* 05.3gp */ = {isa = PBXFileReference; lastKnownFileType = file; path = 05.3gp; sourceTree = "<group>"; };
@@ -538,6 +554,7 @@
 		0D401BB01EF10EEA0076CE5D /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				0DDFE8B91EF37CD500BDE04B /* BroadDataModel */,
 				0D401BB71EF112FF0076CE5D /* DataModel */,
 				0D401BC21EF113CD0076CE5D /* CategoryModel.h */,
 				0D401BC31EF113CD0076CE5D /* CategoryModel.m */,
@@ -561,6 +578,10 @@
 				0D401BC61EF121050076CE5D /* CategoryCell.m */,
 				0D401BC81EF1244E0076CE5D /* CategoryCellFrame.h */,
 				0D401BC91EF1244E0076CE5D /* CategoryCellFrame.m */,
+				0DDFE8B01EF36EB400BDE04B /* CategoryOtherCell.h */,
+				0DDFE8B11EF36EB400BDE04B /* CategoryOtherCell.m */,
+				0DDFE8B31EF37B8700BDE04B /* CategoryBroadCell.h */,
+				0DDFE8B41EF37B8700BDE04B /* CategoryBroadCell.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -713,6 +734,20 @@
 				0D352D1E1ECD347500447E1B /* Request */,
 			);
 			path = Selection;
+			sourceTree = "<group>";
+		};
+		0DDFE8B91EF37CD500BDE04B /* BroadDataModel */ = {
+			isa = PBXGroup;
+			children = (
+				0DDFE8BA1EF37CD500BDE04B /* BroadBaseClass.h */,
+				0DDFE8BB1EF37CD500BDE04B /* BroadBaseClass.m */,
+				0DDFE8BC1EF37CD500BDE04B /* BroadDataList.h */,
+				0DDFE8BD1EF37CD500BDE04B /* BroadDataList.m */,
+				0DDFE8BE1EF37CD500BDE04B /* BroadDataModels.h */,
+				0DDFE8BF1EF37CD500BDE04B /* BroadResult.h */,
+				0DDFE8C01EF37CD500BDE04B /* BroadResult.m */,
+			);
+			path = BroadDataModel;
 			sourceTree = "<group>";
 		};
 		1251B4A32C5266E020B52319 /* Frameworks */ = {
@@ -946,7 +981,9 @@
 				0D352D511ECD493D00447E1B /* SelectionBaseClass.m in Sources */,
 				64E99F651EECFC0200CBC205 /* MainTabBarController.m in Sources */,
 				0D352D371ECD3E5400447E1B /* CycleBannerCell.m in Sources */,
+				0DDFE8C11EF37CD500BDE04B /* BroadBaseClass.m in Sources */,
 				0DB24B601ECC315800ABF4CA /* BaseTableViewCell.m in Sources */,
+				0DDFE8B51EF37B8700BDE04B /* CategoryBroadCell.m in Sources */,
 				0D352D7A1ECD79BD00447E1B /* KLFMTabbarReq.m in Sources */,
 				64C370DB1ED3271300EC366D /* SelectionCellFrame.m in Sources */,
 				0D401BC71EF121050076CE5D /* CategoryCell.m in Sources */,
@@ -963,14 +1000,17 @@
 				0D401BC11EF112FF0076CE5D /* CategoryResult.m in Sources */,
 				0D401BC01EF112FF0076CE5D /* CategoryDataList.m in Sources */,
 				0D401BB61EF10F9A0076CE5D /* KLFMCategoryReq.m in Sources */,
+				0DDFE8C21EF37CD500BDE04B /* BroadDataList.m in Sources */,
 				0D5E537F1ED52707009FB1D9 /* KLFMNavBar.m in Sources */,
 				0D352D3B1ECD3E5400447E1B /* singleton.m in Sources */,
 				0D352D351ECD3E5400447E1B /* NSString+Extension.m in Sources */,
+				0DDFE8B21EF36EB400BDE04B /* CategoryOtherCell.m in Sources */,
 				0DB24B111ECC2D0A00ABF4CA /* main.m in Sources */,
 				0D352D521ECD493D00447E1B /* SelectionDataList.m in Sources */,
 				0D401BB31EF10EEA0076CE5D /* KLFMCategoryVC.m in Sources */,
 				0D352D831ECD7BA400447E1B /* TabbarDataList.m in Sources */,
 				64CEE63C1EEC2099005039FB /* KLFMOtherVC.m in Sources */,
+				0DDFE8C31EF37CD500BDE04B /* BroadResult.m in Sources */,
 				0D401BAB1EF1099D0076CE5D /* KLFMAnchorVC.m in Sources */,
 				64CEE6361EEC0E1A005039FB /* BaseNavigationViewController.m in Sources */,
 				0D352D191ECD343200447E1B /* KLFMAppDelegate.m in Sources */,

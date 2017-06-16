@@ -7,25 +7,60 @@
 //
 
 #import "CategoryModel.h"
-#import "KLFMCategoryVC.h"
 #import "CategoryDataModels.h"
 #import "CategoryCellFrame.h"
 
 @implementation CategoryModel
 
-+ (void)ModelResolver:(CategoryBaseClass *)baseModel VC:(UIViewController *)VC{
++ (void)ModelResolver:(CategoryBaseClass *)baseModel VC:(UIViewController *)VC type:(CategoryDataComponentType)dataType{
     
     NSMutableArray *marr = [NSMutableArray new];
     
-    for (NSDictionary *dic in baseModel.result.dataList) {
-        CategoryDataList *list = (CategoryDataList *)[CategoryDataList yy_modelWithDictionary:dic];
-        CategoryCellFrame *cellFrame = [CategoryCellFrame new];
-        cellFrame.cellModel = list;
-        [marr addObject:cellFrame];
-    }
     
     KLFMCategoryVC *vc = (KLFMCategoryVC *)VC;
-    vc.hotArr = marr;
+    switch (dataType) {
+        case CategoryDataType_hot:
+            for (NSDictionary *dic in baseModel.result.dataList) {
+                CategoryDataList *list = (CategoryDataList *)[CategoryDataList yy_modelWithDictionary:dic];
+                CategoryCellFrame *cellFrame = [CategoryCellFrame new];
+                cellFrame.cellModel = list;
+                [marr addObject:cellFrame];
+            }
+            vc.hotArr = marr;
+            break;
+            
+        case CategoryDataType_other:
+            for (NSDictionary *dic in baseModel.result.dataList) {
+                CategoryDataList *list = (CategoryDataList *)[CategoryDataList yy_modelWithDictionary:dic];
+                [marr addObject:list];
+            }
+            vc.otherArr = marr;
+            break;
+
+        default:
+            break;
+    }
 }
 
+
++(void)ModelResolverWithBroadModel:(BroadBaseClass *)broadModel VC:(UIViewController *)VC{
+    NSMutableArray *marr = [NSMutableArray new];
+    
+    KLFMCategoryVC *vc = (KLFMCategoryVC *)VC;
+    
+//    for (NSDictionary *dic in broadModel.result.dataList) {
+//        BroadDataList *list = (BroadDataList *)[BroadDataList yy_modelWithDictionary:dic];
+//        CategoryCellFrame *cellFrame = [CategoryCellFrame new];
+//        cellFrame.broadModel = list;
+//        [marr addObject:cellFrame];
+//    }
+    
+//    BroadResult *list = (BroadResult *)[BroadDataList yy_modelWithDictionary:dic];
+
+    CategoryCellFrame *cellFrame = [CategoryCellFrame new];
+    cellFrame.broadModel = broadModel.result;
+
+    [marr addObject:cellFrame];
+    vc.broadArr = marr;
+}
 @end

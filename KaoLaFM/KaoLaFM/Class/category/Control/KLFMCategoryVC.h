@@ -7,7 +7,7 @@
 //  分类
 
 #import "BaseTableViewController.h"
-@class CategoryBaseClass;
+@class CategoryBaseClass,BroadBaseClass;
 
 typedef NS_ENUM(NSInteger,CategoryDataComponentType) {
     CategoryDataType_hot = 0,       //热门分类
@@ -18,7 +18,11 @@ typedef NS_ENUM(NSInteger,CategoryDataComponentType) {
 @interface KLFMCategoryVC : BaseTableViewController
 
 @property (nonatomic) CategoryBaseClass *baseModel;
+@property (nonatomic) BroadBaseClass *broadModel;
 @property (nonatomic) CategoryDataComponentType dataType;
+
+@property (nonatomic) BaseRequest *otherRequest;
+@property (nonatomic) BaseRequest *broadRequest;
 
 /**
  热门分类
