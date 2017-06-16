@@ -47,15 +47,6 @@
     NSMutableArray *marr = [NSMutableArray new];
     
     KLFMCategoryVC *vc = (KLFMCategoryVC *)VC;
-    
-//    for (NSDictionary *dic in broadModel.result.dataList) {
-//        BroadDataList *list = (BroadDataList *)[BroadDataList yy_modelWithDictionary:dic];
-//        CategoryCellFrame *cellFrame = [CategoryCellFrame new];
-//        cellFrame.broadModel = list;
-//        [marr addObject:cellFrame];
-//    }
-    
-//    BroadResult *list = (BroadResult *)[BroadDataList yy_modelWithDictionary:dic];
 
     CategoryCellFrame *cellFrame = [CategoryCellFrame new];
     cellFrame.broadModel = broadModel.result;

@@ -56,7 +56,6 @@
 
 }
 -(void)loadData{
-    _titles = @[@"热门分类",@"其他分类",@"调频"];
     if (!self.request) return;
     [self startProgress];
     WEAK_BLOCK_SELF(KLFMCategoryVC);
@@ -90,6 +89,7 @@
 -(void)setBroadArr:(NSArray *)broadArr{
     if (!broadArr)return;
     _broadArr = broadArr;
+    _titles = @[@"热门分类",@"其他分类",@"调频"];
     [self yxg_reloadData];
 }
 
@@ -152,7 +152,6 @@
 -(BaseTableViewCell *)yxg_cellAtIndexPath:(NSIndexPath *)indexPath{
     BaseTableViewCell *cell;
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
-    cell.backgroundColor = tableViewBackColor;
     if (indexPath.section == 0) {
         cell =[CategoryCell cellWithTableView:self.tableView identifier:[NSString stringWithFormat:@"cell%ld%ld",indexPath.section,indexPath.row]];
         [self cellWithCategory_Hot_WithCell:(CategoryCell *)cell indexRow:indexPath.row];
@@ -173,14 +172,17 @@
     CategoryCellFrame *cellFrame = self.hotArr[row];
     cell.delegate = self;
     cell.cellFrame = cellFrame;
+    cell.backgroundColor = tableViewBackColor;
 }
 - (void)cellWithCategory_Other_WithCell:(CategoryOtherCell *)cell{
     cell.dataList = self.otherArr;
+    cell.backgroundColor = tableViewBackColor;
 }
 - (void)cellWithCategory_Broad_WithCell:(CategoryBroadCell *)cell indexRow:(NSInteger)row{
     CategoryCellFrame *cellFrame = self.broadArr[row];
     cell.delegate = self;
     cell.cellFrame = cellFrame;
+    cell.backgroundColor = tableViewBackColor;
 }
 
 
@@ -212,6 +214,8 @@
         //更新cell的高度
         cellFrame.cellHeight = cellFrame.cellHeighten;
         [cell heighten:cellFrame];
+
+//        [self.tableView setContentOffset:CGPointMake(0, self.tableView.bottom + cellFrame.cellHeight * 2) animated:YES];
     }else{
         //设置cell的高度 为 默认高度
         cellFrame.cellHeight = cellFrame.cellSubtract;
@@ -219,6 +223,10 @@
     }
     [self.tableView beginUpdates];
     [self.tableView endUpdates];
+    
+    NSIndexPath *scrollIndexPath = [NSIndexPath indexPathForRow:0 inSection:2];
+    [self.tableView scrollToRowAtIndexPath:scrollIndexPath  atScrollPosition:UITableViewScrollPositionTop animated:YES];
+
 
 }
 - (void)didReceiveMemoryWarning {
