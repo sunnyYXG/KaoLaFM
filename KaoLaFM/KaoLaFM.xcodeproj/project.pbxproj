@@ -41,6 +41,13 @@
 		0D401BC41EF113CD0076CE5D /* CategoryModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D401BC31EF113CD0076CE5D /* CategoryModel.m */; };
 		0D401BC71EF121050076CE5D /* CategoryCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D401BC61EF121050076CE5D /* CategoryCell.m */; };
 		0D401BCA1EF1244E0076CE5D /* CategoryCellFrame.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D401BC91EF1244E0076CE5D /* CategoryCellFrame.m */; };
+		0D57C7C11EF3C1310064603E /* KLFMDiscoverReq.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D57C7C01EF3C1310064603E /* KLFMDiscoverReq.m */; };
+		0D57C7C91EF3C3320064603E /* DiscoverBaseClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D57C7C31EF3C3320064603E /* DiscoverBaseClass.m */; };
+		0D57C7CA1EF3C3320064603E /* DiscoverDataList.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D57C7C51EF3C3320064603E /* DiscoverDataList.m */; };
+		0D57C7CB1EF3C3320064603E /* DiscoverResult.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D57C7C81EF3C3320064603E /* DiscoverResult.m */; };
+		0D57C7CE1EF3C4070064603E /* DiscoverModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D57C7CD1EF3C4070064603E /* DiscoverModel.m */; };
+		0D57C7D11EF3C5550064603E /* DiscoverCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D57C7D01EF3C5550064603E /* DiscoverCell.m */; };
+		0D57C7D41EF3C71E0064603E /* DiscoverCellFrame.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D57C7D31EF3C71E0064603E /* DiscoverCellFrame.m */; };
 		0D5E537F1ED52707009FB1D9 /* KLFMNavBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D5E537E1ED52707009FB1D9 /* KLFMNavBar.m */; };
 		0DB24B111ECC2D0A00ABF4CA /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DB24B101ECC2D0A00ABF4CA /* main.m */; };
 		0DB24B1C1ECC2D0A00ABF4CA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0DB24B1B1ECC2D0A00ABF4CA /* Assets.xcassets */; };
@@ -161,6 +168,21 @@
 		0D401BC61EF121050076CE5D /* CategoryCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CategoryCell.m; sourceTree = "<group>"; };
 		0D401BC81EF1244E0076CE5D /* CategoryCellFrame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CategoryCellFrame.h; sourceTree = "<group>"; };
 		0D401BC91EF1244E0076CE5D /* CategoryCellFrame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CategoryCellFrame.m; sourceTree = "<group>"; };
+		0D57C7BF1EF3C1310064603E /* KLFMDiscoverReq.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KLFMDiscoverReq.h; sourceTree = "<group>"; };
+		0D57C7C01EF3C1310064603E /* KLFMDiscoverReq.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KLFMDiscoverReq.m; sourceTree = "<group>"; };
+		0D57C7C21EF3C3320064603E /* DiscoverBaseClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DiscoverBaseClass.h; sourceTree = "<group>"; };
+		0D57C7C31EF3C3320064603E /* DiscoverBaseClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DiscoverBaseClass.m; sourceTree = "<group>"; };
+		0D57C7C41EF3C3320064603E /* DiscoverDataList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DiscoverDataList.h; sourceTree = "<group>"; };
+		0D57C7C51EF3C3320064603E /* DiscoverDataList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DiscoverDataList.m; sourceTree = "<group>"; };
+		0D57C7C61EF3C3320064603E /* DiscoverDataModels.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DiscoverDataModels.h; sourceTree = "<group>"; };
+		0D57C7C71EF3C3320064603E /* DiscoverResult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DiscoverResult.h; sourceTree = "<group>"; };
+		0D57C7C81EF3C3320064603E /* DiscoverResult.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DiscoverResult.m; sourceTree = "<group>"; };
+		0D57C7CC1EF3C4070064603E /* DiscoverModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DiscoverModel.h; sourceTree = "<group>"; };
+		0D57C7CD1EF3C4070064603E /* DiscoverModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DiscoverModel.m; sourceTree = "<group>"; };
+		0D57C7CF1EF3C5550064603E /* DiscoverCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DiscoverCell.h; sourceTree = "<group>"; };
+		0D57C7D01EF3C5550064603E /* DiscoverCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DiscoverCell.m; sourceTree = "<group>"; };
+		0D57C7D21EF3C71E0064603E /* DiscoverCellFrame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DiscoverCellFrame.h; sourceTree = "<group>"; };
+		0D57C7D31EF3C71E0064603E /* DiscoverCellFrame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DiscoverCellFrame.m; sourceTree = "<group>"; };
 		0D5E537D1ED52707009FB1D9 /* KLFMNavBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KLFMNavBar.h; sourceTree = "<group>"; };
 		0D5E537E1ED52707009FB1D9 /* KLFMNavBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KLFMNavBar.m; sourceTree = "<group>"; };
 		0DB24B0C1ECC2D0A00ABF4CA /* KaoLaFM.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KaoLaFM.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -513,6 +535,15 @@
 		0D401B9D1EF108830076CE5D /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				0D57C7C21EF3C3320064603E /* DiscoverBaseClass.h */,
+				0D57C7C31EF3C3320064603E /* DiscoverBaseClass.m */,
+				0D57C7C41EF3C3320064603E /* DiscoverDataList.h */,
+				0D57C7C51EF3C3320064603E /* DiscoverDataList.m */,
+				0D57C7C61EF3C3320064603E /* DiscoverDataModels.h */,
+				0D57C7C71EF3C3320064603E /* DiscoverResult.h */,
+				0D57C7C81EF3C3320064603E /* DiscoverResult.m */,
+				0D57C7CC1EF3C4070064603E /* DiscoverModel.h */,
+				0D57C7CD1EF3C4070064603E /* DiscoverModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -520,6 +551,8 @@
 		0D401B9E1EF108830076CE5D /* Request */ = {
 			isa = PBXGroup;
 			children = (
+				0D57C7BF1EF3C1310064603E /* KLFMDiscoverReq.h */,
+				0D57C7C01EF3C1310064603E /* KLFMDiscoverReq.m */,
 			);
 			path = Request;
 			sourceTree = "<group>";
@@ -527,6 +560,10 @@
 		0D401B9F1EF108830076CE5D /* View */ = {
 			isa = PBXGroup;
 			children = (
+				0D57C7CF1EF3C5550064603E /* DiscoverCell.h */,
+				0D57C7D01EF3C5550064603E /* DiscoverCell.m */,
+				0D57C7D21EF3C71E0064603E /* DiscoverCellFrame.h */,
+				0D57C7D31EF3C71E0064603E /* DiscoverCellFrame.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -982,7 +1019,9 @@
 				64E99F651EECFC0200CBC205 /* MainTabBarController.m in Sources */,
 				0D352D371ECD3E5400447E1B /* CycleBannerCell.m in Sources */,
 				0DDFE8C11EF37CD500BDE04B /* BroadBaseClass.m in Sources */,
+				0D57C7CB1EF3C3320064603E /* DiscoverResult.m in Sources */,
 				0DB24B601ECC315800ABF4CA /* BaseTableViewCell.m in Sources */,
+				0D57C7CE1EF3C4070064603E /* DiscoverModel.m in Sources */,
 				0DDFE8B51EF37B8700BDE04B /* CategoryBroadCell.m in Sources */,
 				0D352D7A1ECD79BD00447E1B /* KLFMTabbarReq.m in Sources */,
 				64C370DB1ED3271300EC366D /* SelectionCellFrame.m in Sources */,
@@ -991,10 +1030,13 @@
 				0D401BCA1EF1244E0076CE5D /* CategoryCellFrame.m in Sources */,
 				0D352D531ECD493D00447E1B /* SelectionResult.m in Sources */,
 				0D401BBF1EF112FF0076CE5D /* CategoryBaseClass.m in Sources */,
+				0D57C7D11EF3C5550064603E /* DiscoverCell.m in Sources */,
 				0D352D841ECD7BA400447E1B /* TabbarResult.m in Sources */,
 				0D352D1F1ECD347500447E1B /* KLFMSelectionVC.m in Sources */,
+				0D57C7D41EF3C71E0064603E /* DiscoverCellFrame.m in Sources */,
 				0D352D761ECD799100447E1B /* KLFMNavigateVC.m in Sources */,
 				0D352D771ECD799100447E1B /* KLFMNavigateView.m in Sources */,
+				0D57C7CA1EF3C3320064603E /* DiscoverDataList.m in Sources */,
 				0D401BA81EF109780076CE5D /* KLFMDiscoverVC.m in Sources */,
 				0DB24B5C1ECC315800ABF4CA /* BaseViewController.m in Sources */,
 				0D401BC11EF112FF0076CE5D /* CategoryResult.m in Sources */,
@@ -1014,6 +1056,8 @@
 				0D401BAB1EF1099D0076CE5D /* KLFMAnchorVC.m in Sources */,
 				64CEE6361EEC0E1A005039FB /* BaseNavigationViewController.m in Sources */,
 				0D352D191ECD343200447E1B /* KLFMAppDelegate.m in Sources */,
+				0D57C7C11EF3C1310064603E /* KLFMDiscoverReq.m in Sources */,
+				0D57C7C91EF3C3320064603E /* DiscoverBaseClass.m in Sources */,
 				0D352D3A1ECD3E5400447E1B /* HelperTools.m in Sources */,
 				0D352D361ECD3E5400447E1B /* UIView+Addition.m in Sources */,
 				0D352D821ECD7BA400447E1B /* TabbarBaseClass.m in Sources */,

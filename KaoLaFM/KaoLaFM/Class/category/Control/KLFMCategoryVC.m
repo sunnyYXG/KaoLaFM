@@ -202,6 +202,9 @@
     }
     [self.tableView beginUpdates];
     [self.tableView endUpdates];
+    
+//    NSIndexPath *scrollIndexPath = [NSIndexPath indexPathForRow:path.row inSection:0];
+//    [self.tableView scrollToRowAtIndexPath:scrollIndexPath  atScrollPosition:UITableViewScrollPositionMiddle animated:YES];
 
 }
 
@@ -215,7 +218,6 @@
         cellFrame.cellHeight = cellFrame.cellHeighten;
         [cell heighten:cellFrame];
 
-//        [self.tableView setContentOffset:CGPointMake(0, self.tableView.bottom + cellFrame.cellHeight * 2) animated:YES];
     }else{
         //设置cell的高度 为 默认高度
         cellFrame.cellHeight = cellFrame.cellSubtract;
@@ -224,6 +226,8 @@
     [self.tableView beginUpdates];
     [self.tableView endUpdates];
     
+//    [self.tableView setContentOffset:CGPointMake(0, self.tableView.bottom + cellFrame.cellHeight) animated:YES];
+
     NSIndexPath *scrollIndexPath = [NSIndexPath indexPathForRow:0 inSection:2];
     [self.tableView scrollToRowAtIndexPath:scrollIndexPath  atScrollPosition:UITableViewScrollPositionTop animated:YES];
 

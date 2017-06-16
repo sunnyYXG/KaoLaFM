@@ -7,7 +7,11 @@
 //  发现
 
 #import "BaseTableViewController.h"
+#import "DiscoverDataModels.h"
 
 @interface KLFMDiscoverVC : BaseTableViewController
+
+@property (nonatomic) DiscoverBaseClass *baseModel;
+@property (nonatomic) NSArray *data;
 
 @end

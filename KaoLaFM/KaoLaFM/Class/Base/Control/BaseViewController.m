@@ -42,6 +42,7 @@
 //    [self.view addSubview:self.navBar];
     [self initRequest];
     [self loadData];
+    
     // Do any additional setup after loading the view, typically from a nib.
 }
 
