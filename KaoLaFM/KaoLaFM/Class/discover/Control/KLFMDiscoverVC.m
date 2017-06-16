@@ -21,6 +21,10 @@
     self.tableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
         [self loadData];
     }];
+    
+    CGRect frame = CGRectMake(0, 0, SCREEN_WIDTH, self.tableView.height - 108 - playerViewHeight);
+    self.tableView.frame = frame;
+
 
     // Do any additional setup after loading the view.
 }
@@ -37,6 +41,7 @@
     [self startProgress];
     WEAK_BLOCK_SELF(KLFMDiscoverVC);
     [self.request yxg_sendRequestWithCompletion:^(id response, BOOL success, NSString *message) {
+        [block_self.tableView.mj_header endRefreshing];
         [block_self stopProgress];
         
         block_self.baseModel = (DiscoverBaseClass *)[DiscoverBaseClass yy_modelWithJSON:response];
@@ -53,10 +58,14 @@
 }
 -(BaseTableViewCell *)yxg_cellAtIndexPath:(NSIndexPath *)indexPath{
     DiscoverCell *cell = [DiscoverCell cellWithTableView:self.tableView identifier:[NSString stringWithFormat:@"cell%ld%ld",indexPath.section,indexPath.row]];
-    
+    cell.cellFrame = (DiscoverCellFrame *)_data[indexPath.row];
     return cell;
 }
 
+-(CGFloat)yxg_cellheightAtIndexPath:(NSIndexPath *)indexPath{
+    DiscoverCellFrame *cellFrame = (DiscoverCellFrame *)_data[indexPath.row];
+    return  cellFrame.cellHeight;
+}
 -(void)setData:(NSArray *)data{
     if (!data) return;
     _data = data;

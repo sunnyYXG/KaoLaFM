@@ -13,4 +13,13 @@
 
 @property (nonatomic) DiscoverDataList *cellModel;
 
+@property (nonatomic) CGRect pic_rect;
+@property (nonatomic) CGRect rname_rect;
+@property (nonatomic) CGRect line_rect;
+@property (nonatomic) CGRect rightBtn_rect;
+@property (nonatomic) CGRect des_rect;
+@property (nonatomic) NSString *webUrl;
+
+@property (nonatomic) CGFloat cellHeight;
+
 @end

@@ -7,7 +7,10 @@
 //
 
 #import "BaseTableViewCell.h"
+#import "DiscoverCellFrame.h"
 
 @interface DiscoverCell : BaseTableViewCell
+
+@property (nonatomic) DiscoverCellFrame *cellFrame;
 
 @end
