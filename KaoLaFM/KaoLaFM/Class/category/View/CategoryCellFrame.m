@@ -11,6 +11,10 @@
 
 @implementation CategoryCellFrame
 
+
+/**
+ 热门分类
+ */
 -(void)setCellModel:(CategoryDataList *)cellModel{
     if(_cellModel == cellModel && _cellModel) return;
     _cellModel = cellModel;
@@ -33,13 +37,23 @@
     self.cellHeighten = _h * n/2 + 5;
 
     self.data = cellModel.dataList;
+    self.categoryID = cellModel.categoryId;
     self.rects = [HelperTools rectWithCreateUIWithLeft:w + 1 top:0 num:3 width:w height:49 Vertical:1 Horizontal:1 arr:self.data];
     self.subBtnRect = CGRectMake(SCREEN_WIDTH - w,  (n-1) * 50, w, 49);
     if (cellModel.dataList.count > 6) {
         self.is_heighten = YES;
     }
+    
+    for (NSDictionary *dic in self.data) {
+        [self.categoryIDMarr addObject:[NSString stringWithFormat:@"%@",dic[@"categoryId"]]];
+    }
+    
 }
 
+
+/**
+ 调频
+ */
 -(void)setBroadModel:(BroadResult *)broadModel{
     if (_broadModel == broadModel && _broadModel) return;
     _broadModel = broadModel;

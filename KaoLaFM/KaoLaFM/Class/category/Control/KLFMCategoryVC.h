@@ -24,6 +24,10 @@ typedef NS_ENUM(NSInteger,CategoryDataComponentType) {
 @property (nonatomic) BaseRequest *otherRequest;
 @property (nonatomic) BaseRequest *broadRequest;
 
+
+@property (nonatomic) double categoryID;
+@property (nonatomic) NSInteger parentID;
+
 /**
  热门分类
  */

@@ -26,14 +26,8 @@
             [self createButtonWith:rect tag:66 action:@selector(broadCellHieght:) hidden:NO];
             [self createButtonWith:cellFrame.subBtnRect tag:88 action:@selector(broadCellHieght:) hidden:YES];
         }else{
-            UILabel *title = [[UILabel alloc]initWithFrame:rect];
-            [title setBackgroundColor:[UIColor whiteColor]];
-            [self addSubview:title];
             NSDictionary *dic = (NSDictionary *)cellFrame.data[i];
-            title.text = dic[@"name"];
-            title.textAlignment = NSTextAlignmentCenter;
-            title.tag = i;
-            title.textColor = UIColorFromRGB(140, 140, 140);
+            [self createLabelWith:rect tag:i title:dic[@"name"] action:@selector(lableTapAction:)];
             
         }
         if (i == 7) {
@@ -59,18 +53,20 @@
     
     for (NSInteger i = 7; i < cellFrame.rects.count; i ++) {
         CGRect rect= [HelperTools withNSValue:cellFrame.rects[i]];
-        UILabel *title = [[UILabel alloc]initWithFrame:rect];
-        [title setBackgroundColor:[UIColor whiteColor]];
-        [self addSubview:title];
         NSDictionary *dic = (NSDictionary *)cellFrame.data[i];
-        title.text = dic[@"name"];
-        title.textAlignment = NSTextAlignmentCenter;
-        title.tag = i;
-        title.textColor = UIColorFromRGB(140, 140, 140);
+        [self createLabelWith:rect tag:i title:dic[@"name"] action:@selector(lableTapAction:)];
         
     }
     
 }
+
+#pragma mark - label 点击事件 跳转
+- (void)lableTapAction:(UITapGestureRecognizer *)tap{
+    //     BaseViewController *vc = (BaseViewController *)[[CategoryCell new] viewController];
+    UILabel *label = (UILabel *)tap.view;
+    DDLog(@"调频label:%@",self.cellFrame.data[label.tag]);
+}
+
 #pragma mark - 改变cell的布局 subtract cell收缩时 移除控件
 -(void)subtract:(CategoryCellFrame *)cellFrame{
     //展开按钮
@@ -106,6 +102,22 @@
     button.hidden = hidden;
     [self addSubview:button];
     
+    
+}
+
+-(void)createLabelWith:(CGRect)rect tag:(NSInteger)tag title:(NSString *)title action:(SEL)action {
+    
+    UILabel *label = [[UILabel alloc]initWithFrame:rect];
+    [label setBackgroundColor:[UIColor whiteColor]];
+    label.text = title;
+    label.textAlignment = NSTextAlignmentCenter;
+    label.tag = tag;
+    label.textColor = UIColorFromRGB(140, 140, 140);
+    
+    label.userInteractionEnabled = YES;
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:action];
+    [label addGestureRecognizer:tap];
+    [self addSubview:label];
     
 }
 

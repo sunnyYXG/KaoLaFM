@@ -29,17 +29,24 @@
         UIView *view = [[UIView alloc]initWithFrame:rect];
         view.backgroundColor = [UIColor whiteColor];
         
-        UIButton *leftBtn = [[UIButton alloc]initWithFrame:CGRectMake(view.width/4, 10, view.width/2, view.width/2)];
-        [leftBtn sd_setImageWithURL:[NSURL URLWithString:cellModel.icon] forState:UIControlStateNormal];
+        UIButton *button = [[UIButton alloc]initWithFrame:CGRectMake(view.width/4, 10, view.width/2, view.width/2)];
+        [button sd_setImageWithURL:[NSURL URLWithString:cellModel.icon] forState:UIControlStateNormal];
         
-        UILabel *title = [[UILabel alloc]initWithFrame:CGRectMake(0, leftBtn.bottom, view.width, view.height - leftBtn.bottom - 10)];
+        UILabel *title = [[UILabel alloc]initWithFrame:CGRectMake(0, button.bottom, view.width, view.height - button.bottom - 10)];
         title.textAlignment = NSTextAlignmentCenter;
         title.text = cellModel.title;
         title.textColor = UIColorFromRGB(140, 140, 140);
         title.backgroundColor = [UIColor whiteColor];
         
+        button.tag = view.tag = i;
+        [button addTarget:self action:@selector(buttonTapAction:) forControlEvents:UIControlEventTouchUpInside];
+        
+        view.userInteractionEnabled = YES;
+        UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(viewTapAction:)];
+        [view addGestureRecognizer:tap];
+
         [view addSubview:title];
-        [view addSubview:leftBtn];
+        [view addSubview:button];
         [self addSubview:view];
     }
     
@@ -47,6 +54,19 @@
 
 }
 
+#pragma mark - button 点击事件 跳转
+- (void)viewTapAction:(UITapGestureRecognizer *)tap{
+    
+    DDLog(@"其他分类view:%ld",tap.view.tag);
+    DDLog(@"其他分类view:%@",self.dataList[tap.view.tag]);
+    
+}
+
+- (void)buttonTapAction:(UIButton *)sender{
+    DDLog(@"其他分类button:%ld",sender.tag);
+    DDLog(@"其他分类button:%@",self.dataList[sender.tag]);
+    
+}
 
 
 

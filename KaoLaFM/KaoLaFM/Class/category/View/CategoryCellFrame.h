@@ -58,4 +58,10 @@
  */
 @property (nonatomic) CGRect subBtnRect;
 
+/**
+ 热门分类ID
+ */
+@property (nonatomic) double categoryID;
+@property (nonatomic,strong) NSMutableArray *categoryIDMarr;
+
 @end

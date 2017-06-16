@@ -7,11 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "BaseViewController.h"
 
 @interface BaseTableViewCell : UITableViewCell
-
 @property (nonatomic, weak) UITableView *tableView;
-
+@property (nonatomic) BaseViewController *vc;
 /**
  *  快速创建一个不是从xib中加载的tableview cell
  */
@@ -21,6 +21,8 @@
  *  快速创建一个从xib中加载的tableview cell
  */
 + (instancetype)nibCellWithTableView:(UITableView *)tableView;
+
+- (UIViewController *)viewController;
 
 
 

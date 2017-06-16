@@ -27,7 +27,6 @@
 
 @implementation KLFMCategoryVC
 
-
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.tableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
@@ -55,11 +54,10 @@
     broadReq.paramsDic = [KLFMCategoryReq params];
     self.broadRequest = broadReq;
 
-
 }
 -(void)loadData{
+    _titles = @[@"热门分类",@"其他分类",@"调频"];
     if (!self.request) return;
-    _titles = @[@"热门分类",@"其他人类",@"调频"];
     [self startProgress];
     WEAK_BLOCK_SELF(KLFMCategoryVC);
     [self.request yxg_sendRequestWithCompletion:^(id response, BOOL success, NSString *message) {
@@ -82,9 +80,6 @@
         block_self.broadModel = (BroadBaseClass *)[BroadBaseClass yy_modelWithJSON:response];
         [CategoryModel ModelResolverWithBroadModel:block_self.broadModel VC:block_self];
     }];
-
-
-
 }
 -(void)setHotArr:(NSArray *)hotArr{
     if (!hotArr)return;
@@ -106,22 +101,11 @@
 }
 
 -(NSInteger)yxg_numberOfRowsInSection:(NSInteger)section{
-    switch (section) {
-        case 0:
-            return self.hotArr.count;
-            break;
-        case 1:
-            return 1;
-            break;
-        case 2:
-            return 1;
-            break;
-
-        default:
-            break;
+    if (section == 0) {
+        return self.hotArr.count;
+    }else{
+        return 1;
     }
-    return 0;
-
 }
 -(NSInteger)yxg_numberOfSections{
     return 3;
@@ -166,49 +150,41 @@
     return 40.0f;
 }
 -(BaseTableViewCell *)yxg_cellAtIndexPath:(NSIndexPath *)indexPath{
+    BaseTableViewCell *cell;
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
+    cell.backgroundColor = tableViewBackColor;
     if (indexPath.section == 0) {
-        CategoryCell *cell = [CategoryCell cellWithTableView:self.tableView identifier:[NSString stringWithFormat:@"cell%ld%ld",indexPath.section,indexPath.row]];
-        [self cellWithCategory_Hot_WithCell:cell indexRow:indexPath.row];
+        cell =[CategoryCell cellWithTableView:self.tableView identifier:[NSString stringWithFormat:@"cell%ld%ld",indexPath.section,indexPath.row]];
+        [self cellWithCategory_Hot_WithCell:(CategoryCell *)cell indexRow:indexPath.row];
         return cell;
     }else if (indexPath.section == 1){
-        CategoryOtherCell *cell = [CategoryOtherCell cellWithTableView:self.tableView identifier:[NSString stringWithFormat:@"cell%ld%ld",indexPath.section,indexPath.row]];
-        [self cellWithCategory_Other_WithCell:cell];
+         cell = [CategoryOtherCell cellWithTableView:self.tableView identifier:[NSString stringWithFormat:@"cell%ld%ld",indexPath.section,indexPath.row]];
+        [self cellWithCategory_Other_WithCell:(CategoryOtherCell *)cell];
         return cell;
     }else{
-        CategoryBroadCell *cell = [CategoryBroadCell cellWithTableView:self.tableView identifier:[NSString stringWithFormat:@"cell%ld%ld",indexPath.section,indexPath.row]];
-        [self cellWithCategory_Broad_WithCell:cell indexRow:indexPath.row];
+         cell = [CategoryBroadCell cellWithTableView:self.tableView identifier:[NSString stringWithFormat:@"cell%ld%ld",indexPath.section,indexPath.row]];
+        [self cellWithCategory_Broad_WithCell:(CategoryBroadCell *)cell indexRow:indexPath.row];
         return cell;
     }
-    
-    
     return nil;
 }
-
+#pragma mark - 分类
 - (void)cellWithCategory_Hot_WithCell:(CategoryCell *)cell indexRow:(NSInteger)row{
     CategoryCellFrame *cellFrame = self.hotArr[row];
-    cell.selectionStyle = UITableViewCellSelectionStyleNone;
     cell.delegate = self;
-    cell.backgroundColor = tableViewBackColor;
     cell.cellFrame = cellFrame;
 }
-
 - (void)cellWithCategory_Other_WithCell:(CategoryOtherCell *)cell{
-    cell.selectionStyle = UITableViewCellSelectionStyleNone;
-    cell.backgroundColor = tableViewBackColor;
     cell.dataList = self.otherArr;
 }
-
 - (void)cellWithCategory_Broad_WithCell:(CategoryBroadCell *)cell indexRow:(NSInteger)row{
     CategoryCellFrame *cellFrame = self.broadArr[row];
-    cell.selectionStyle = UITableViewCellSelectionStyleNone;
-    cell.backgroundColor = tableViewBackColor;
     cell.delegate = self;
     cell.cellFrame = cellFrame;
 }
 
 
-#pragma mark - CategoryCellChangeHeightDelegate
-#pragma mark - cell的高度调整
+#pragma mark - CategoryCellChangeHeightDelegate && cell的高度调整
 -(void)hotCellHieght_change:(UIButton *)button{
     CategoryCell * cell = (CategoryCell *)[button superview];
     NSIndexPath * path = [self.tableView indexPathForCell:cell];
@@ -227,7 +203,7 @@
 
 }
 
-#pragma mark - CategoryBroadCellChangeHeightDelegate
+#pragma mark - CategoryBroadCellChangeHeightDelegate && cell的高度调整
 -(void)broadCellHieght_change:(UIButton *)button{
     CategoryBroadCell * cell = (CategoryBroadCell *)[button superview];
     NSIndexPath * path = [self.tableView indexPathForCell:cell];

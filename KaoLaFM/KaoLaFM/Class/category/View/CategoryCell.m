@@ -42,11 +42,16 @@
     title.text = cellFrame.cellModel.title;
     title.textColor = UIColorFromRGB(140, 140, 140);
     title.backgroundColor = [UIColor whiteColor];
-    
+
     [self.leftView addSubview:title];
     [self.leftView addSubview:leftBtn];
     [self.left_bgView addSubview:self.leftView];
     [self addSubview:self.left_bgView];
+    
+    self.leftView.userInteractionEnabled = YES;
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(viewTapAction:)];
+    [self.leftView addGestureRecognizer:tap];
+    [leftBtn addTarget:self action:@selector(viewTapAction:) forControlEvents:UIControlEventTouchUpInside];
     
     for (NSInteger i = 0; i < cellFrame.rects.count; i ++) {
         CGRect rect= [HelperTools withNSValue:cellFrame.rects[i]];
@@ -54,19 +59,32 @@
             [self createButtonWith:rect tag:66 action:@selector(hotCellHieghtChange:) hidden:NO];
             [self createButtonWith:cellFrame.subBtnRect tag:88 action:@selector(hotCellHieghtChange:) hidden:YES];
         }else{
-            UILabel *title = [[UILabel alloc]initWithFrame:rect];
-            [title setBackgroundColor:[UIColor whiteColor]];
-            [self addSubview:title];
             NSDictionary *dic = (NSDictionary *)cellFrame.data[i];
-            title.text = dic[@"title"];
-            title.textAlignment = NSTextAlignmentCenter;
-            title.tag = i;
-            title.textColor = UIColorFromRGB(140, 140, 140);
-
+            [self createLabelWith:rect tag:i title:dic[@"title"] action:@selector(lableTapAction:)];
         }
         if (i == 5) {
             break;
         }
+    }
+}
+
+#pragma mark - label 点击事件 跳转
+- (void)lableTapAction:(UITapGestureRecognizer *)tap{
+//     BaseViewController *vc = (BaseViewController *)[[CategoryCell new] viewController];
+    UILabel *label = (UILabel *)tap.view;
+    DDLog(@"热门分类label:%@",self.cellFrame.data[label.tag]);
+}
+#pragma mark - button 点击事件 跳转
+- (void)viewTapAction:(UITapGestureRecognizer *)tap{
+    DDLog(@"热门分类button:%@",self.cellFrame.cellModel);
+
+}
+
+
+-(void)hotCellHieghtChange:(UIButton *)sender{
+    
+    if (_delegate && [_delegate respondsToSelector:@selector(hotCellHieght_change:)]) {
+        [_delegate hotCellHieght_change:sender];
     }
 }
 
@@ -100,14 +118,8 @@
     
     for (NSInteger i = 5; i < cellFrame.rects.count; i ++) {
         CGRect rect= [HelperTools withNSValue:cellFrame.rects[i]];
-        UILabel *title = [[UILabel alloc]initWithFrame:rect];
-        [title setBackgroundColor:[UIColor whiteColor]];
-        [self addSubview:title];
         NSDictionary *dic = (NSDictionary *)cellFrame.data[i];
-        title.text = dic[@"title"];
-        title.textAlignment = NSTextAlignmentCenter;
-        title.tag = i;
-        title.textColor = UIColorFromRGB(140, 140, 140);
+        [self createLabelWith:rect tag:i title:dic[@"title"] action:@selector(lableTapAction:)];
 
     }
 
@@ -140,14 +152,6 @@
 
 }
 
-
--(void)hotCellHieghtChange:(UIButton *)sender{
-    
-    if (_delegate && [_delegate respondsToSelector:@selector(hotCellHieght_change:)]) {
-        [_delegate hotCellHieght_change:sender];
-    }
-}
-
 -(void)createButtonWith:(CGRect)rect tag:(NSInteger)tag action:(SEL)action hidden:(BOOL)hidden{
     
     UIButton *button = [[UIButton alloc]initWithFrame:rect];
@@ -158,7 +162,23 @@
     button.hidden = hidden;
     [self addSubview:button];
     
-
 }
+
+-(void)createLabelWith:(CGRect)rect tag:(NSInteger)tag title:(NSString *)title action:(SEL)action {
+    
+    UILabel *label = [[UILabel alloc]initWithFrame:rect];
+    [label setBackgroundColor:[UIColor whiteColor]];
+    label.text = title;
+    label.textAlignment = NSTextAlignmentCenter;
+    label.tag = tag;
+    label.textColor = UIColorFromRGB(140, 140, 140);
+    
+    label.userInteractionEnabled = YES;
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:action];
+    [label addGestureRecognizer:tap];
+    [self addSubview:label];
+    
+}
+
 
 @end
