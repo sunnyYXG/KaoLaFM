@@ -20,18 +20,13 @@
 #import "CycleBannerView.h"
 #import "HomeTJMenuView.h"
 #import "KLFMViewVC.h"
-@interface KLFMSelectionVC ()
+#import "YXGAVPlayer.h"
+@interface KLFMSelectionVC ()<SelectionCellPlayDelegate>
 
 @end
 
 @implementation KLFMSelectionVC
 
-//-(NSMutableArray *)frameArr{
-//    if (!_frameArr) {
-//        _frameArr = [NSMutableArray new];
-//    }
-//    return _frameArr;
-//}
 -(CycleBannerView *)bannerView{
     if (!_bannerView) {
         _bannerView = [[CycleBannerView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_WIDTH * 0.55)];
@@ -67,6 +62,7 @@
     CGRect frame = CGRectMake(0, 0, SCREEN_WIDTH, self.tableView.height - 108 - playerViewHeight);
     self.tableView.frame = frame;
 
+    [self.view setHeight:self.view.height - 64];
     [self initBannerView];
 
 }
@@ -127,6 +123,7 @@
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     SelectionCellFrame *cellFrame = self.data[indexPath.row];
     cell.cellFrame = cellFrame;
+    cell.delegate = self;
     return cell;
 }
 -(CGFloat)yxg_cellheightAtIndexPath:(NSIndexPath *)indexPath{
@@ -137,7 +134,11 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
+#pragma mark - SelectionCellPlayDelegate
+-(void)playClick:(NSDictionary *)dic{
+    DDLog(@"play:%@",dic);
+    [self.playerView.player playNewWithUrl:dic[@"mp3PlayUrl"]];
+}
 /*
 #pragma mark - Navigation
 

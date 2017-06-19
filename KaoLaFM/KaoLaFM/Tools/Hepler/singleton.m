@@ -7,20 +7,25 @@
 //
 
 #import "singleton.h"
+#import "playerView.h"
+
+static singleton *sharedInstance=nil;
 
 @implementation singleton
 
-+ (id)singletonSharedInstance {
++ (singleton *)singletonSharedInstance {
     
     static dispatch_once_t once;
     
-    static id sharedInstance;
     dispatch_once(&once, ^{
         
-        sharedInstance = [[self alloc] init];
+        sharedInstance = [[singleton alloc] init];
+        sharedInstance.playerView = [[playerView alloc] initWithFrame:CGRectMake(0, SCREEN_HEIGHT - 64, SCREEN_WIDTH, playerViewHeight)];
+        
     });
     return sharedInstance;
     
 }
+
 
 @end

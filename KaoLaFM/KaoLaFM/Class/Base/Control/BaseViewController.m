@@ -7,7 +7,7 @@
 //
 
 #import "BaseViewController.h"
-
+#import "singleton.h"
 @interface BaseViewController ()
 
 
@@ -25,14 +25,6 @@
     return _navBar;
 }
 
--(playerView *)playerView{
-    if (!_playerView) {
-        _playerView = [[playerView alloc]initWithFrame:CGRectMake(0, SCREEN_HEIGHT - playerViewHeight, SCREEN_WIDTH, playerViewHeight)];
-//        _playerView.backgroundColor = [UIColor orangeColor];
-    }
-    return _playerView;
-}
-
 - (void)viewDidLoad {
     [super viewDidLoad];
 
@@ -42,7 +34,12 @@
 //    [self.view addSubview:self.navBar];
     [self initRequest];
     [self loadData];
+    singleton *sing = [singleton singletonSharedInstance];
+    self.playerView = sing.playerView;
     
+    UIWindow *window = [UIApplication sharedApplication].keyWindow;
+    [window addSubview:self.playerView];
+
     // Do any additional setup after loading the view, typically from a nib.
 }
 
@@ -176,7 +173,6 @@
     [super viewWillAppear:animated];
     [self.navigationController setNavigationBarHidden:YES];
     
-    [self.view addSubview:self.playerView];
 
 }
 

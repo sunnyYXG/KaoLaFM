@@ -7,7 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
-
+@class YXGAVPlayer;
 @interface playerView : UIView
+
+@property(nonatomic)YXGAVPlayer *player;
 
 @end

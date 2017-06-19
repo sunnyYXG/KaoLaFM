@@ -42,11 +42,15 @@
     return _navBars;
 }
 
+
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.edgesForExtendedLayout = UIRectEdgeNone;
+//    self.edgesForExtendedLayout = UIRectEdgeNone;
     [self.view addSubview:self.navBar];
     self.navigationController.navigationBar.hidden = YES;
+//    self.view.backgroundColor = [UIColor redColor];
+    
+    [self.view setHeight:self.view.height + 64];
 
 }
 
@@ -85,17 +89,6 @@
     
     for (NSInteger i =0; i < _navBars.count; i ++) {
         TabbarDataList *list = _navBars[i];
-//        UIViewController *vc;
-//        NSString *className;
-//        if (i == 1) {
-//            vc = [KLFMSelectionVC new];
-//            className = [KLFMSelectionVC description];
-//        }else{
-//            vc = [KLFMOtherVC new];
-//            className = [KLFMOtherVC description];
-//
-//        }
-        
         [viewArray addObject:[self addChildViewControllerWithClassname:classNames[i] title:list.name]];
     }
     
@@ -149,13 +142,14 @@
     [_navTabBar updateData:1];
     [self.view addSubview:_navTabBar];
     
-    _mainView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 108, SCREEN_WIDTH, SCREEN_HEIGHT)];
+    _mainView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 108, SCREEN_WIDTH, SCREEN_HEIGHT - 108)];
     _mainView.delegate = self;
     _mainView.pagingEnabled = YES;
     _mainView.bounces = _mainViewBounces;
     _mainView.showsHorizontalScrollIndicator = NO;
     _mainView.showsVerticalScrollIndicator = NO;
     _mainView.contentSize = CGSizeMake(SCREEN_WIDTH * _subViewControllers.count, 0);
+    
     [self.view addSubview:_mainView];
     
 

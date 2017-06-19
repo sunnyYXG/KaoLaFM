@@ -23,7 +23,7 @@
 -(void)setCellFrame:(SelectionCellFrame *)cellFrame{
     if (_cellFrame == cellFrame && _cellFrame) return;
     _cellFrame = cellFrame;
-    
+    self.dataList = cellFrame.cellModel.dataList;
     UILabel *title = [[UILabel alloc]initWithFrame:cellFrame.titleRect];
     title.text = cellFrame.cellModel.name;
 //    title.backgroundColor = [UIColor orangeColor];
@@ -84,7 +84,6 @@
         playerBtn.frame = CGRectMake(IV.right - 30, IV.bottom - 30, 25, 25);
 
         IV.userInteractionEnabled = YES;
-        
         [IV addSubview:playerBtn];
         [view addSubview:albumName];
         [view addSubview:rname];
@@ -96,8 +95,12 @@
 
 - (void)player:(UIButton *)sender{
     if (!sender.selected) {
+        
         sender.selected = YES;
         [sender setImage:[UIImage imageNamed:@"btn_player_pause_on"] forState:UIControlStateNormal];
+        if (_delegate && [_delegate respondsToSelector:@selector(playClick:)]) {
+            [_delegate playClick:self.dataList[sender.tag - 100]];
+        }
     }else{
         sender.selected = NO;
         [sender setImage:[UIImage imageNamed:@"btn_player_play_on"] forState:UIControlStateNormal];

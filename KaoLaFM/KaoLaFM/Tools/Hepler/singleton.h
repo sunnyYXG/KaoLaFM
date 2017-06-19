@@ -7,8 +7,11 @@
 //
 
 #import <Foundation/Foundation.h>
-
+@class playerView;
 @interface singleton : NSObject
 
-+ (id)singletonSharedInstance;
+@property (nonatomic)playerView *playerView;
+
+
++ (singleton *)singletonSharedInstance;
 @end
