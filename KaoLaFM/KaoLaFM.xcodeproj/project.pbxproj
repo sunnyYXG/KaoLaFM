@@ -48,6 +48,7 @@
 		0D57C7D11EF3C5550064603E /* DiscoverCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D57C7D01EF3C5550064603E /* DiscoverCell.m */; };
 		0D57C7D41EF3C71E0064603E /* DiscoverCellFrame.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D57C7D31EF3C71E0064603E /* DiscoverCellFrame.m */; };
 		0D5E537F1ED52707009FB1D9 /* KLFMNavBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D5E537E1ED52707009FB1D9 /* KLFMNavBar.m */; };
+		0D6095DA1EF799010028666F /* AppNotification.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D6095D91EF799010028666F /* AppNotification.m */; };
 		0DB24B111ECC2D0A00ABF4CA /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DB24B101ECC2D0A00ABF4CA /* main.m */; };
 		0DB24B1C1ECC2D0A00ABF4CA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0DB24B1B1ECC2D0A00ABF4CA /* Assets.xcassets */; };
 		0DB24B2A1ECC2D0B00ABF4CA /* KaoLaFMTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DB24B291ECC2D0B00ABF4CA /* KaoLaFMTests.m */; };
@@ -184,6 +185,8 @@
 		0D57C7D31EF3C71E0064603E /* DiscoverCellFrame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DiscoverCellFrame.m; sourceTree = "<group>"; };
 		0D5E537D1ED52707009FB1D9 /* KLFMNavBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KLFMNavBar.h; sourceTree = "<group>"; };
 		0D5E537E1ED52707009FB1D9 /* KLFMNavBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KLFMNavBar.m; sourceTree = "<group>"; };
+		0D6095D81EF799010028666F /* AppNotification.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppNotification.h; sourceTree = "<group>"; };
+		0D6095D91EF799010028666F /* AppNotification.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppNotification.m; sourceTree = "<group>"; };
 		0DB24B0C1ECC2D0A00ABF4CA /* KaoLaFM.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KaoLaFM.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0DB24B101ECC2D0A00ABF4CA /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		0DB24B1B1ECC2D0A00ABF4CA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -360,6 +363,8 @@
 				0D352D321ECD3E5400447E1B /* HelperTools.m */,
 				0D352D331ECD3E5400447E1B /* SingletonManager.h */,
 				0D352D341ECD3E5400447E1B /* SingletonManager.m */,
+				0D6095D81EF799010028666F /* AppNotification.h */,
+				0D6095D91EF799010028666F /* AppNotification.m */,
 			);
 			path = Hepler;
 			sourceTree = "<group>";
@@ -1083,6 +1088,7 @@
 				0D401B881EF0BF860076CE5D /* ColorHelper.m in Sources */,
 				64C370D81ED31D0A00EC366D /* SelectionCell.m in Sources */,
 				64CEE6331EEBFA62005039FB /* KLFMViewVC.m in Sources */,
+				0D6095DA1EF799010028666F /* AppNotification.m in Sources */,
 				0D401BC41EF113CD0076CE5D /* CategoryModel.m in Sources */,
 				0D352D561ECD4C6600447E1B /* SelectionModel.m in Sources */,
 				64F927181ED0775900C2F424 /* KLFMLauchMovieVC.m in Sources */,

@@ -21,7 +21,7 @@
 #import "HomeTJMenuView.h"
 #import "KLFMViewVC.h"
 #import "YXGAVPlayer.h"
-@interface KLFMSelectionVC ()<SelectionCellPlayDelegate>
+@interface KLFMSelectionVC ()
 
 @end
 
@@ -123,7 +123,6 @@
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     SelectionCellFrame *cellFrame = self.data[indexPath.row];
     cell.cellFrame = cellFrame;
-    cell.delegate = self;
     return cell;
 }
 -(CGFloat)yxg_cellheightAtIndexPath:(NSIndexPath *)indexPath{
@@ -133,11 +132,6 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
-}
-#pragma mark - SelectionCellPlayDelegate
--(void)playClick:(NSDictionary *)dic{
-    DDLog(@"play:%@",dic);
-    [self.playerView setInfoWithAuthor:dic[@"albumName"] name:dic[@"dataReport"] playUrl:dic[@"mp3PlayUrl"]];
 }
 /*
 #pragma mark - Navigation

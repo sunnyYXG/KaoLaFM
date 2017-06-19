@@ -39,6 +39,6 @@
 //
 
 #import "SingletonManager.h"
-
+#import "AppNotification.h"
 
 #endif /* PrefixHeader_pch */

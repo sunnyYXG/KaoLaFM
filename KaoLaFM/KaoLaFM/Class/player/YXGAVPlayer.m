@@ -14,25 +14,16 @@
 
 @property(nonatomic,retain)AVPlayerItem *songItem;
 @property(nonatomic,retain)AVPlayer *player;
-@property(nonatomic,copy)NSArray *songArr;//歌曲的数组
-@property(nonatomic,copy)NSArray *imageArr;//图片的数组
-@property(nonatomic,assign)NSInteger tapCount;//点击次数
 @property(nonatomic,retain)id timeObserver;//时间观察
 @property(nonatomic) BOOL is_first;
 @end
 
 @implementation YXGAVPlayer
 
--(instancetype)initWithFrame:(CGRect)frame andSongUrlArr:(NSArray *)urlArr andSongImageArr:(NSArray *)imageArr;
-{
+-(instancetype)initWithFrame:(CGRect)frame{
     self=[super initWithFrame:frame];
     if (self) {
-        _songArr=urlArr;
-        _imageArr=imageArr;
-        NSString *urlStr=urlArr[0];
-        NSURL *url=[NSURL URLWithString:urlStr];
         //初始化songItem和player
-        _songItem=[AVPlayerItem playerItemWithURL:url];
         _player=[AVPlayer playerWithPlayerItem:_songItem];
 //        [_player play];
         //声音设置为0.5;
@@ -45,8 +36,6 @@
         _playerImage=[[UIImageView alloc]initWithFrame:CGRectMake(0, 0, self.width, self.height)];
 //        _playerImage.backgroundColor=[UIColor grayColor];
         //添加背景图片
-        NSString *imagrStr=imageArr[0];
-        [_playerImage sd_setImageWithURL:[NSURL URLWithString:imagrStr]];
         [self addSubview:_playerImage];
         self.is_first = YES;
     }
@@ -127,13 +116,6 @@
 {
     //移除所有监听
     [self removeAllNotice];
-    _tapCount++;
-    if (_tapCount>=_songArr.count) {
-        _tapCount=0;
-    }
-    NSLog(@"当前播放第%ld首歌",_tapCount);
-    //替换songItem
-    [self playerWithItem];
     //添加播放器状态的监听
     [self addAVPlayerStatusObserver];
     //添加数据缓存的监听
@@ -148,13 +130,6 @@
 
     //移除所有监听
     [self removeAllNotice];
-    _tapCount--;
-    if (_tapCount<0) {
-        _tapCount=_songArr.count-1;
-    }
-    NSLog(@"当前播放第%ld首歌",_tapCount);
-   //替换songItem
-    [self playerWithItem];
     //添加播放器状态的监听
     [self addAVPlayerStatusObserver];
     //添加数据缓存的监听
@@ -164,12 +139,12 @@
     [self resumeAnimation];
 
 }
--(void)playNewWithUrl:(NSString *)url{
+-(void)playNewWith:(NSDictionary *)dic{
     //移除所有监听
     [self removeAllNotice];
-    NSLog(@"当前播放第%ld首歌",_tapCount);
+    [_playerImage sd_setImageWithURL:[NSURL URLWithString:dic[@"pic"]]];
     //替换songItem
-    NSURL *NETurl=[NSURL URLWithString:url];
+    NSURL *NETurl=[NSURL URLWithString:dic[@"mp3PlayUrl"]];
     _songItem=[AVPlayerItem playerItemWithURL:NETurl];
     [_player replaceCurrentItemWithPlayerItem:_songItem];
     [_player play];
@@ -182,50 +157,10 @@
     [self resumeAnimation];
 
 }
-#pragma mark---根据点击次数切换songItem
--(void)playerWithItem
-{
-    NSString *urlStr=_songArr[_tapCount];
-    NSURL *url=[NSURL URLWithString:urlStr];
-    _songItem=[AVPlayerItem playerItemWithURL:url];
-    [_player replaceCurrentItemWithPlayerItem:_songItem];
-    [_player play];
-}
 #pragma mark----设置player的volume
 -(void)setPlayerVolume
 {
     _player.volume=_volume;
-}
-#pragma mark----添加观察者获取当前时间,总共时间,进度
--(void)addTimeObserve
-{
-    __block  AVPlayerItem *songItem=_songItem;
-    __block typeof(self) bself = self;
-    _timeObserver=[_player addPeriodicTimeObserverForInterval:CMTimeMake(1.0, 1.0) queue:dispatch_get_main_queue() usingBlock:^(CMTime time) {
-        //设置player的声音
-        [bself setPlayerVolume];
-        //添加背景图片
-        NSString *imagrStr=bself.imageArr[bself.tapCount];
-        if (imagrStr.length<=4) {
-            bself.playerImage.image=[UIImage imageNamed:bself.imageArr[bself.tapCount]];
-        }else{
-            NSString *imagrSubStr=[imagrStr substringWithRange:NSMakeRange(0, 4)];
-            if ([imagrSubStr isEqualToString:@"http"]) {
-                NSURL *imageUrl=[NSURL URLWithString:bself.imageArr[bself.tapCount]];
-                [bself.playerImage setImageWithURL:imageUrl placeholderImage:[UIImage imageNamed:@"radioBG"]];
-            }else{
-                bself.playerImage.image=[UIImage imageNamed:bself.imageArr[bself.tapCount]];
-            }
-        }
-        //当前时间
-        float current=CMTimeGetSeconds(time);
-        //总共时间
-        float total=CMTimeGetSeconds(songItem.duration);
-        //进度
-        float progress=current/total;
-        //将值传入知道delegate方法中
-        [bself.delegate getSongCurrentTime:[bself formatTime:current]  andTotalTime:[bself formatTime:total] andProgress:progress andTapCount:bself.tapCount];
-    }];
 }
 #pragma mark---移除时间观察者
 -(void)removeTimeObserver
@@ -267,8 +202,6 @@
                 break;
             case AVPlayerStatusReadyToPlay:{
                 NSLog(@"准备完毕，可以播放");
-                //添加时间的监听
-                [self addTimeObserve];
                 //添加播放完成的通知
                 [self addPlayToEndObserver];
             }

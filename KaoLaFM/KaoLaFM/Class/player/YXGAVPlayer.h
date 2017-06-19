@@ -10,15 +10,7 @@
 #import <UIKit/UIKit.h>
 
 @protocol YXGAVPlayerDelegate <NSObject>
-/**
- *  author  苑心刚 QQ:505228831
- *
- *  @param currentTime 当前时间
- *  @param totalTime   总共时间
- *  @param progress    歌曲进度
- *  @param tapCount    点击次数
- */
--(void)getSongCurrentTime:(NSString *)currentTime andTotalTime:(NSString *)totalTime andProgress:(CGFloat)progress andTapCount:(NSInteger)tapCount;
+
 @end
 
 @interface YXGAVPlayer :  UIView
@@ -62,6 +54,6 @@
  */
 -(void)lastSong;
 
--(void)playNewWithUrl:(NSString *)url;
+-(void)playNewWith:(NSDictionary *)dic;
 @property (nonatomic)NSString *urlString;
 @end

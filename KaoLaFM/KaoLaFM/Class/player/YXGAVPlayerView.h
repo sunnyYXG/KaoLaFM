@@ -13,6 +13,6 @@
 
 @property(nonatomic)YXGAVPlayer *player;
 
-- (void)setInfoWithAuthor:(NSString *)Author name:(NSString *)name playUrl:(NSString *)url;
+- (void)setInfoWith:(NSDictionary *)dic;
 
 @end

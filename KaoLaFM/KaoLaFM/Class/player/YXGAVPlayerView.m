@@ -13,11 +13,6 @@
 
 }
 
-@property(nonatomic,copy)NSArray *songArr;//歌曲数组
-@property(nonatomic,copy)NSArray *songNameArr;//歌曲名称数组
-@property(nonatomic,copy)NSArray *songAuthorArr;//歌曲演唱者数组
-@property(nonatomic,copy)NSArray *songImageArr;//歌曲图片数组
-
 @property(nonatomic)UIButton *playBt;//播放\暂停按钮
 @property(nonatomic)UIButton *playList;//显示列表
 @property(nonatomic)UILabel *Author;//作者
@@ -26,30 +21,6 @@
 @end
 
 @implementation YXGAVPlayerView
-#pragma mark---歌曲名称数组
--(NSArray *)songNameArr
-{
-    _songNameArr=@[@"火星情报局 (《火星情报局》节目主题曲)",@"下一站我是你的依靠",@"世界上不存在的歌(《火锅英雄》电影主题曲)"];
-    return _songNameArr;
-}
-#pragma mark---歌曲流媒体地址
--(NSArray *)songArr
-{
-    _songArr=@[@"http://image.kaolafm.net/mz/audios/201706/d1779152-bde7-41a0-b9b1-f4cea6e7dc57.mp3"];
-    return _songArr;
-}
-#pragma mark---歌曲演唱者数组
--(NSArray *)songAuthorArr
-{
-    _songAuthorArr=@[@"华晨宇"];
-    return _songAuthorArr;
-}
-#pragma mark---歌曲图片的数组
--(NSArray *)songImageArr
-{
-    _songImageArr=@[@"http://i.gtimg.cn/music/photo/mid_album_300/W/8/003re5702kSBW8.jpg"];
-    return _songImageArr;
-}
 
 -(instancetype)initWithFrame:(CGRect)frame{
     if (self = [super initWithFrame:frame]) {
@@ -60,6 +31,8 @@
         [self addSongInformation];
         //添加播放器的控件
         [self addPlayerControls];
+        
+        [AppNotification registe:NOTIFICATION_TYPE_PALYER receiver:self action:@selector(Player_Notification:)];
     }
     return self;
 
@@ -67,7 +40,7 @@
 #pragma mark---添加playerView
 -(void)addPlayerView
 {
-    _player=[[YXGAVPlayer alloc]initWithFrame:CGRectMake(5, 5, self.height -10, self.height -10) andSongUrlArr:self.songArr andSongImageArr:self.songImageArr];
+    _player=[[YXGAVPlayer alloc]initWithFrame:CGRectMake(5, 5, self.height -10, self.height -10)];
     _player.delegate=self;
     _player.layer.cornerRadius=(self.height-10)/2;
     _player.layer.masksToBounds=YES;
@@ -99,7 +72,7 @@
     _name.text = @"姓名";
 
 }
-#pragma mark---添加播放器的播放，下一首，上一首按钮控件
+#pragma mark---添加播放器的播放按钮控件
 -(void)addPlayerControls
 {
     //播放\暂停按钮
@@ -130,13 +103,18 @@
     }
 }
 
--(void)setInfoWithAuthor:(NSString *)Author name:(NSString *)name playUrl:(NSString *)url{
-    _Author.text = Author;
-    _name.text = name;
-    [self.player playNewWithUrl:url];
+
+- (void)Player_Notification:(NSNotification *)n{
+    NSDictionary *dic = n.userInfo[PALYER_KEY];
+    _Author.text = dic[@"albumName"];
+    _name.text = dic[@"dataReport"];
+    [self.player playNewWith:dic];
     [_playBt setBackgroundImage:[UIImage imageNamed:@"btn_player_pause_on"] forState:UIControlStateNormal];
     _playBt.selected=NO;
 
+}
+-(void)dealloc{
+    [AppNotification remove:NOTIFICATION_TYPE_PALYER receiver:self];
 }
 /*
 // Only override drawRect: if you perform custom drawing.

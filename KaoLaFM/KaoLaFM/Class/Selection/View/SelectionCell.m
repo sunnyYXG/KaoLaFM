@@ -95,12 +95,16 @@
 
 - (void)player:(UIButton *)sender{
     if (!sender.selected) {
-        
         sender.selected = YES;
         [sender setImage:[UIImage imageNamed:@"btn_player_pause_on"] forState:UIControlStateNormal];
-        if (_delegate && [_delegate respondsToSelector:@selector(playClick:)]) {
-            [_delegate playClick:self.dataList[sender.tag - 100]];
-        }
+        
+        [self.last_btn setImage:[UIImage imageNamed:@"btn_player_play_on"] forState:UIControlStateNormal];
+        self.last_btn.selected = NO;
+        self.last_btn = sender;
+        
+        NSDictionary *dic = self.dataList[sender.tag - 100];
+        [AppNotification send:NOTIFICATION_TYPE_PALYER userInfo:@{PALYER_KEY:dic}];
+
     }else{
         sender.selected = NO;
         [sender setImage:[UIImage imageNamed:@"btn_player_play_on"] forState:UIControlStateNormal];
