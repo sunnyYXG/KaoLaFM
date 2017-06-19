@@ -49,6 +49,7 @@
 		0D57C7D41EF3C71E0064603E /* DiscoverCellFrame.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D57C7D31EF3C71E0064603E /* DiscoverCellFrame.m */; };
 		0D5E537F1ED52707009FB1D9 /* KLFMNavBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D5E537E1ED52707009FB1D9 /* KLFMNavBar.m */; };
 		0D6095DA1EF799010028666F /* AppNotification.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D6095D91EF799010028666F /* AppNotification.m */; };
+		0D6095DD1EF7C1A10028666F /* YXGRollingLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D6095DC1EF7C1A10028666F /* YXGRollingLabel.m */; };
 		0DB24B111ECC2D0A00ABF4CA /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DB24B101ECC2D0A00ABF4CA /* main.m */; };
 		0DB24B1C1ECC2D0A00ABF4CA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0DB24B1B1ECC2D0A00ABF4CA /* Assets.xcassets */; };
 		0DB24B2A1ECC2D0B00ABF4CA /* KaoLaFMTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DB24B291ECC2D0B00ABF4CA /* KaoLaFMTests.m */; };
@@ -185,6 +186,8 @@
 		0D5E537E1ED52707009FB1D9 /* KLFMNavBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KLFMNavBar.m; sourceTree = "<group>"; };
 		0D6095D81EF799010028666F /* AppNotification.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppNotification.h; sourceTree = "<group>"; };
 		0D6095D91EF799010028666F /* AppNotification.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppNotification.m; sourceTree = "<group>"; };
+		0D6095DB1EF7C1A10028666F /* YXGRollingLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YXGRollingLabel.h; sourceTree = "<group>"; };
+		0D6095DC1EF7C1A10028666F /* YXGRollingLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YXGRollingLabel.m; sourceTree = "<group>"; };
 		0DB24B0C1ECC2D0A00ABF4CA /* KaoLaFM.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KaoLaFM.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0DB24B101ECC2D0A00ABF4CA /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		0DB24B1B1ECC2D0A00ABF4CA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -345,6 +348,8 @@
 		0D352D2E1ECD3E5400447E1B /* Hepler */ = {
 			isa = PBXGroup;
 			children = (
+				0D6095DB1EF7C1A10028666F /* YXGRollingLabel.h */,
+				0D6095DC1EF7C1A10028666F /* YXGRollingLabel.m */,
 				0D401B861EF0BF860076CE5D /* ColorHelper.h */,
 				0D401B871EF0BF860076CE5D /* ColorHelper.m */,
 				0D352D2F1ECD3E5400447E1B /* Factory.h */,
@@ -1039,6 +1044,7 @@
 				0D352D531ECD493D00447E1B /* SelectionResult.m in Sources */,
 				0D401BBF1EF112FF0076CE5D /* CategoryBaseClass.m in Sources */,
 				6412F5BD1EF54AD000198C55 /* YXGAVPlayerView.m in Sources */,
+				0D6095DD1EF7C1A10028666F /* YXGRollingLabel.m in Sources */,
 				0D57C7D11EF3C5550064603E /* DiscoverCell.m in Sources */,
 				0D352D841ECD7BA400447E1B /* TabbarResult.m in Sources */,
 				0D352D1F1ECD347500447E1B /* KLFMSelectionVC.m in Sources */,

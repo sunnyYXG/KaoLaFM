@@ -8,7 +8,7 @@
 
 #import "YXGAVPlayerView.h"
 #import "YXGAVPlayer.h"
-
+#import "YXGRollingLabel.h"
 @interface YXGAVPlayerView()<YXGAVPlayerDelegate>{
 
 }
@@ -16,7 +16,7 @@
 @property(nonatomic)UIButton *playBt;//播放\暂停按钮
 @property(nonatomic)UIButton *playList;//显示列表
 @property(nonatomic)UILabel *Author;//作者
-@property (nonatomic) UILabel *name;
+@property (nonatomic) YXGRollingLabel *name;
 
 @end
 
@@ -55,17 +55,25 @@
 #pragma makr---添加歌曲的信息
 -(void)addSongInformation
 {
-    _name = [[UILabel alloc]initWithFrame:CGRectMake(_player.right + 10, 5, SCREEN_WIDTH/3 * 2 - _player.right - 20, (self.height - 15)/2)];
+//    _name = [[YFRollingLabel alloc]initWithFrame:CGRectMake(_player.right + 10, 5, SCREEN_WIDTH/3 * 2 - _player.right - 20, (self.height - 15)/2)];
     
+    NSArray *textArray = @[@"01234567890123456789"];
+    _name = [[YXGRollingLabel alloc] initWithFrame:CGRectMake(_player.right + 10, 5, SCREEN_WIDTH/3 * 2 - _player.right - 20, (self.height - 15)/2)  textArray:textArray font:[UIFont systemFontOfSize:20] textColor:[UIColor whiteColor]];
+
     _Author = [[UILabel alloc]initWithFrame:CGRectMake(_player.right + 10, _name.bottom + 5, _name.width, _name.height)];
     
     [self addSubview:_Author];
     [self addSubview:_name];
 
-    _name.textColor = [UIColor whiteColor];
+//    _name.textColor = [UIColor whiteColor];
     _Author.textColor = [UIColor whiteColor];
     _Author.text = @"作者";
-    _name.text = @"姓名";
+    
+//    _name.speed = 0.8;
+    [_name setOrientation:RollingOrientationLeft];
+    [_name setInternalWidth:_name.frame.size.width / 3];;
+
+//    _name.text = @"姓名";
 
 }
 #pragma mark---添加播放器的播放按钮控件
@@ -103,10 +111,11 @@
 - (void)Player_Notification:(NSNotification *)n{
     NSDictionary *dic = n.userInfo[PALYER_KEY];
     _Author.text = dic[@"albumName"];
-    _name.text = dic[@"dataReport"];
+//    _name.text = dic[@"dataReport"];
     [self.player playNewWith:dic];
     [_playBt setBackgroundImage:[UIImage imageNamed:@"btn_player_pause_on"] forState:UIControlStateNormal];
     _playBt.selected=NO;
+    [self.name stringWithTitle:dic[@"dataReport"]];
 
 }
 -(void)dealloc{
