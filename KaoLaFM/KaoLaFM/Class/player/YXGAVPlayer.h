@@ -25,18 +25,7 @@
  *  volume 0.0~1.0
  */
 @property(nonatomic,assign)CGFloat volume;
-/**
- *  初始化YXGAVPlayer
- *
- *  @param frame  AVPlayerLayer的frame
- *  @param urlArr 歌曲网址的数组
- *  @param urlArr 歌曲背景图片网址的数组
- *
- *  @return   YXGAVPlayer
- */
--(instancetype)initWithFrame:(CGRect)frame
-               andSongUrlArr:(NSArray *)urlArr
-             andSongImageArr:(NSArray *)imageArr;
+
 /**
  *  开始播放
  */

@@ -9,7 +9,6 @@
 #import "MainTabBarController.h"
 #import "BaseNavigationViewController.h"
 #import "KLFMNavigateVC.h"
-#import "KLFMOtherVC.h"
 @interface MainTabBarController ()
 
 @end
@@ -25,7 +24,6 @@
 
 - (void)createTab{
     [self addChildViewControllerWithClassname:[KLFMNavigateVC description] imagename:@"" title:@""];
-//    [self addChildViewControllerWithClassname:[KLFMOtherVC description] imagename:@"" title:@""];
 
 }
 // 添加子控制器

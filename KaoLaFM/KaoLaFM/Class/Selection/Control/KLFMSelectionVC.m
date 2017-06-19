@@ -19,7 +19,6 @@
 
 #import "CycleBannerView.h"
 #import "HomeTJMenuView.h"
-#import "KLFMViewVC.h"
 #import "YXGAVPlayer.h"
 @interface KLFMSelectionVC ()
 
@@ -48,7 +47,7 @@
         _TJMenuView.itemsBlock = ^(NSInteger index) {
             DDLog(@"dinjia");
             
-            [block_self pushVc:[KLFMViewVC new] userInfo:nil];
+//            [block_self pushVc:[KLFMViewVC new] userInfo:nil];
         };
     }
     return _TJMenuView;

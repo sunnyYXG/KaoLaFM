@@ -21,7 +21,6 @@
 #import "KLFMCategoryVC.h"
 #import "KLFMDiscoverVC.h"
 #import "KLFMAnchorVC.h"
-#import "KLFMOtherVC.h"
 @interface KLFMNavigateVC ()<UIScrollViewDelegate,SCNavTabBarDelegate>
 {
     NSInteger       _currentIndex;

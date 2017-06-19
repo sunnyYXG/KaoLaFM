@@ -44,7 +44,6 @@
     _player.delegate=self;
     _player.layer.cornerRadius=(self.height-10)/2;
     _player.layer.masksToBounds=YES;
-    _player.backgroundColor=[UIColor orangeColor];
     //设置volume，不设置默认为0.5
     _player.volume=0.8;
     [self addSubview:_player];
@@ -56,7 +55,6 @@
 #pragma makr---添加歌曲的信息
 -(void)addSongInformation
 {
-    
     _name = [[UILabel alloc]initWithFrame:CGRectMake(_player.right + 10, 5, SCREEN_WIDTH/3 * 2 - _player.right - 20, (self.height - 15)/2)];
     
     _Author = [[UILabel alloc]initWithFrame:CGRectMake(_player.right + 10, _name.bottom + 5, _name.width, _name.height)];
@@ -66,8 +64,6 @@
 
     _name.textColor = [UIColor whiteColor];
     _Author.textColor = [UIColor whiteColor];
-//    _Author.backgroundColor = [UIColor orangeColor];
-//    _name.backgroundColor = [UIColor orangeColor];
     _Author.text = @"作者";
     _name.text = @"姓名";
 

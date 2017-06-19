@@ -13,6 +13,4 @@
 
 @property(nonatomic)YXGAVPlayer *player;
 
-- (void)setInfoWith:(NSDictionary *)dic;
-
 @end

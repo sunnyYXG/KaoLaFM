@@ -72,9 +72,7 @@
 		64853D991ED477A800D05788 /* HomeTJMenuView.m in Sources */ = {isa = PBXBuildFile; fileRef = 64853D981ED477A800D05788 /* HomeTJMenuView.m */; };
 		64C370D81ED31D0A00EC366D /* SelectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 64C370D71ED31D0A00EC366D /* SelectionCell.m */; };
 		64C370DB1ED3271300EC366D /* SelectionCellFrame.m in Sources */ = {isa = PBXBuildFile; fileRef = 64C370DA1ED3271300EC366D /* SelectionCellFrame.m */; };
-		64CEE6331EEBFA62005039FB /* KLFMViewVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 64CEE6321EEBFA62005039FB /* KLFMViewVC.m */; };
 		64CEE6361EEC0E1A005039FB /* BaseNavigationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 64CEE6351EEC0E1A005039FB /* BaseNavigationViewController.m */; };
-		64CEE63C1EEC2099005039FB /* KLFMOtherVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 64CEE63B1EEC2099005039FB /* KLFMOtherVC.m */; };
 		64E99F651EECFC0200CBC205 /* MainTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 64E99F641EECFC0200CBC205 /* MainTabBarController.m */; };
 		64F927181ED0775900C2F424 /* KLFMLauchMovieVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 64F927151ED0775900C2F424 /* KLFMLauchMovieVC.m */; };
 /* End PBXBuildFile section */
@@ -234,12 +232,8 @@
 		64C370D71ED31D0A00EC366D /* SelectionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelectionCell.m; sourceTree = "<group>"; };
 		64C370D91ED3271300EC366D /* SelectionCellFrame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelectionCellFrame.h; sourceTree = "<group>"; };
 		64C370DA1ED3271300EC366D /* SelectionCellFrame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelectionCellFrame.m; sourceTree = "<group>"; };
-		64CEE6311EEBFA62005039FB /* KLFMViewVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KLFMViewVC.h; sourceTree = "<group>"; };
-		64CEE6321EEBFA62005039FB /* KLFMViewVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KLFMViewVC.m; sourceTree = "<group>"; };
 		64CEE6341EEC0E1A005039FB /* BaseNavigationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseNavigationViewController.h; sourceTree = "<group>"; };
 		64CEE6351EEC0E1A005039FB /* BaseNavigationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseNavigationViewController.m; sourceTree = "<group>"; };
-		64CEE63A1EEC2099005039FB /* KLFMOtherVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KLFMOtherVC.h; sourceTree = "<group>"; };
-		64CEE63B1EEC2099005039FB /* KLFMOtherVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KLFMOtherVC.m; sourceTree = "<group>"; };
 		64E99F631EECFC0200CBC205 /* MainTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainTabBarController.h; sourceTree = "<group>"; };
 		64E99F641EECFC0200CBC205 /* MainTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainTabBarController.m; sourceTree = "<group>"; };
 		64F927141ED0775900C2F424 /* KLFMLauchMovieVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KLFMLauchMovieVC.h; sourceTree = "<group>"; };
@@ -293,10 +287,6 @@
 			children = (
 				0D352D1B1ECD347500447E1B /* KLFMSelectionVC.h */,
 				0D352D1C1ECD347500447E1B /* KLFMSelectionVC.m */,
-				64CEE6311EEBFA62005039FB /* KLFMViewVC.h */,
-				64CEE6321EEBFA62005039FB /* KLFMViewVC.m */,
-				64CEE63A1EEC2099005039FB /* KLFMOtherVC.h */,
-				64CEE63B1EEC2099005039FB /* KLFMOtherVC.m */,
 			);
 			path = Control;
 			sourceTree = "<group>";
@@ -1071,7 +1061,6 @@
 				0D352D521ECD493D00447E1B /* SelectionDataList.m in Sources */,
 				0D401BB31EF10EEA0076CE5D /* KLFMCategoryVC.m in Sources */,
 				0D352D831ECD7BA400447E1B /* TabbarDataList.m in Sources */,
-				64CEE63C1EEC2099005039FB /* KLFMOtherVC.m in Sources */,
 				0DDFE8C31EF37CD500BDE04B /* BroadResult.m in Sources */,
 				0D401BAB1EF1099D0076CE5D /* KLFMAnchorVC.m in Sources */,
 				64CEE6361EEC0E1A005039FB /* BaseNavigationViewController.m in Sources */,
@@ -1087,7 +1076,6 @@
 				0DB24B5D1ECC315800ABF4CA /* BaseRequest.m in Sources */,
 				0D401B881EF0BF860076CE5D /* ColorHelper.m in Sources */,
 				64C370D81ED31D0A00EC366D /* SelectionCell.m in Sources */,
-				64CEE6331EEBFA62005039FB /* KLFMViewVC.m in Sources */,
 				0D6095DA1EF799010028666F /* AppNotification.m in Sources */,
 				0D401BC41EF113CD0076CE5D /* CategoryModel.m in Sources */,
 				0D352D561ECD4C6600447E1B /* SelectionModel.m in Sources */,
