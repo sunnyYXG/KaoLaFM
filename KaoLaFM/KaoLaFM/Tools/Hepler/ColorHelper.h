@@ -45,6 +45,10 @@
 
 + (UIColor *)newLightTextColor;
 + (UIColor *)appLineColor;
+
++ (UIColor *)playerBGViewColor;
+
+
 + (UIView *)lineView;
 + (UILabel *)labelWithColor:(UIColor *)color Font:(UIFont *)font;
 

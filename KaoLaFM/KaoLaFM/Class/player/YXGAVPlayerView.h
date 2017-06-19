@@ -8,8 +8,11 @@
 
 #import <UIKit/UIKit.h>
 @class YXGAVPlayer;
-@interface playerView : UIView
+
+@interface YXGAVPlayerView : UIView
 
 @property(nonatomic)YXGAVPlayer *player;
+
+- (void)setInfoWithAuthor:(NSString *)Author name:(NSString *)name playUrl:(NSString *)url;
 
 @end

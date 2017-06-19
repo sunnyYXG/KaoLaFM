@@ -7,7 +7,6 @@
 //
 
 #import "BaseViewController.h"
-#import "singleton.h"
 @interface BaseViewController ()
 
 
@@ -31,15 +30,8 @@
     [UIView setAnimationsEnabled:YES];
     self.automaticallyAdjustsScrollViewInsets = NO;
     self.edgesForExtendedLayout = UIRectEdgeAll;
-//    [self.view addSubview:self.navBar];
     [self initRequest];
     [self loadData];
-    singleton *sing = [singleton singletonSharedInstance];
-    self.playerView = sing.playerView;
-    
-    UIWindow *window = [UIApplication sharedApplication].keyWindow;
-    [window addSubview:self.playerView];
-
     // Do any additional setup after loading the view, typically from a nib.
 }
 
@@ -173,6 +165,11 @@
     [super viewWillAppear:animated];
     [self.navigationController setNavigationBarHidden:YES];
     
+    //添加播放器
+    SingletonManager *singleton = [SingletonManager SingletonManagerSharedInstance];
+    self.playerView = singleton.playerView;
+    UIWindow *window = [UIApplication sharedApplication].keyWindow;
+    [window addSubview:self.playerView];
 
 }
 

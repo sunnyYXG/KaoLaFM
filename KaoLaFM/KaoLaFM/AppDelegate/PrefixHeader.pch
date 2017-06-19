@@ -38,6 +38,7 @@
 #import "SVProgressHUD.h"
 //
 
+#import "SingletonManager.h"
 
 
 #endif /* PrefixHeader_pch */

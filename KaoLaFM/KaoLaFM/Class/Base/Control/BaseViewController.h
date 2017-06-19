@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "KLFMNavBar.h"
-#import "playerView.h"
+#import "YXGAVPlayerView.h"
 
 @class BaseRequest,KLFMNavigateView;
 
@@ -16,7 +16,7 @@
 
 @property (nonatomic) BaseRequest *request;
 
-@property (nonatomic) playerView *playerView;
+@property (nonatomic) YXGAVPlayerView *playerView;
 @property (nonatomic,strong) KLFMNavBar *navBar;
 
 

@@ -137,7 +137,7 @@
 #pragma mark - SelectionCellPlayDelegate
 -(void)playClick:(NSDictionary *)dic{
     DDLog(@"play:%@",dic);
-    [self.playerView.player playNewWithUrl:dic[@"mp3PlayUrl"]];
+    [self.playerView setInfoWithAuthor:dic[@"albumName"] name:dic[@"dataReport"] playUrl:dic[@"mp3PlayUrl"]];
 }
 /*
 #pragma mark - Navigation

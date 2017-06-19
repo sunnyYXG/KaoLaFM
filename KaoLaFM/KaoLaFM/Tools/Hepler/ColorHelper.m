@@ -108,6 +108,11 @@
 + (UIColor *)appLineColor{
     return [UIColor colorWithRed:0xF6/255.0 green:0xF6/255.0 blue:0xF6/255.0 alpha:1];
 }
+
++ (UIColor *)playerBGViewColor{
+    return YUKEYRGB(88, 88, 88, 1);
+}
+
 + (UIView *)lineView{
     UIView *view = [[UIView alloc] init];
     view.backgroundColor = [UIColor colorWithRed:0xF6/255.0 green:0xF6/255.0 blue:0xF6/255.0 alpha:1];
