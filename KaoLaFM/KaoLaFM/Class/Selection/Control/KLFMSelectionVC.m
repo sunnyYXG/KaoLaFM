@@ -92,9 +92,14 @@
     [self.request yxg_sendRequestWithCompletion:^(id response, BOOL success, NSString *message) {
         [self stopProgress];
         [block_self.tableView.mj_header endRefreshing];
-        block_self.baseModel = (SelectionBaseClass *)[SelectionBaseClass yy_modelWithJSON:response];
-        [SelectionModel ModelResolver:block_self.baseModel VC:block_self];
-        [block_self yxg_reloadData];
+        if (success) {
+            block_self.baseModel = (SelectionBaseClass *)[SelectionBaseClass yy_modelWithJSON:response];
+            [SelectionModel ModelResolver:block_self.baseModel VC:block_self];
+            [block_self yxg_reloadData];
+        }else{
+            [block_self showError:@"数据在火星..."];
+        }
+        
     }];
 }
 

@@ -62,22 +62,36 @@
     [self.request yxg_sendRequestWithCompletion:^(id response, BOOL success, NSString *message) {
         [self stopProgress];
         [block_self.tableView.mj_header endRefreshing];
-        block_self.baseModel = (CategoryBaseClass *)[CategoryBaseClass yy_modelWithJSON:response];
-        [CategoryModel ModelResolver:block_self.baseModel VC:block_self type:CategoryDataType_hot];
+        if (success) {
+            block_self.baseModel = (CategoryBaseClass *)[CategoryBaseClass yy_modelWithJSON:response];
+            [CategoryModel ModelResolver:block_self.baseModel VC:block_self type:CategoryDataType_hot];
+        } else {
+            [block_self showError:@"数据在火星..."];
+        }
     }];
     
     [self.otherRequest yxg_sendRequestWithCompletion:^(id response, BOOL success, NSString *message) {
         [self stopProgress];
         [block_self.tableView.mj_header endRefreshing];
-        block_self.baseModel = (CategoryBaseClass *)[CategoryBaseClass yy_modelWithJSON:response];
-        [CategoryModel ModelResolver:block_self.baseModel VC:block_self type:CategoryDataType_other];
+        if (success) {
+            block_self.baseModel = (CategoryBaseClass *)[CategoryBaseClass yy_modelWithJSON:response];
+            [CategoryModel ModelResolver:block_self.baseModel VC:block_self type:CategoryDataType_other];
+        } else {
+            [block_self showError:@"数据在火星..."];
+        }
+
     }];
     
     [self.broadRequest yxg_sendRequestWithCompletion:^(id response, BOOL success, NSString *message) {
         [self stopProgress];
         [block_self.tableView.mj_header endRefreshing];
-        block_self.broadModel = (BroadBaseClass *)[BroadBaseClass yy_modelWithJSON:response];
-        [CategoryModel ModelResolverWithBroadModel:block_self.broadModel VC:block_self];
+        if (success) {
+            block_self.broadModel = (BroadBaseClass *)[BroadBaseClass yy_modelWithJSON:response];
+            [CategoryModel ModelResolverWithBroadModel:block_self.broadModel VC:block_self];
+        } else {
+            [block_self showError:@"数据在火星..."];
+        }
+
     }];
 }
 -(void)setHotArr:(NSArray *)hotArr{
