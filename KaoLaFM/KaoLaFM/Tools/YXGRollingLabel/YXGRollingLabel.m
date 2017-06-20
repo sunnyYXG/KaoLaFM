@@ -11,35 +11,28 @@
 #define KSelfWith self.frame.size.width
 #define KSelfHeight self.frame.size.height
 
-#define kFont [UIFont systemFontOfSize:18]
+#define kFont [UIFont systemFontOfSize:16.0f]
 
 @implementation YXGRollingLabel
 
--(id)initWithFrame:(CGRect)frame textArray:(NSArray *)textArray{
+
+
+-(instancetype)initWithFrame:(CGRect)frame{
     if(self = [super initWithFrame:frame]){
-        _textArray = [NSMutableArray arrayWithArray:textArray];
+        NSString *str = @"01234567890123456789";
+        _textArray = [NSMutableArray arrayWithObjects:str, nil];
+        _font = kFont;
+        _textColor = [UIColor whiteColor];
         [self commonInit];
     }
     return self;
 }
-
-
--(id)initWithFrame:(CGRect)frame textArray:(NSArray *)textArray font:(UIFont *)font textColor:(UIColor *)textColor{
-    if(self = [super initWithFrame:frame]){
-        _textArray = [NSMutableArray arrayWithArray:textArray];
-        _font = font;
-        _textColor = textColor;
-//        [self commonInit];
-    }
-    return self;
-}
-
 -(void)commonInit{
-    
+    [self stopTimer];
     for (UIView *view in self.subviews) {
         [view removeFromSuperview];
     }
-    _CanRolling = NO;
+    _CanRolling = YES;
     
     _currentIndex = 0;
     _textRectArray = [NSMutableArray arrayWithCapacity:_textArray.count];
@@ -47,44 +40,15 @@
     self.offsetX = 0;
     self.internalWidth = KSelfWith / 3;
     self.speed = 0.8f;
-    self.orientation = RollingOrientationNone;
+    self.orientation = RollingOrientationLeft;
     self.clipsToBounds = YES;
     
-    //Get all the auto layout Size of arrayText;
     CGSize maxSize = CGSizeMake(CGFLOAT_MAX, KSelfHeight);
     for (int i = 0; i < _textArray.count; i++) {
         CGRect textRect = [((NSString *)_textArray[i]) boundingRectWithSize:maxSize options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName:(_font ? _font : kFont)} context:nil];
         [_textRectArray addObject:[NSValue valueWithCGRect:textRect]];
     } 
     
-    //Add Subviews
-    if(_textArray.count == 1){
-        CGRect rect = [((NSValue *)[_textRectArray firstObject]) CGRectValue];
-        if(rect.size.width > KSelfWith){
-            _CanRolling = YES;
-        }else{
-            //Add Another Single UILabel which won't roll.
-            _CanRolling = NO;
-            UILabel *label = [[UILabel alloc] initWithFrame:
-                              CGRectMake((KSelfWith - rect.size.width) / 2, (KSelfHeight - rect.size.height) / 2, rect.size.width, rect.size.height)];
-            label.numberOfLines = 1;
-            label.textAlignment = NSTextAlignmentCenter;
-            label.text = [_textArray firstObject];
-            label.userInteractionEnabled = YES;
-            label.textColor = _textColor ? _textColor : [UIColor blackColor];
-            label.font = _font ? _font : kFont;
-            label.tag = 100 + 2;
-            [self addSubview:label];
-            
-            UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(labelTap:)];
-            [label addGestureRecognizer:tapGesture];
-        }
-    }else{  //>1
-        _CanRolling = YES;
-    }
-    //Add Two UILabels which can roll
-    if(_CanRolling){
-        self.orientation = RollingOrientationLeft;
         for (int i = 0; i < kNumberOfLabel; i++) {
             _labels[i] = [[UILabel alloc] init];
             _labels[i].numberOfLines = 1;
@@ -92,36 +56,32 @@
             _labels[i].tag = 100 + i;
             _labels[i].userInteractionEnabled = YES;
             _labels[i].textColor = _textColor ? _textColor : [UIColor whiteColor];
-            _labels[i].font = _font ? _font : kFont;
+            _labels[i].font = kFont;
             [self addSubview:_labels[i]];
             
             UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(labelTap:)];
             [_labels[i] addGestureRecognizer:tapGesture];
         }
-//        [self startTimer];
-    }
-//    [self pauseTimer];
+    [self startTimer];
 }
 
 - (void)stringWithTitle:(NSString *)string{
-    [self startTimer];
     [_textArray replaceObjectAtIndex:0 withObject:string];
     [self commonInit];
-//    [self beginTimer];
 }
-//UILabel Tap Event
+
 -(void)labelTap:(UITapGestureRecognizer *)gesture{
     NSInteger tag = ((UILabel *)[gesture view]).tag - 100;
     NSInteger index;
-    if(tag == 0){   //The First One
+    if(tag == 0){
         index = _currentIndex;
-    }else if (tag == 1){  //The Next One
+    }else if (tag == 1){
         index = (_currentIndex + 1) % _textArray.count;
-    }else{  //Only One Label
+    }else{
         index = _currentIndex;
     }
         
-    //Label Click Block
+    
     if(self.labelClickBlock){
         self.labelClickBlock(index);
     }
@@ -164,37 +124,14 @@
     CGRect firstRect = [((NSValue *)[labelArray firstObject]) CGRectValue];
     CGRect lastRect = [((NSValue *)[labelArray lastObject]) CGRectValue];
     
-    NSInteger sign; //sign for From Left To Right or From Right To Left.
+    NSInteger sign;
     sign = (self.orientation == RollingOrientationLeft) ? 1 : -1;
-    self.offsetX =  self.offsetX - sign * self.speed;   //frame.origin.X of first Rect
+    self.offsetX =  self.offsetX - sign * self.speed;
     
-    // Next Label's OffsetX:
-    // There is always internalWith's distance between Two Labels in Width.
-    // Like : [firstLabel][internalWidth][lastLabel] or Left-side right
-    CGFloat nextOffX = self.offsetX + sign * (((self.orientation == RollingOrientationLeft)? firstRect.size.width : lastRect.size.width) + self.internalWidth);   //frame.origin.X of last Rect
+    CGFloat nextOffX = self.offsetX + sign * (((self.orientation == RollingOrientationLeft)? firstRect.size.width : lastRect.size.width) + self.internalWidth);
     
-    
-    //get reseted labelTextArray
     NSArray *labelTextArray = [self GetLabelTextArrayAtIndex:_currentIndex];
     
-    //        from Right to Left
-    //  <===============================
-    //firstLabel is always on the left.
-    //if the offsetX is bigger than Width of the firstLabel , offsetX and nextOffX
-    //      are both divided by speed for every _timer's Intervel(0.02);
-    //otherwise when firstLabel is invisible, Set FirstLabel's offsetX with LastLabel's
-    //      and change next two Labels whitch will be visible.
-    
-    //         from Left to Right
-    //  ===============================>
-    //firstLabel is always on the right.
-    //if the offsetX is bigger than Width of the View,        offsetX and nextOffX
-    //      are both added by speed for every _timer's Intervel(0.02);
-    //otherwise when firstLabel is invisible, Set FirstLabel's offsetX with LastLabel's
-    //      and change next two Labels whitch will be visible.
-    
-    //So The next time , Two Labels is exchanged;
-    //Set Two Label's Background and you'll observe it clearly;
     
     if((self.offsetX > -firstRect.size.width && self.orientation == RollingOrientationLeft) ||
            (self.offsetX < KSelfWith && self.orientation == RollingOrientationRight) ){
@@ -235,7 +172,6 @@
 
 
 #pragma setter and getter
-//the speed should be setted bigger than 0 and no smaller than 5;
 -(void)setSpeed:(CGFloat)speed{
     if(speed > 0){
         _speed = speed;

@@ -152,7 +152,7 @@
     //添加数据缓存的监听
     [self addNetDataStatusObserver];
     
-    [self startIconViewAnimate];
+//    [self startIconViewAnimate];
     [self resumeAnimation];
 
 }

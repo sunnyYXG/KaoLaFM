@@ -43,6 +43,8 @@
  */
 -(void)lastSong;
 
+- (void)startIconViewAnimate;
+
 -(void)playNewWith:(NSDictionary *)dic;
 @property (nonatomic)NSString *urlString;
 @end

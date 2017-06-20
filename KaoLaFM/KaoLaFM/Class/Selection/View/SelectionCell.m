@@ -27,7 +27,7 @@
     UILabel *title = [[UILabel alloc]initWithFrame:cellFrame.titleRect];
     title.text = cellFrame.cellModel.name;
 //    title.backgroundColor = [UIColor orangeColor];
-    
+
     UIView *line = [[UIView alloc]initWithFrame:cellFrame.lineRect];
     line.backgroundColor = UIColorFromRGB(248, 248, 248);
     [self addSubview:line];
@@ -94,21 +94,41 @@
 }
 
 - (void)player:(UIButton *)sender{
-    if (!sender.selected) {
-        sender.selected = YES;
-        [sender setImage:[UIImage imageNamed:@"btn_player_pause_on"] forState:UIControlStateNormal];
+    UIButton *button = (UIButton *)[self viewWithTag:sender.tag];
+    NSInteger n;
+    if (!button.selected) {
         
         [self.last_btn setImage:[UIImage imageNamed:@"btn_player_play_on"] forState:UIControlStateNormal];
         self.last_btn.selected = NO;
-        self.last_btn = sender;
+
+        button.selected = YES;
+        [button setImage:[UIImage imageNamed:@"btn_player_pause_on"] forState:UIControlStateNormal];
+        n = 1;
         
-        NSDictionary *dic = self.dataList[sender.tag - 100];
-        [AppNotification send:NOTIFICATION_TYPE_PALYER userInfo:@{PALYER_KEY:dic}];
 
     }else{
-        sender.selected = NO;
-        [sender setImage:[UIImage imageNamed:@"btn_player_play_on"] forState:UIControlStateNormal];
+        [self.last_btn setImage:[UIImage imageNamed:@"btn_player_play_on"] forState:UIControlStateNormal];
+        self.last_btn.selected = YES;
+
+        button.selected = NO;
+        [button setImage:[UIImage imageNamed:@"btn_player_play_on"] forState:UIControlStateNormal];
+        n = 0;
     }
+    
+    self.last_btn = button;
+    NSDictionary *dic = self.dataList[button.tag - 100];
+
+    NSString *m;
+    if (self.albumId == [dic[@"albumId"] longLongValue]) {
+        m = @"1";
+    } else {
+        m = @"0";
+        self.albumId = [dic[@"albumId"] longLongValue];
+    }
+    
+    [AppNotification send:NOTIFICATION_TYPE_PALYER userInfo:@{PALYER_KEY:dic,@"on":[NSString stringWithFormat:@"%ld",n],@"m":m}];
+
+
 }
 
 - (void)SelectionCellComponentType_Single:(SelectionCellFrame *)cellFrame{

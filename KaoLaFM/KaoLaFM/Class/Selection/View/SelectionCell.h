@@ -17,4 +17,5 @@
 
 @property (nonatomic) NSArray *dataList;
 @property (nonatomic)UIButton *last_btn;//记录上次选中button
+@property (nonatomic) u_long albumId;
 @end

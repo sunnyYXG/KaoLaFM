@@ -24,6 +24,7 @@
 
 #define kUserDefaultsCookie @"cookies"
 
+#define Font_BASE SCREEN_WIDTH/375
 ///判断是否是ios7
 #define isIOS7 (DeviceSystemMajorVersion()< 7 ? NO:YES)
 ///判断是否是ios8

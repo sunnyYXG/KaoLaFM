@@ -110,7 +110,7 @@
 }
 
 + (UIColor *)playerBGViewColor{
-    return YUKEYRGB(88, 88, 88, 1);
+    return YUKEYRGB(168, 168, 168, 1);
 }
 
 + (UIView *)lineView{
