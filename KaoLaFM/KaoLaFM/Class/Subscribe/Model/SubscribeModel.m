@@ -7,7 +7,7 @@
 //
 
 #import "SubscribeModel.h"
-#include "SubscribeDataModels.h"
+#import "SubscribeDataModels.h"
 #import "KLFMSubscribeVC.h"
 #import "SubscribeCellFrame.h"
 
