@@ -37,5 +37,10 @@
  */
 #define discover_url @"http://api.kaolafm.com/api/v4/labelinfo/get?"
 
+/**
+ 订阅
+ */
+#define subscribe_url @"http://api.kaolafm.com/api/v4/user/like?"
+
 
 #endif /* BaseUrl_h */

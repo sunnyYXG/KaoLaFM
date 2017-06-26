@@ -7,7 +7,10 @@
 //  订阅
 
 #import "BaseTableViewController.h"
+@class SubscribeBaseClass;
 
 @interface KLFMSubscribeVC : BaseTableViewController
 
+@property (nonatomic) SubscribeBaseClass *baseModel;
+@property (nonatomic) NSArray *dataList;
 @end

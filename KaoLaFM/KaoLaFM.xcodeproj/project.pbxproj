@@ -7,6 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0D1ACA0B1F00AD27008282B7 /* KLFMSubscribeVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D1AC9FE1F00AD27008282B7 /* KLFMSubscribeVC.m */; };
+		0D1ACA0F1F00AD27008282B7 /* KLFMSubscribeReq.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D1ACA091F00AD27008282B7 /* KLFMSubscribeReq.m */; };
+		0D1ACA181F00AD9B008282B7 /* SubscribeBaseClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D1ACA121F00AD9B008282B7 /* SubscribeBaseClass.m */; };
+		0D1ACA191F00AD9B008282B7 /* SubscribeDataList.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D1ACA141F00AD9B008282B7 /* SubscribeDataList.m */; };
+		0D1ACA1A1F00AD9B008282B7 /* SubscribeResult.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D1ACA171F00AD9B008282B7 /* SubscribeResult.m */; };
+		0D1ACA1D1F00ADB6008282B7 /* SubscribeModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D1ACA1C1F00ADB6008282B7 /* SubscribeModel.m */; };
+		0D1ACA201F00B2BD008282B7 /* SubscribeCellFrame.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D1ACA1F1F00B2BD008282B7 /* SubscribeCellFrame.m */; };
+		0D1ACA231F00D22C008282B7 /* SubscribeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D1ACA221F00D22C008282B7 /* SubscribeCell.m */; };
 		0D352D181ECD343200447E1B /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0D352D141ECD343200447E1B /* InfoPlist.strings */; };
 		0D352D191ECD343200447E1B /* KLFMAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D352D161ECD343200447E1B /* KLFMAppDelegate.m */; };
 		0D352D1F1ECD347500447E1B /* KLFMSelectionVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D352D1C1ECD347500447E1B /* KLFMSelectionVC.m */; };
@@ -29,7 +37,6 @@
 		0D352D831ECD7BA400447E1B /* TabbarDataList.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D352D7E1ECD7BA400447E1B /* TabbarDataList.m */; };
 		0D352D841ECD7BA400447E1B /* TabbarResult.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D352D811ECD7BA400447E1B /* TabbarResult.m */; };
 		0D401B881EF0BF860076CE5D /* ColorHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D401B871EF0BF860076CE5D /* ColorHelper.m */; };
-		0D401BA21EF1091D0076CE5D /* KLFMSubscribeVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D401BA11EF1091D0076CE5D /* KLFMSubscribeVC.m */; };
 		0D401BA81EF109780076CE5D /* KLFMDiscoverVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D401BA71EF109780076CE5D /* KLFMDiscoverVC.m */; };
 		0D401BAB1EF1099D0076CE5D /* KLFMAnchorVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D401BAA1EF1099D0076CE5D /* KLFMAnchorVC.m */; };
 		0D401BB31EF10EEA0076CE5D /* KLFMCategoryVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D401BAF1EF10EEA0076CE5D /* KLFMCategoryVC.m */; };
@@ -96,6 +103,23 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0D1AC9FD1F00AD27008282B7 /* KLFMSubscribeVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KLFMSubscribeVC.h; sourceTree = "<group>"; };
+		0D1AC9FE1F00AD27008282B7 /* KLFMSubscribeVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KLFMSubscribeVC.m; sourceTree = "<group>"; };
+		0D1ACA081F00AD27008282B7 /* KLFMSubscribeReq.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KLFMSubscribeReq.h; sourceTree = "<group>"; };
+		0D1ACA091F00AD27008282B7 /* KLFMSubscribeReq.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KLFMSubscribeReq.m; sourceTree = "<group>"; };
+		0D1ACA111F00AD9B008282B7 /* SubscribeBaseClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SubscribeBaseClass.h; sourceTree = "<group>"; };
+		0D1ACA121F00AD9B008282B7 /* SubscribeBaseClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SubscribeBaseClass.m; sourceTree = "<group>"; };
+		0D1ACA131F00AD9B008282B7 /* SubscribeDataList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SubscribeDataList.h; sourceTree = "<group>"; };
+		0D1ACA141F00AD9B008282B7 /* SubscribeDataList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SubscribeDataList.m; sourceTree = "<group>"; };
+		0D1ACA151F00AD9B008282B7 /* SubscribeDataModels.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SubscribeDataModels.h; sourceTree = "<group>"; };
+		0D1ACA161F00AD9B008282B7 /* SubscribeResult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SubscribeResult.h; sourceTree = "<group>"; };
+		0D1ACA171F00AD9B008282B7 /* SubscribeResult.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SubscribeResult.m; sourceTree = "<group>"; };
+		0D1ACA1B1F00ADB6008282B7 /* SubscribeModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SubscribeModel.h; sourceTree = "<group>"; };
+		0D1ACA1C1F00ADB6008282B7 /* SubscribeModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SubscribeModel.m; sourceTree = "<group>"; };
+		0D1ACA1E1F00B2BD008282B7 /* SubscribeCellFrame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SubscribeCellFrame.h; sourceTree = "<group>"; };
+		0D1ACA1F1F00B2BD008282B7 /* SubscribeCellFrame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SubscribeCellFrame.m; sourceTree = "<group>"; };
+		0D1ACA211F00D22C008282B7 /* SubscribeCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SubscribeCell.h; sourceTree = "<group>"; };
+		0D1ACA221F00D22C008282B7 /* SubscribeCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SubscribeCell.m; sourceTree = "<group>"; };
 		0D352D121ECD343200447E1B /* BaseDefine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseDefine.h; sourceTree = "<group>"; };
 		0D352D131ECD343200447E1B /* BaseUrl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseUrl.h; sourceTree = "<group>"; };
 		0D352D141ECD343200447E1B /* InfoPlist.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = InfoPlist.strings; sourceTree = "<group>"; };
@@ -144,8 +168,6 @@
 		0D352D811ECD7BA400447E1B /* TabbarResult.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TabbarResult.m; sourceTree = "<group>"; };
 		0D401B861EF0BF860076CE5D /* ColorHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ColorHelper.h; sourceTree = "<group>"; };
 		0D401B871EF0BF860076CE5D /* ColorHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ColorHelper.m; sourceTree = "<group>"; };
-		0D401BA01EF1091D0076CE5D /* KLFMSubscribeVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KLFMSubscribeVC.h; sourceTree = "<group>"; };
-		0D401BA11EF1091D0076CE5D /* KLFMSubscribeVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KLFMSubscribeVC.m; sourceTree = "<group>"; };
 		0D401BA61EF109780076CE5D /* KLFMDiscoverVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KLFMDiscoverVC.h; sourceTree = "<group>"; };
 		0D401BA71EF109780076CE5D /* KLFMDiscoverVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KLFMDiscoverVC.m; sourceTree = "<group>"; };
 		0D401BA91EF1099D0076CE5D /* KLFMAnchorVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KLFMAnchorVC.h; sourceTree = "<group>"; };
@@ -271,6 +293,70 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0D1AC9FB1F00AD27008282B7 /* Subscribe */ = {
+			isa = PBXGroup;
+			children = (
+				0D1AC9FC1F00AD27008282B7 /* Control */,
+				0D1AC9FF1F00AD27008282B7 /* Model */,
+				0D1ACA071F00AD27008282B7 /* Request */,
+				0D1ACA0A1F00AD27008282B7 /* View */,
+			);
+			path = Subscribe;
+			sourceTree = "<group>";
+		};
+		0D1AC9FC1F00AD27008282B7 /* Control */ = {
+			isa = PBXGroup;
+			children = (
+				0D1AC9FD1F00AD27008282B7 /* KLFMSubscribeVC.h */,
+				0D1AC9FE1F00AD27008282B7 /* KLFMSubscribeVC.m */,
+			);
+			path = Control;
+			sourceTree = "<group>";
+		};
+		0D1AC9FF1F00AD27008282B7 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				0D1ACA101F00AD9B008282B7 /* DataModel */,
+				0D1ACA1B1F00ADB6008282B7 /* SubscribeModel.h */,
+				0D1ACA1C1F00ADB6008282B7 /* SubscribeModel.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		0D1ACA071F00AD27008282B7 /* Request */ = {
+			isa = PBXGroup;
+			children = (
+				0D1ACA081F00AD27008282B7 /* KLFMSubscribeReq.h */,
+				0D1ACA091F00AD27008282B7 /* KLFMSubscribeReq.m */,
+			);
+			path = Request;
+			sourceTree = "<group>";
+		};
+		0D1ACA0A1F00AD27008282B7 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				0D1ACA1E1F00B2BD008282B7 /* SubscribeCellFrame.h */,
+				0D1ACA1F1F00B2BD008282B7 /* SubscribeCellFrame.m */,
+				0D1ACA211F00D22C008282B7 /* SubscribeCell.h */,
+				0D1ACA221F00D22C008282B7 /* SubscribeCell.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		0D1ACA101F00AD9B008282B7 /* DataModel */ = {
+			isa = PBXGroup;
+			children = (
+				0D1ACA111F00AD9B008282B7 /* SubscribeBaseClass.h */,
+				0D1ACA121F00AD9B008282B7 /* SubscribeBaseClass.m */,
+				0D1ACA131F00AD9B008282B7 /* SubscribeDataList.h */,
+				0D1ACA141F00AD9B008282B7 /* SubscribeDataList.m */,
+				0D1ACA151F00AD9B008282B7 /* SubscribeDataModels.h */,
+				0D1ACA161F00AD9B008282B7 /* SubscribeResult.h */,
+				0D1ACA171F00AD9B008282B7 /* SubscribeResult.m */,
+			);
+			path = DataModel;
+			sourceTree = "<group>";
+		};
 		0D352D111ECD343200447E1B /* AppDelegate */ = {
 			isa = PBXGroup;
 			children = (
@@ -427,48 +513,6 @@
 			children = (
 				0D352D741ECD799100447E1B /* KLFMNavigateView.h */,
 				0D352D751ECD799100447E1B /* KLFMNavigateView.m */,
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		0D401B8C1EF108630076CE5D /* Subscribe */ = {
-			isa = PBXGroup;
-			children = (
-				0D401B8D1EF108630076CE5D /* Control */,
-				0D401B8E1EF108630076CE5D /* Model */,
-				0D401B8F1EF108630076CE5D /* Request */,
-				0D401B901EF108630076CE5D /* View */,
-			);
-			name = Subscribe;
-			path = KLFMTabbar/Subscribe;
-			sourceTree = "<group>";
-		};
-		0D401B8D1EF108630076CE5D /* Control */ = {
-			isa = PBXGroup;
-			children = (
-				0D401BA01EF1091D0076CE5D /* KLFMSubscribeVC.h */,
-				0D401BA11EF1091D0076CE5D /* KLFMSubscribeVC.m */,
-			);
-			path = Control;
-			sourceTree = "<group>";
-		};
-		0D401B8E1EF108630076CE5D /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
-		0D401B8F1EF108630076CE5D /* Request */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Request;
-			sourceTree = "<group>";
-		};
-		0D401B901EF108630076CE5D /* View */ = {
-			isa = PBXGroup;
-			children = (
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -715,7 +759,7 @@
 			children = (
 				6412F5BA1EF54AD000198C55 /* player */,
 				0D352D6D1ECD799100447E1B /* KLFMTabbar */,
-				0D401B8C1EF108630076CE5D /* Subscribe */,
+				0D1AC9FB1F00AD27008282B7 /* Subscribe */,
 				0DB24B621ECC336D00ABF4CA /* Selection */,
 				0D401BAC1EF10EEA0076CE5D /* category */,
 				0D401B9B1EF108830076CE5D /* discover */,
@@ -1037,10 +1081,12 @@
 			files = (
 				0D352D221ECD378500447E1B /* KLFMSelectionReq.m in Sources */,
 				0D352D511ECD493D00447E1B /* SelectionBaseClass.m in Sources */,
+				0D1ACA181F00AD9B008282B7 /* SubscribeBaseClass.m in Sources */,
 				64E99F651EECFC0200CBC205 /* MainTabBarController.m in Sources */,
 				0D352D371ECD3E5400447E1B /* CycleBannerCell.m in Sources */,
 				0DDFE8C11EF37CD500BDE04B /* BroadBaseClass.m in Sources */,
 				0D57C7CB1EF3C3320064603E /* DiscoverResult.m in Sources */,
+				0D1ACA1A1F00AD9B008282B7 /* SubscribeResult.m in Sources */,
 				0DB24B601ECC315800ABF4CA /* BaseTableViewCell.m in Sources */,
 				0D57C7CE1EF3C4070064603E /* DiscoverModel.m in Sources */,
 				0DDFE8B51EF37B8700BDE04B /* CategoryBroadCell.m in Sources */,
@@ -1048,6 +1094,7 @@
 				64C370DB1ED3271300EC366D /* SelectionCellFrame.m in Sources */,
 				0D401BC71EF121050076CE5D /* CategoryCell.m in Sources */,
 				0DB24B5F1ECC315800ABF4CA /* BaseTableView.m in Sources */,
+				0D1ACA0B1F00AD27008282B7 /* KLFMSubscribeVC.m in Sources */,
 				0D401BCA1EF1244E0076CE5D /* CategoryCellFrame.m in Sources */,
 				0D352D531ECD493D00447E1B /* SelectionResult.m in Sources */,
 				0D401BBF1EF112FF0076CE5D /* CategoryBaseClass.m in Sources */,
@@ -1056,6 +1103,7 @@
 				0D352D841ECD7BA400447E1B /* TabbarResult.m in Sources */,
 				0D352D1F1ECD347500447E1B /* KLFMSelectionVC.m in Sources */,
 				0D57C7D41EF3C71E0064603E /* DiscoverCellFrame.m in Sources */,
+				0D1ACA201F00B2BD008282B7 /* SubscribeCellFrame.m in Sources */,
 				0D6095E11EF7CB560028666F /* YXGRollingLabel.m in Sources */,
 				0D352D761ECD799100447E1B /* KLFMNavigateVC.m in Sources */,
 				0D352D771ECD799100447E1B /* KLFMNavigateView.m in Sources */,
@@ -1070,6 +1118,7 @@
 				0D5E537F1ED52707009FB1D9 /* KLFMNavBar.m in Sources */,
 				0D352D3B1ECD3E5400447E1B /* SingletonManager.m in Sources */,
 				0D352D351ECD3E5400447E1B /* NSString+Extension.m in Sources */,
+				0D1ACA1D1F00ADB6008282B7 /* SubscribeModel.m in Sources */,
 				0DDFE8B21EF36EB400BDE04B /* CategoryOtherCell.m in Sources */,
 				0DB24B111ECC2D0A00ABF4CA /* main.m in Sources */,
 				0D352D521ECD493D00447E1B /* SelectionDataList.m in Sources */,
@@ -1078,17 +1127,19 @@
 				0DDFE8C31EF37CD500BDE04B /* BroadResult.m in Sources */,
 				0D401BAB1EF1099D0076CE5D /* KLFMAnchorVC.m in Sources */,
 				64CEE6361EEC0E1A005039FB /* BaseNavigationViewController.m in Sources */,
+				0D1ACA0F1F00AD27008282B7 /* KLFMSubscribeReq.m in Sources */,
 				0D352D191ECD343200447E1B /* KLFMAppDelegate.m in Sources */,
 				0D57C7C11EF3C1310064603E /* KLFMDiscoverReq.m in Sources */,
 				0D57C7C91EF3C3320064603E /* DiscoverBaseClass.m in Sources */,
 				0D352D3A1ECD3E5400447E1B /* HelperTools.m in Sources */,
+				0D1ACA231F00D22C008282B7 /* SubscribeCell.m in Sources */,
 				0D352D361ECD3E5400447E1B /* UIView+Addition.m in Sources */,
 				0D352D821ECD7BA400447E1B /* TabbarBaseClass.m in Sources */,
-				0D401BA21EF1091D0076CE5D /* KLFMSubscribeVC.m in Sources */,
 				0D352D391ECD3E5400447E1B /* Factory.m in Sources */,
 				0DB24B5E1ECC315800ABF4CA /* BaseTableHeaderFooterView.m in Sources */,
 				0DB24B5D1ECC315800ABF4CA /* BaseRequest.m in Sources */,
 				0D401B881EF0BF860076CE5D /* ColorHelper.m in Sources */,
+				0D1ACA191F00AD9B008282B7 /* SubscribeDataList.m in Sources */,
 				64C370D81ED31D0A00EC366D /* SelectionCell.m in Sources */,
 				0D6095DA1EF799010028666F /* AppNotification.m in Sources */,
 				0D401BC41EF113CD0076CE5D /* CategoryModel.m in Sources */,

@@ -26,4 +26,8 @@
 + (NSString *) isBlankString:(NSString *)string;
 
 + (NSArray *)rectWithCreateUIWithLeft:(CGFloat)left top:(CGFloat)top num:(NSInteger)n width:(CGFloat)w height:(CGFloat)h Vertical:(CGFloat)vBottom Horizontal:(CGFloat)hBottom  arr:(NSArray *)arr;
+
++ (float) widthForString:(NSString *)value fontSize:(float)fontSize andHeight:(float)height;
++ (float) heightForString:(NSString *)value fontSize:(float)fontSize andWidth:(float)width;
+
 @end
