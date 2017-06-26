@@ -70,7 +70,16 @@
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     SubscribeCellFrame *cellFrame = self.dataList[indexPath.row];
     cell.cellFrame = cellFrame;
+    WEAK_BLOCK_SELF(KLFMSubscribeVC);
+    cell.cellBlock = ^(NSString *name) {
+        [block_self SubscribeCellBlock:name];
+    };
     return cell;
+}
+
+#pragma mark - SubscribeCellBlock
+- (void)SubscribeCellBlock:(NSString *)name{
+    DDLog(@"订阅-name:%@",name);
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

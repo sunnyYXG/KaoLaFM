@@ -9,7 +9,6 @@
 #ifndef BaseUrl_h
 #define BaseUrl_h
 
-#define NavBarHeight         64.0
 
 
 #define host_url        @"http://api.kaolafm.com"

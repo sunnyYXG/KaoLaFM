@@ -40,10 +40,12 @@
 }
 
 /*
- 订阅响应事件
+ 订阅--响应事件
  */
 - (void)subscribeButtonClickDelegate:(UIButton *)sender{
-    DDLog(@"订阅");
+    if (self.cellBlock) {
+        self.cellBlock(_cellFrame.cellModel.name);
+    }
 }
 
 /*

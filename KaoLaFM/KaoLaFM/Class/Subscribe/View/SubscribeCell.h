@@ -9,8 +9,11 @@
 #import "BaseTableViewCell.h"
 @class SubscribeCellFrame;
 
+typedef void (^SubscribeCellBlock)(NSString *name);
+
 @interface SubscribeCell : BaseTableViewCell
 
 @property (nonatomic) SubscribeCellFrame *cellFrame;
+@property (nonatomic,copy) SubscribeCellBlock cellBlock;
 
 @end
