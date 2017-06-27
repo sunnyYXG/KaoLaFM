@@ -32,6 +32,7 @@
 #import "AFNetworking.h"
 #import "MBProgressHUD.h"
 #import "YYModel.h"
+#import "YYCache.h"
 #import "MJExtension.h"
 #import "Masonry.h"
 #import "MJRefresh.h"

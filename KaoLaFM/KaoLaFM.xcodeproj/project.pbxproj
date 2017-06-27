@@ -36,6 +36,8 @@
 		0D352D821ECD7BA400447E1B /* TabbarBaseClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D352D7C1ECD7BA400447E1B /* TabbarBaseClass.m */; };
 		0D352D831ECD7BA400447E1B /* TabbarDataList.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D352D7E1ECD7BA400447E1B /* TabbarDataList.m */; };
 		0D352D841ECD7BA400447E1B /* TabbarResult.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D352D811ECD7BA400447E1B /* TabbarResult.m */; };
+		0D354A951F022460003F3AA1 /* YXGCacheHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D354A941F022460003F3AA1 /* YXGCacheHelper.m */; };
+		0D354A9B1F022E8D003F3AA1 /* YXGNetWorkingStatus.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D354A9A1F022E8D003F3AA1 /* YXGNetWorkingStatus.m */; };
 		0D401B881EF0BF860076CE5D /* ColorHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D401B871EF0BF860076CE5D /* ColorHelper.m */; };
 		0D401BA81EF109780076CE5D /* KLFMDiscoverVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D401BA71EF109780076CE5D /* KLFMDiscoverVC.m */; };
 		0D401BAB1EF1099D0076CE5D /* KLFMAnchorVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D401BAA1EF1099D0076CE5D /* KLFMAnchorVC.m */; };
@@ -166,6 +168,10 @@
 		0D352D7F1ECD7BA400447E1B /* TabbarDataModels.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TabbarDataModels.h; sourceTree = "<group>"; };
 		0D352D801ECD7BA400447E1B /* TabbarResult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TabbarResult.h; sourceTree = "<group>"; };
 		0D352D811ECD7BA400447E1B /* TabbarResult.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TabbarResult.m; sourceTree = "<group>"; };
+		0D354A931F022460003F3AA1 /* YXGCacheHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YXGCacheHelper.h; sourceTree = "<group>"; };
+		0D354A941F022460003F3AA1 /* YXGCacheHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YXGCacheHelper.m; sourceTree = "<group>"; };
+		0D354A991F022E8D003F3AA1 /* YXGNetWorkingStatus.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YXGNetWorkingStatus.h; sourceTree = "<group>"; };
+		0D354A9A1F022E8D003F3AA1 /* YXGNetWorkingStatus.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YXGNetWorkingStatus.m; sourceTree = "<group>"; };
 		0D401B861EF0BF860076CE5D /* ColorHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ColorHelper.h; sourceTree = "<group>"; };
 		0D401B871EF0BF860076CE5D /* ColorHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ColorHelper.m; sourceTree = "<group>"; };
 		0D401BA61EF109780076CE5D /* KLFMDiscoverVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KLFMDiscoverVC.h; sourceTree = "<group>"; };
@@ -402,6 +408,7 @@
 		0D352D231ECD3E5400447E1B /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				0D354A921F022460003F3AA1 /* YXGNetWorking */,
 				0D6095DE1EF7CB560028666F /* YXGRollingLabel */,
 				0D352D241ECD3E5400447E1B /* Category */,
 				0D352D291ECD3E5400447E1B /* CycleBannerView */,
@@ -515,6 +522,17 @@
 				0D352D751ECD799100447E1B /* KLFMNavigateView.m */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		0D354A921F022460003F3AA1 /* YXGNetWorking */ = {
+			isa = PBXGroup;
+			children = (
+				0D354A931F022460003F3AA1 /* YXGCacheHelper.h */,
+				0D354A941F022460003F3AA1 /* YXGCacheHelper.m */,
+				0D354A991F022E8D003F3AA1 /* YXGNetWorkingStatus.h */,
+				0D354A9A1F022E8D003F3AA1 /* YXGNetWorkingStatus.m */,
+			);
+			path = YXGNetWorking;
 			sourceTree = "<group>";
 		};
 		0D401B911EF108830076CE5D /* anchor */ = {
@@ -1054,7 +1072,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		5C4E6793328CA6B19E317431 /* [CP] Copy Pods Resources */ = {
@@ -1110,6 +1128,7 @@
 				0D57C7CA1EF3C3320064603E /* DiscoverDataList.m in Sources */,
 				0D401BA81EF109780076CE5D /* KLFMDiscoverVC.m in Sources */,
 				0DB24B5C1ECC315800ABF4CA /* BaseViewController.m in Sources */,
+				0D354A9B1F022E8D003F3AA1 /* YXGNetWorkingStatus.m in Sources */,
 				0D401BC11EF112FF0076CE5D /* CategoryResult.m in Sources */,
 				0D401BC01EF112FF0076CE5D /* CategoryDataList.m in Sources */,
 				0D401BB61EF10F9A0076CE5D /* KLFMCategoryReq.m in Sources */,
@@ -1140,6 +1159,7 @@
 				0DB24B5D1ECC315800ABF4CA /* BaseRequest.m in Sources */,
 				0D401B881EF0BF860076CE5D /* ColorHelper.m in Sources */,
 				0D1ACA191F00AD9B008282B7 /* SubscribeDataList.m in Sources */,
+				0D354A951F022460003F3AA1 /* YXGCacheHelper.m in Sources */,
 				64C370D81ED31D0A00EC366D /* SelectionCell.m in Sources */,
 				0D6095DA1EF799010028666F /* AppNotification.m in Sources */,
 				0D401BC41EF113CD0076CE5D /* CategoryModel.m in Sources */,
