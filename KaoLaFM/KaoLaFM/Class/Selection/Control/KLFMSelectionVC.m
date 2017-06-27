@@ -63,9 +63,18 @@
 
     [self.view setHeight:self.view.height - 64];
     [self initBannerView];
-
 }
+- (void)isPlayer_Notification:(NSNotification *)n{
+    NSDictionary *dic = n.userInfo;
+    NSNumber *yet = dic[@"isPlayer"];
+    if ([yet boolValue]) {
+//        DDLog(@"改变cell上面按钮状态--yes");
 
+    }else{
+        DDLog(@"改变cell上面按钮状态--no");
+
+    }
+}
 #pragma mark 首页轮播图
 - (void)initBannerView
 {

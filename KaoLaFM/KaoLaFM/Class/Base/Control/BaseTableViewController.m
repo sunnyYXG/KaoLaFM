@@ -25,9 +25,13 @@
 //    if ([[[UIDevice currentDevice]systemVersion]floatValue] >= 7.0) {
         //            self.edgesForExtendedLayout = UIRectEdgeNone;
 //    }
+    [AppNotification registe:@"changePlayer" receiver:self action:@selector(isPlayer_Notification:)];
 
 }
 
+- (void)isPlayer_Notification:(NSNotification *)n{
+    
+}
 /**
  *  加载tableview
  */

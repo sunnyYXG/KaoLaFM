@@ -13,7 +13,7 @@
 
 /** 表视图*/
 @property (nonatomic) BaseTableView *tableView;
-
+- (void)isPlayer_Notification:(NSNotification *)n;
 
 /** 刷新数据*/
 - (void)yxg_reloadData;

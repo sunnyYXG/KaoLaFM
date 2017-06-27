@@ -86,21 +86,28 @@
     [_playList setBackgroundImage:[UIImage imageNamed:@"playList_pic"] forState:UIControlStateNormal];
 //    [_playList setImage:[UIImage imageNamed:@"playList_pic"] forState:UIControlStateNormal];
     [self addSubview:_playList];
+    
 }
 #pragma mark---播放暂停按钮点击
 -(void)playBtClick:(UIButton *)sender
 {
+
+    NSNumber *yet;
     if (sender.selected==YES) {
         //暂停播放
         [_player puasePlay];
         [_playBt setBackgroundImage:[UIImage imageNamed:@"btn_player_play_on"] forState:UIControlStateNormal];
         sender.selected=NO;
+        yet = [NSNumber numberWithBool:NO];
     }else if(sender.selected==NO){
         //开始播放
         [_player startPlay];
         [_playBt setBackgroundImage:[UIImage imageNamed:@"btn_player_pause_on"] forState:UIControlStateNormal];
         sender.selected=YES;
+        yet = [NSNumber numberWithBool:YES];
     }
+    [AppNotification send:@"changePlayer" userInfo:@{@"isPlayer":yet}];
+
 }
 
 
@@ -124,7 +131,6 @@
 
  
     }
-    
     
 }
 -(void)dealloc{
