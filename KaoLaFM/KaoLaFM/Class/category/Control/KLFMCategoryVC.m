@@ -67,7 +67,7 @@
             block_self.baseModel = (CategoryBaseClass *)[CategoryBaseClass yy_modelWithJSON:response];
             [CategoryModel ModelResolver:block_self.baseModel VC:block_self type:CategoryDataType_hot];
         } else {
-            [block_self showError:@"数据在火星..."];
+            [block_self showError:@"数据丢失"];
         }
     }];
     
@@ -78,7 +78,7 @@
             block_self.baseModel = (CategoryBaseClass *)[CategoryBaseClass yy_modelWithJSON:response];
             [CategoryModel ModelResolver:block_self.baseModel VC:block_self type:CategoryDataType_other];
         } else {
-            [block_self showError:@"数据在火星..."];
+            [block_self showError:@"数据丢失"];
         }
 
     }];
@@ -90,7 +90,7 @@
             block_self.broadModel = (BroadBaseClass *)[BroadBaseClass yy_modelWithJSON:response];
             [CategoryModel ModelResolverWithBroadModel:block_self.broadModel VC:block_self];
         } else {
-            [block_self showError:@"数据在火星..."];
+            [block_self showError:@"数据丢失"];
         }
 
     }];
@@ -112,7 +112,7 @@
                 block_self.baseModel = (CategoryBaseClass *)[CategoryBaseClass yy_modelWithJSON:response];
                 [CategoryModel ModelResolver:block_self.baseModel VC:block_self type:CategoryDataType_hot];
             } else {
-                [block_self showError:@"数据在火星..."];
+                [block_self showError:@"数据丢失"];
             }
             dispatch_group_leave(group);
             DDLog(@"热门分类-结束");
@@ -127,7 +127,7 @@
                 block_self.baseModel = (CategoryBaseClass *)[CategoryBaseClass yy_modelWithJSON:response];
                 [CategoryModel ModelResolver:block_self.baseModel VC:block_self type:CategoryDataType_other];
             } else {
-                [block_self showError:@"数据在火星..."];
+                [block_self showError:@"数据丢失"];
             }
             dispatch_group_leave(group);
             DDLog(@"其他分类-结束");
@@ -142,7 +142,7 @@
                 block_self.broadModel = (BroadBaseClass *)[BroadBaseClass yy_modelWithJSON:response];
                 [CategoryModel ModelResolverWithBroadModel:block_self.broadModel VC:block_self];
             } else {
-                [block_self showError:@"数据在火星..."];
+                [block_self showError:@"数据丢失"];
             }
             dispatch_group_leave(group);
             DDLog(@"调频分类-结束");
