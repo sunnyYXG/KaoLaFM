@@ -20,9 +20,27 @@
 
 }
 
+//- (void)isPlayer_Notification:(NSNotification *)n{
+//    NSDictionary *dic = n.userInfo;
+//    NSNumber *yet = dic[@"isPlayer"];
+//    if ([yet boolValue]) {
+//                DDLog(@"改变cell上面按钮状态--yes");
+//        [self.last_btn setImage:[UIImage imageNamed:@"btn_player_pause_on"] forState:UIControlStateNormal];
+//        self.last_btn.selected = YES;
+//
+//        
+//    }else{
+//        [self.last_btn setImage:[UIImage imageNamed:@"btn_player_play_on"] forState:UIControlStateNormal];
+//        self.last_btn.selected = NO;
+//        
+//    }
+//}
+//
+
 -(void)setCellFrame:(SelectionCellFrame *)cellFrame{
     if (_cellFrame == cellFrame && _cellFrame) return;
     _cellFrame = cellFrame;
+//    [AppNotification registe:@"changePlayer" receiver:self action:@selector(isPlayer_Notification:)];
     self.dataList = cellFrame.cellModel.dataList;
     UILabel *title = [[UILabel alloc]initWithFrame:cellFrame.titleRect];
     title.text = cellFrame.cellModel.name;

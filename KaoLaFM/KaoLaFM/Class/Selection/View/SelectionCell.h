@@ -9,9 +9,15 @@
 #import "BaseTableViewCell.h"
 @class SelectionDataList,SelectionCellFrame;
 
+@protocol SelectionCellDelegate <NSObject>
+
+- (void)playerClick:(UIButton *)sender;
+
+@end
 
 @interface SelectionCell : BaseTableViewCell
 
+@property (nonatomic) id<SelectionCellDelegate>delegate;
 @property (nonatomic) SelectionDataList *cellModel;
 @property (nonatomic) SelectionCellFrame *cellFrame;
 

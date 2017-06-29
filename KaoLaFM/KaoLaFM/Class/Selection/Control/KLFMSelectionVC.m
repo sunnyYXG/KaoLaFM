@@ -20,7 +20,9 @@
 #import "CycleBannerView.h"
 #import "HomeTJMenuView.h"
 #import "YXGAVPlayer.h"
-@interface KLFMSelectionVC ()
+@interface KLFMSelectionVC ()<SelectionCellDelegate>{
+    SelectionCell *_cell;
+}
 
 @end
 
@@ -64,16 +66,33 @@
     [self.view setHeight:self.view.height - 64];
     [self initBannerView];
 }
-- (void)isPlayer_Notification:(NSNotification *)n{
-    NSDictionary *dic = n.userInfo;
-    NSNumber *yet = dic[@"isPlayer"];
-    if ([yet boolValue]) {
+//- (void)isPlayer_Notification:(NSNotification *)n{
+//    NSDictionary *dic = n.userInfo;
+//    NSNumber *yet = dic[@"isPlayer"];
+////    SelectionCell *cell = [self.tableView cellForRowAtIndexPath:_indexPath];
+//    
+//    if ([yet boolValue]) {
 //        DDLog(@"改变cell上面按钮状态--yes");
-
-    }else{
-        DDLog(@"改变cell上面按钮状态--no");
-
+//        [_cell.last_btn setImage:[UIImage imageNamed:@"btn_player_pause_on"] forState:UIControlStateNormal];
+//        _cell.last_btn.selected = YES;
+//        
+//        
+//    }else{
+//        [_cell.last_btn setImage:[UIImage imageNamed:@"btn_player_play_on"] forState:UIControlStateNormal];
+//        _cell.last_btn.selected = NO;
+//        
+//    }
+//}
+-(void)playerClick:(UIButton *)sender{
+    SelectionCell* cell = (SelectionCell *)[[sender superview] superview];
+//    NSIndexPath *indexPath = [self.tableView indexPathForCell:cell];
+    
+    if (_cell != cell) {
+        [_cell.last_btn setImage:[UIImage imageNamed:@"btn_player_play_on"] forState:UIControlStateNormal];
+        _cell.last_btn.selected = NO;
+        _cell = cell;
     }
+
 }
 #pragma mark 首页轮播图
 - (void)initBannerView
@@ -136,6 +155,8 @@
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     SelectionCellFrame *cellFrame = self.data[indexPath.row];
     cell.cellFrame = cellFrame;
+    cell.delegate = self;
+    _cell = cell;
     return cell;
 }
 -(CGFloat)yxg_cellheightAtIndexPath:(NSIndexPath *)indexPath{

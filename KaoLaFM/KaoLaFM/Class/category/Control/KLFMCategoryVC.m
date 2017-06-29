@@ -35,7 +35,7 @@
 
     CGRect frame = CGRectMake(0, 0, SCREEN_WIDTH, self.tableView.height - 108 - playerViewHeight);
     self.tableView.frame = frame;
-    
+    self.tableView.hidden = YES;
 }
 
 - (void)initRequest{
@@ -56,6 +56,7 @@
 
 }
 -(void)loadData{
+    /*
     if (!self.request) return;
     [self startProgress];
     WEAK_BLOCK_SELF(KLFMCategoryVC);
@@ -93,25 +94,86 @@
         }
 
     }];
+     */
+    [self createDispatchGroup];
+}
+- (void)createDispatchGroup{
+    if (!self.request) return;
+    [self startProgress];
+    WEAK_BLOCK_SELF(KLFMCategoryVC);
+
+    dispatch_group_t group = dispatch_group_create();
+    
+    dispatch_group_enter(group);
+    dispatch_async(dispatch_get_global_queue(0, 0), ^{
+        DDLog(@"热门分类-开始");
+        [self.request yxg_sendRequestWithCompletion:^(id response, BOOL success, NSString *message) {
+            if (success) {
+                block_self.baseModel = (CategoryBaseClass *)[CategoryBaseClass yy_modelWithJSON:response];
+                [CategoryModel ModelResolver:block_self.baseModel VC:block_self type:CategoryDataType_hot];
+            } else {
+                [block_self showError:@"数据在火星..."];
+            }
+            dispatch_group_leave(group);
+            DDLog(@"热门分类-结束");
+        }];
+    });
+    
+    dispatch_group_enter(group);
+    dispatch_async(dispatch_get_global_queue(0, 0), ^{
+        DDLog(@"其他分类-开始");
+        [self.otherRequest yxg_sendRequestWithCompletion:^(id response, BOOL success, NSString *message) {
+            if (success) {
+                block_self.baseModel = (CategoryBaseClass *)[CategoryBaseClass yy_modelWithJSON:response];
+                [CategoryModel ModelResolver:block_self.baseModel VC:block_self type:CategoryDataType_other];
+            } else {
+                [block_self showError:@"数据在火星..."];
+            }
+            dispatch_group_leave(group);
+            DDLog(@"其他分类-结束");
+        }];
+    });
+
+    dispatch_group_enter(group);
+    dispatch_async(dispatch_get_global_queue(0, 0), ^{
+        DDLog(@"调频分类-开始");
+        [self.broadRequest yxg_sendRequestWithCompletion:^(id response, BOOL success, NSString *message) {
+            if (success) {
+                block_self.broadModel = (BroadBaseClass *)[BroadBaseClass yy_modelWithJSON:response];
+                [CategoryModel ModelResolverWithBroadModel:block_self.broadModel VC:block_self];
+            } else {
+                [block_self showError:@"数据在火星..."];
+            }
+            dispatch_group_leave(group);
+            DDLog(@"调频分类-结束");
+        }];
+    });
+    
+    dispatch_group_notify(group, dispatch_get_global_queue(0, 0), ^{
+       dispatch_async(dispatch_get_main_queue(), ^{
+           [block_self stopProgress];
+           block_self.tableView.hidden = NO;
+           [block_self.tableView.mj_header endRefreshing];
+           [block_self yxg_reloadData];
+           DDLog(@"结束-刷新数据");
+       });
+    });
+
 }
 -(void)setHotArr:(NSArray *)hotArr{
     if (!hotArr)return;
     _hotArr = hotArr;
-    [self yxg_reloadData];
 }
 
 -(void)setBroadArr:(NSArray *)broadArr{
     if (!broadArr)return;
     _broadArr = broadArr;
     _titles = @[@"热门分类",@"其他分类",@"调频"];
-    [self yxg_reloadData];
 }
 
 -(void)setOtherArr:(NSArray *)otherArr{
     if (!otherArr)return;
     _otherArr = otherArr;
-    [self yxg_reloadData];
-
 }
 
 -(NSInteger)yxg_numberOfRowsInSection:(NSInteger)section{
