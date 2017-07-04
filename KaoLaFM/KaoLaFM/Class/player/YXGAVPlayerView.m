@@ -56,6 +56,7 @@
 -(void)addSongInformation
 {
     
+    /*
     NSArray *paths=NSSearchPathForDirectoriesInDomains(NSDocumentDirectory,NSUserDomainMask,YES);
     NSString *path=[paths objectAtIndex:0];
     NSString *filename=[path stringByAppendingPathComponent:@"player.plist"];
@@ -75,7 +76,9 @@
 //    
     NSDictionary* dic2 = [NSDictionary dictionaryWithContentsOfFile:filename];
     NSLog(@"dic is:%@",dic2);
-
+*/
+    
+    NSDictionary *mdic = [[NSUserDefaults standardUserDefaults]objectForKey:@"MyPlayer"];
     _name = [[YXGRollingLabel alloc] initWithFrame:CGRectMake(_player.right + 10, 5, SCREEN_WIDTH/3 * 2 - _player.right - 20, (self.height - 15)/2) withString:[HelperTools isBlankString:mdic[@"dataReport"]]];
 
     _Author = [[UILabel alloc]initWithFrame:CGRectMake(_player.right + 10, _name.bottom + 5, _name.width, _name.height)];
@@ -133,11 +136,11 @@
 
 - (void)Player_Notification:(NSNotification *)n{
     NSDictionary *dic = n.userInfo[PALYER_KEY];
+    [HelperTools savePlayerWithObject:@{@"albumName":dic[@"albumName"],@"dataReport":dic[@"dataReport"],@"pic":dic[@"pic"],@"mp3PlayUrl":dic[@"mp3PlayUrl"]}];
     _Author.text = dic[@"albumName"];
-    [self.player playNewWith:dic];
+    [self.player playNewWith:[[NSUserDefaults standardUserDefaults] objectForKey:@"MyPlayer"]];
     [self.name stringWithTitle:dic[@"dataReport"]];
-    [HelperTools playID:@"albumId" object:dic];
-    
+//    [HelperTools playID:@"albumId" object:dic];
     NSInteger on = [n.userInfo[@"on"] integerValue];
     NSString *m = n.userInfo[@"m"];
     [self playBtClick:self.playBt];

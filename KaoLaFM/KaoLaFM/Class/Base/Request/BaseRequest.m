@@ -62,7 +62,7 @@
             completion(responseObject, YES, @"");
             //缓存数据
             [YXGCacheHelper saveResponseCache:responseObject forKey:self.yxg_url];
-            NSData *data = [NSKeyedArchiver archivedDataWithRootObject:responseObject];
+//            NSData *data = [NSKeyedArchiver archivedDataWithRootObject:responseObject];
 //            DDLog(@"文件大小:%lu", [data length]/1024);
 
             

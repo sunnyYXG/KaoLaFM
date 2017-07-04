@@ -31,4 +31,6 @@
 + (float) heightForString:(NSString *)value fontSize:(float)fontSize andWidth:(float)width;
 
 + (void)playID:(NSString *)playID object:(NSDictionary *)object;
+
++ (void)savePlayerWithObject:(NSDictionary *)dic;
 @end

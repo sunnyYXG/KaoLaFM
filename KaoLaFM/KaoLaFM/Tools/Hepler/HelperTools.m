@@ -13,6 +13,11 @@
 
 @implementation HelperTools
 
++ (void)savePlayerWithObject:(NSDictionary *)dic{
+    [[NSUserDefaults standardUserDefaults] setObject:dic forKey:@"MyPlayer"];
+    [[NSUserDefaults standardUserDefaults] synchronize];
+}
+
 + (void)playID:(NSString *)playID object:(NSDictionary *)object{
     
     NSArray *paths=NSSearchPathForDirectoriesInDomains(NSDocumentDirectory,NSUserDomainMask,YES);

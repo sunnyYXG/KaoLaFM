@@ -23,8 +23,14 @@
 -(instancetype)initWithFrame:(CGRect)frame{
     self=[super initWithFrame:frame];
     if (self) {
+        NSDictionary *dic = [[NSUserDefaults standardUserDefaults]objectForKey:@"MyPlayer"];
+
         //初始化songItem和player
         _player=[AVPlayer playerWithPlayerItem:_songItem];
+        NSURL *NETurl=[NSURL URLWithString:dic[@"mp3PlayUrl"]];
+        _songItem=[AVPlayerItem playerItemWithURL:NETurl];
+        [_player replaceCurrentItemWithPlayerItem:_songItem];
+
         //声音设置为0.5;
         _volume=0.5;
         //添加播放器状态的监听
@@ -33,9 +39,11 @@
         [self addNetDataStatusObserver];
         //player的背景图片
         _playerImage=[[UIImageView alloc]initWithFrame:CGRectMake(0, 0, self.width, self.height)];
-        _playerImage.image = [UIImage imageNamed:@"head_image"];
+        [_playerImage sd_setImageWithURL:[NSURL URLWithString:dic[@"pic"]]];
         //添加背景图片
         [self addSubview:_playerImage];
+        
+
         self.is_first = YES;
     }
     return self;
