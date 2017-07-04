@@ -56,7 +56,27 @@
 -(void)addSongInformation
 {
     
-    _name = [[YXGRollingLabel alloc] initWithFrame:CGRectMake(_player.right + 10, 5, SCREEN_WIDTH/3 * 2 - _player.right - 20, (self.height - 15)/2)];
+    NSArray *paths=NSSearchPathForDirectoriesInDomains(NSDocumentDirectory,NSUserDomainMask,YES);
+    NSString *path=[paths objectAtIndex:0];
+    NSString *filename=[path stringByAppendingPathComponent:@"player.plist"];
+    NSMutableDictionary *BaseDic = [NSMutableDictionary dictionaryWithContentsOfFile:filename];
+
+
+    NSDictionary *mdic;
+    if(BaseDic == nil){
+        NSFileManager *fm = [NSFileManager defaultManager];
+        [fm createFileAtPath:self.filename contents:nil attributes:nil];
+    }else{
+        mdic= [BaseDic objectForKey:@"albumId"];
+    }
+
+//    NSDictionary* dic = [NSDictionary dictionaryWithObjectsAndKeys:@"sina",@"1",@"163",@"2",nil];
+//    [dic writeToFile:filename atomically:YES];
+//    
+    NSDictionary* dic2 = [NSDictionary dictionaryWithContentsOfFile:filename];
+    NSLog(@"dic is:%@",dic2);
+
+    _name = [[YXGRollingLabel alloc] initWithFrame:CGRectMake(_player.right + 10, 5, SCREEN_WIDTH/3 * 2 - _player.right - 20, (self.height - 15)/2) withString:[HelperTools isBlankString:mdic[@"dataReport"]]];
 
     _Author = [[UILabel alloc]initWithFrame:CGRectMake(_player.right + 10, _name.bottom + 5, _name.width, _name.height)];
     _Author.font = [UIFont systemFontOfSize:16.0f];;
@@ -64,7 +84,7 @@
     [self addSubview:_name];
 
     _Author.textColor = [UIColor whiteColor];
-    _Author.text = @"作者";
+    _Author.text = [HelperTools isBlankString:mdic[@"albumName"]];
     
 //    _name.speed = 0.8;
     [_name setOrientation:RollingOrientationLeft];
@@ -116,6 +136,7 @@
     _Author.text = dic[@"albumName"];
     [self.player playNewWith:dic];
     [self.name stringWithTitle:dic[@"dataReport"]];
+    [HelperTools playID:@"albumId" object:dic];
     
     NSInteger on = [n.userInfo[@"on"] integerValue];
     NSString *m = n.userInfo[@"m"];

@@ -13,4 +13,8 @@
 
 @property(nonatomic)YXGAVPlayer *player;
 
+@property (nonatomic) NSArray *paths;
+@property (nonatomic) NSString *path;
+@property (nonatomic) NSString *filename;
+
 @end

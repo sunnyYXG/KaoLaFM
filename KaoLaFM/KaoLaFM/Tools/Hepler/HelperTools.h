@@ -30,4 +30,5 @@
 + (float) widthForString:(NSString *)value fontSize:(float)fontSize andHeight:(float)height;
 + (float) heightForString:(NSString *)value fontSize:(float)fontSize andWidth:(float)width;
 
++ (void)playID:(NSString *)playID object:(NSDictionary *)object;
 @end

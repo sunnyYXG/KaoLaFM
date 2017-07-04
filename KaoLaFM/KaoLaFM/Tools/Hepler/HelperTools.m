@@ -13,6 +13,23 @@
 
 @implementation HelperTools
 
++ (void)playID:(NSString *)playID object:(NSDictionary *)object{
+    
+    NSArray *paths=NSSearchPathForDirectoriesInDomains(NSDocumentDirectory,NSUserDomainMask,YES);
+    NSString *path=[paths objectAtIndex:0];
+    NSString *filename=[path stringByAppendingPathComponent:@"player.plist"];
+    NSDictionary *BaseDic = [NSDictionary dictionaryWithContentsOfFile:filename];
+    
+    if(BaseDic == nil){
+        NSFileManager *fm = [NSFileManager defaultManager];
+        [fm createFileAtPath:filename contents:nil attributes:nil];
+    }
+    NSDictionary* dic = [NSDictionary dictionaryWithObjectsAndKeys:object,@"albumId",nil];
+    [dic writeToFile:filename atomically:YES];
+    NSDictionary* dic2 = [NSDictionary dictionaryWithContentsOfFile:filename];
+    NSLog(@"BaseDic is:%@",dic2);
+}
+
 //设置不同字体颜色
 + (void)setTextColor:(UILabel *)label AndRange:(NSRange)range AndColor:(UIColor *)vaColor
 {

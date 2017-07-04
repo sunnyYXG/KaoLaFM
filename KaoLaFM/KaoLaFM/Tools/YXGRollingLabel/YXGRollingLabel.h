@@ -58,4 +58,5 @@ typedef NS_ENUM(NSInteger, RollingOrientation){
 
 - (void)stringWithTitle:(NSString *)string;
 
+-(instancetype)initWithFrame:(CGRect)frame withString:(NSString *)str;
 @end

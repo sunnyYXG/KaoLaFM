@@ -27,6 +27,16 @@
     }
     return self;
 }
+-(instancetype)initWithFrame:(CGRect)frame withString:(NSString *)str{
+    if(self = [super initWithFrame:frame]){
+        _textArray = [NSMutableArray arrayWithObjects:str, nil];
+        _font = kFont;
+        _textColor = [UIColor whiteColor];
+        [self commonInit];
+    }
+    return self;
+
+}
 -(void)commonInit{
     [self stopTimer];
     for (UIView *view in self.subviews) {
