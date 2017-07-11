@@ -45,15 +45,9 @@
 }
 
 - (void)yxg_sendRequestWithCompletion:(FMAPIDicCompletion)completion {
+    
     //获取网络状态
     YXGNetworkStatus YXG_networkingStatus = [YXGNetWorkingStatus networkingStatus];
-    if (YXG_networkingStatus == kYXGNetWorkStatusUnknown || YXG_networkingStatus == kYXGNetWorkStatusNotReachable) {
-        //从缓存里面获取数据
-        id response = [YXGCacheHelper getResponseCacheForKey:self.yxg_url];
-        if (response) {
-            completion(response, YES, @"");
-        }
-    }else{
         AFHTTPSessionManager *manager = [self createManager];
         [manager GET:self.yxg_url parameters:self.paramsDic progress:^(NSProgress * _Nonnull downloadProgress) {
             
@@ -62,16 +56,23 @@
             completion(responseObject, YES, @"");
             //缓存数据
             [YXGCacheHelper saveResponseCache:responseObject forKey:self.yxg_url];
-//            NSData *data = [NSKeyedArchiver archivedDataWithRootObject:responseObject];
-//            DDLog(@"文件大小:%lu", [data length]/1024);
+            NSData *data = [NSKeyedArchiver archivedDataWithRootObject:responseObject];
+            DDLog(@"文件大小:%lu", [data length]/1024);
 
             
         } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
             //
-            completion(nil, NO, @"");
+            if (YXG_networkingStatus == kYXGNetWorkStatusUnknown || YXG_networkingStatus == kYXGNetWorkStatusNotReachable) {
+                //从缓存里面获取数据
+                id response = [YXGCacheHelper getResponseCacheForKey:self.yxg_url];
+                if (response) {
+                    completion(response, YES, @"");
+                }
+            }else{
+                completion(nil, NO, @"");
+            }
 
         }];
-    }
 }
 
 - (AFHTTPSessionManager *)createManager{
