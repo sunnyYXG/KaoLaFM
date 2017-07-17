@@ -96,6 +96,60 @@
     }];
      */
     [self createDispatchGroup];
+//    [self blockOperation];
+}
+- (void)blockOperation{
+    if (!self.request) return;
+    [self startProgress];
+    WEAK_BLOCK_SELF(KLFMCategoryVC);
+
+    NSBlockOperation *blockOperation = [NSBlockOperation blockOperationWithBlock:^{
+        DDLog(@"热门分类-开始");
+        [self.request yxg_sendRequestWithCompletion:^(id response, BOOL success, NSString *message) {
+            if (success) {
+                block_self.baseModel = (CategoryBaseClass *)[CategoryBaseClass yy_modelWithJSON:response];
+                [CategoryModel ModelResolver:block_self.baseModel VC:block_self type:CategoryDataType_hot];
+            } else {
+                [block_self showError:@"数据丢失"];
+            }
+            DDLog(@"热门分类-结束");
+        }];
+    }];
+    
+    [blockOperation addExecutionBlock:^{
+        DDLog(@"其他分类-开始");
+        [self.otherRequest yxg_sendRequestWithCompletion:^(id response, BOOL success, NSString *message) {
+            if (success) {
+                block_self.baseModel = (CategoryBaseClass *)[CategoryBaseClass yy_modelWithJSON:response];
+                [CategoryModel ModelResolver:block_self.baseModel VC:block_self type:CategoryDataType_other];
+            } else {
+                [block_self showError:@"数据丢失"];
+            }
+            DDLog(@"其他分类-结束");
+        }];
+    }];
+    
+    [blockOperation addExecutionBlock:^{
+        DDLog(@"调频分类-开始");
+        [self.broadRequest yxg_sendRequestWithCompletion:^(id response, BOOL success, NSString *message) {
+            if (success) {
+                block_self.broadModel = (BroadBaseClass *)[BroadBaseClass yy_modelWithJSON:response];
+                [CategoryModel ModelResolverWithBroadModel:block_self.broadModel VC:block_self];
+            } else {
+                [block_self showError:@"数据丢失"];
+            }
+            DDLog(@"调频分类-结束");
+        }];
+    }];
+
+    [blockOperation start];
+    
+    [self stopProgress];
+    self.tableView.hidden = NO;
+    [self.tableView.mj_header endRefreshing];
+    [self yxg_reloadData];
+    DDLog(@"结束-刷新数据");
+    
 }
 - (void)createDispatchGroup{
     if (!self.request) return;
