@@ -105,19 +105,10 @@
 
 }
 
-- (void)initRequest{
-    KLFMSelectionReq *req = [KLFMSelectionReq yxg_request];
-    req.yxg_url = selection_url;
-    req.paramsDic = [KLFMSelectionReq params];
-    self.request = req;
-}
-
-
 - (void)loadData{
-    if (!self.request) return;
     [self startProgress];
     WEAK_BLOCK_SELF(KLFMSelectionVC);
-    [self.request yxg_sendRequestWithCompletion:^(id response, BOOL success, NSString *message) {
+    [[BaseRequest sharedManager] yxg_sendRequestWithMethod:GET WithURL:selection_url paramsDic:[KLFMSelectionReq params] Completion:^(id response, BOOL success, NSString *message) {
         [self stopProgress];
         [block_self.tableView.mj_header endRefreshing];
         if (success) {

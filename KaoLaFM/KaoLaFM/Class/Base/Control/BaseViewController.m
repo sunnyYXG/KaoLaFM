@@ -30,7 +30,6 @@
     [UIView setAnimationsEnabled:YES];
     self.automaticallyAdjustsScrollViewInsets = NO;
     self.edgesForExtendedLayout = UIRectEdgeAll;
-    [self initRequest];
     [self loadData];
     // Do any additional setup after loading the view, typically from a nib.
 }

@@ -53,17 +53,10 @@
 
 }
 
-- (void)initRequest{
-    KLFMTabbarReq *req = [KLFMTabbarReq yxg_request];
-    req.yxg_url = tabbar_url;
-    req.paramsDic = [KLFMTabbarReq params];
-    self.request = req;
-}
 
 - (void)loadData{
-    if (!self.request) return;
     WEAK_BLOCK_SELF(KLFMNavigateVC);
-    [self.request yxg_sendRequestWithCompletion:^(id response, BOOL success, NSString *message) {
+    [[BaseRequest sharedManager] yxg_sendRequestWithMethod:GET WithURL:tabbar_url paramsDic:[KLFMTabbarReq params] Completion:^(id response, BOOL success, NSString *message) {
         block_self.baseModel = (TabbarBaseClass *)[TabbarBaseClass yy_modelWithJSON:response];
         for (NSDictionary *dic in block_self.baseModel.result.dataList) {
             TabbarDataList *list = [TabbarDataList modelObjectWithDictionary:dic];

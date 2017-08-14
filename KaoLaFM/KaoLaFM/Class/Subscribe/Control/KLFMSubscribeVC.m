@@ -33,26 +33,19 @@
     [self yxg_reloadData];
 }
 
--(void)initRequest{
-    
-    KLFMSubscribeReq *req = [KLFMSubscribeReq yxg_request];
-    req.yxg_url = subscribe_url;
-    req.paramsDic = [KLFMSubscribeReq params];
-    self.request = req;
-}
-
 -(void)loadData{
-    if (!self.request) return;
     [self startProgress];
     WEAK_BLOCK_SELF(KLFMSubscribeVC);
-    [self.request yxg_sendRequestWithCompletion:^(id response, BOOL success, NSString *message) {
+    [[BaseRequest sharedManager] yxg_sendRequestWithMethod:GET WithURL:subscribe_url paramsDic:[KLFMSubscribeReq params] Completion:^(id response, BOOL success, NSString *message) {
         [block_self stopProgress];
         [block_self.tableView.mj_header endRefreshing];
         if (success) {
             block_self.baseModel = (SubscribeBaseClass *)[SubscribeBaseClass yy_modelWithJSON:response];
             [SubscribeModel ModelResolver:block_self.baseModel VC:block_self];
         }
+
     }];
+
 }
 
 -(NSInteger)yxg_numberOfSections{

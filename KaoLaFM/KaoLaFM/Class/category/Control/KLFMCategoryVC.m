@@ -38,23 +38,6 @@
     self.tableView.hidden = YES;
 }
 
-- (void)initRequest{
-    KLFMCategoryReq *req = [KLFMCategoryReq yxg_request];
-    req.yxg_url = category_hot_url;
-    req.paramsDic = [KLFMCategoryReq params];
-    self.request = req;
-    
-    KLFMCategoryReq *otherReq = [KLFMCategoryReq yxg_request];
-    otherReq.yxg_url = category_other_url;
-    otherReq.paramsDic = [KLFMCategoryReq params];
-    self.otherRequest = otherReq;
-    
-    KLFMCategoryReq *broadReq = [KLFMCategoryReq yxg_request];
-    broadReq.yxg_url = category_broad_url;
-    broadReq.paramsDic = [KLFMCategoryReq params];
-    self.broadRequest = broadReq;
-
-}
 -(void)loadData{
     /*
     if (!self.request) return;
@@ -105,7 +88,7 @@
 
     NSBlockOperation *blockOperation = [NSBlockOperation blockOperationWithBlock:^{
         DDLog(@"热门分类-开始");
-        [self.request yxg_sendRequestWithCompletion:^(id response, BOOL success, NSString *message) {
+        [[BaseRequest sharedManager] yxg_sendRequestWithMethod:GET WithURL:category_hot_url paramsDic:[KLFMCategoryReq params] Completion:^(id response, BOOL success, NSString *message){
             if (success) {
                 block_self.baseModel = (CategoryBaseClass *)[CategoryBaseClass yy_modelWithJSON:response];
                 [CategoryModel ModelResolver:block_self.baseModel VC:block_self type:CategoryDataType_hot];
@@ -118,7 +101,7 @@
     
     [blockOperation addExecutionBlock:^{
         DDLog(@"其他分类-开始");
-        [self.otherRequest yxg_sendRequestWithCompletion:^(id response, BOOL success, NSString *message) {
+        [[BaseRequest sharedManager] yxg_sendRequestWithMethod:GET WithURL:category_other_url paramsDic:[KLFMCategoryReq params] Completion:^(id response, BOOL success, NSString *message) {
             if (success) {
                 block_self.baseModel = (CategoryBaseClass *)[CategoryBaseClass yy_modelWithJSON:response];
                 [CategoryModel ModelResolver:block_self.baseModel VC:block_self type:CategoryDataType_other];
@@ -131,7 +114,7 @@
     
     [blockOperation addExecutionBlock:^{
         DDLog(@"调频分类-开始");
-        [self.broadRequest yxg_sendRequestWithCompletion:^(id response, BOOL success, NSString *message) {
+        [[BaseRequest sharedManager] yxg_sendRequestWithMethod:GET WithURL:category_broad_url paramsDic:[KLFMCategoryReq params] Completion:^(id response, BOOL success, NSString *message) {
             if (success) {
                 block_self.broadModel = (BroadBaseClass *)[BroadBaseClass yy_modelWithJSON:response];
                 [CategoryModel ModelResolverWithBroadModel:block_self.broadModel VC:block_self];
@@ -152,7 +135,6 @@
     
 }
 - (void)createDispatchGroup{
-    if (!self.request) return;
     [self startProgress];
     WEAK_BLOCK_SELF(KLFMCategoryVC);
 
@@ -161,7 +143,7 @@
     dispatch_group_enter(group);
     dispatch_async(dispatch_get_global_queue(0, 0), ^{
         DDLog(@"热门分类-开始");
-        [self.request yxg_sendRequestWithCompletion:^(id response, BOOL success, NSString *message) {
+        [[BaseRequest sharedManager] yxg_sendRequestWithMethod:GET WithURL:category_hot_url paramsDic:[KLFMCategoryReq params] Completion:^(id response, BOOL success, NSString *message) {
             if (success) {
                 block_self.baseModel = (CategoryBaseClass *)[CategoryBaseClass yy_modelWithJSON:response];
                 [CategoryModel ModelResolver:block_self.baseModel VC:block_self type:CategoryDataType_hot];
@@ -176,7 +158,7 @@
     dispatch_group_enter(group);
     dispatch_async(dispatch_get_global_queue(0, 0), ^{
         DDLog(@"其他分类-开始");
-        [self.otherRequest yxg_sendRequestWithCompletion:^(id response, BOOL success, NSString *message) {
+        [[BaseRequest sharedManager] yxg_sendRequestWithMethod:GET WithURL:category_other_url paramsDic:[KLFMCategoryReq params] Completion:^(id response, BOOL success, NSString *message) {
             if (success) {
                 block_self.baseModel = (CategoryBaseClass *)[CategoryBaseClass yy_modelWithJSON:response];
                 [CategoryModel ModelResolver:block_self.baseModel VC:block_self type:CategoryDataType_other];
@@ -191,7 +173,7 @@
     dispatch_group_enter(group);
     dispatch_async(dispatch_get_global_queue(0, 0), ^{
         DDLog(@"调频分类-开始");
-        [self.broadRequest yxg_sendRequestWithCompletion:^(id response, BOOL success, NSString *message) {
+        [[BaseRequest sharedManager] yxg_sendRequestWithMethod:GET WithURL:category_broad_url paramsDic:[KLFMCategoryReq params] Completion:^(id response, BOOL success, NSString *message) {
             if (success) {
                 block_self.broadModel = (BroadBaseClass *)[BroadBaseClass yy_modelWithJSON:response];
                 [CategoryModel ModelResolverWithBroadModel:block_self.broadModel VC:block_self];

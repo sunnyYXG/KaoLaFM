@@ -29,18 +29,12 @@
     // Do any additional setup after loading the view.
 }
 
-- (void)initRequest{
-    KLFMDiscoverReq *req = [KLFMDiscoverReq yxg_request];
-    req.paramsDic = [KLFMDiscoverReq params];
-    req.yxg_url = discover_url;
-    self.request = req;
-}
 
 -(void)loadData{
-    if (!self.request) return;
+    if (![BaseRequest sharedManager]) return;
     [self startProgress];
     WEAK_BLOCK_SELF(KLFMDiscoverVC);
-    [self.request yxg_sendRequestWithCompletion:^(id response, BOOL success, NSString *message) {
+    [[BaseRequest sharedManager] yxg_sendRequestWithMethod:GET WithURL:discover_url paramsDic:[KLFMDiscoverReq params] Completion:^(id response, BOOL success, NSString *message) {
         [block_self.tableView.mj_header endRefreshing];
         [block_self stopProgress];
         
