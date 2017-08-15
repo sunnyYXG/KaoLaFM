@@ -11,4 +11,5 @@ pod 'YYWebImage'
 pod 'YYCache'
 pod 'MBProgressHUD'
 pod 'SVProgressHUD'
+pod 'FMDB'
 end
