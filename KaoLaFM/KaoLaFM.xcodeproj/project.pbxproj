@@ -59,6 +59,9 @@
 		0D5E537F1ED52707009FB1D9 /* KLFMNavBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D5E537E1ED52707009FB1D9 /* KLFMNavBar.m */; };
 		0D6095DA1EF799010028666F /* AppNotification.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D6095D91EF799010028666F /* AppNotification.m */; };
 		0D6095E11EF7CB560028666F /* YXGRollingLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D6095E01EF7CB560028666F /* YXGRollingLabel.m */; };
+		0D7ACC0E1F42B76E00049B20 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D7ACC0D1F42B76E00049B20 /* libsqlite3.tbd */; };
+		0D7ACC121F42B7F200049B20 /* YXGDBHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D7ACC111F42B7F200049B20 /* YXGDBHelper.m */; };
+		0D7ACC151F42B84000049B20 /* YXGDBModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D7ACC141F42B84000049B20 /* YXGDBModel.m */; };
 		0DB24B111ECC2D0A00ABF4CA /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DB24B101ECC2D0A00ABF4CA /* main.m */; };
 		0DB24B1C1ECC2D0A00ABF4CA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0DB24B1B1ECC2D0A00ABF4CA /* Assets.xcassets */; };
 		0DB24B2A1ECC2D0B00ABF4CA /* KaoLaFMTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DB24B291ECC2D0B00ABF4CA /* KaoLaFMTests.m */; };
@@ -216,6 +219,11 @@
 		0D6095D91EF799010028666F /* AppNotification.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppNotification.m; sourceTree = "<group>"; };
 		0D6095DF1EF7CB560028666F /* YXGRollingLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YXGRollingLabel.h; sourceTree = "<group>"; };
 		0D6095E01EF7CB560028666F /* YXGRollingLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YXGRollingLabel.m; sourceTree = "<group>"; };
+		0D7ACC0D1F42B76E00049B20 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
+		0D7ACC101F42B7F200049B20 /* YXGDBHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YXGDBHelper.h; sourceTree = "<group>"; };
+		0D7ACC111F42B7F200049B20 /* YXGDBHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YXGDBHelper.m; sourceTree = "<group>"; };
+		0D7ACC131F42B84000049B20 /* YXGDBModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YXGDBModel.h; sourceTree = "<group>"; };
+		0D7ACC141F42B84000049B20 /* YXGDBModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YXGDBModel.m; sourceTree = "<group>"; };
 		0DB24B0C1ECC2D0A00ABF4CA /* KaoLaFM.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KaoLaFM.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0DB24B101ECC2D0A00ABF4CA /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		0DB24B1B1ECC2D0A00ABF4CA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -278,6 +286,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0D7ACC0E1F42B76E00049B20 /* libsqlite3.tbd in Frameworks */,
 				2D8132F5BB7DD3E7E194207E /* libPods-KaoLaFM.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -408,6 +417,7 @@
 		0D352D231ECD3E5400447E1B /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				0D7ACC0F1F42B7C800049B20 /* FMDBHelper */,
 				0D354A921F022460003F3AA1 /* YXGNetWorking */,
 				0D6095DE1EF7CB560028666F /* YXGRollingLabel */,
 				0D352D241ECD3E5400447E1B /* Category */,
@@ -710,6 +720,17 @@
 			path = YXGRollingLabel;
 			sourceTree = "<group>";
 		};
+		0D7ACC0F1F42B7C800049B20 /* FMDBHelper */ = {
+			isa = PBXGroup;
+			children = (
+				0D7ACC101F42B7F200049B20 /* YXGDBHelper.h */,
+				0D7ACC111F42B7F200049B20 /* YXGDBHelper.m */,
+				0D7ACC131F42B84000049B20 /* YXGDBModel.h */,
+				0D7ACC141F42B84000049B20 /* YXGDBModel.m */,
+			);
+			path = FMDBHelper;
+			sourceTree = "<group>";
+		};
 		0DB24B031ECC2D0A00ABF4CA = {
 			isa = PBXGroup;
 			children = (
@@ -862,6 +883,7 @@
 		1251B4A32C5266E020B52319 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				0D7ACC0D1F42B76E00049B20 /* libsqlite3.tbd */,
 				E0B1FDF5DB2AEF51F75978F6 /* libPods-KaoLaFM.a */,
 			);
 			name = Frameworks;
@@ -1128,6 +1150,7 @@
 				0D57C7CA1EF3C3320064603E /* DiscoverDataList.m in Sources */,
 				0D401BA81EF109780076CE5D /* KLFMDiscoverVC.m in Sources */,
 				0DB24B5C1ECC315800ABF4CA /* BaseViewController.m in Sources */,
+				0D7ACC151F42B84000049B20 /* YXGDBModel.m in Sources */,
 				0D354A9B1F022E8D003F3AA1 /* YXGNetWorkingStatus.m in Sources */,
 				0D401BC11EF112FF0076CE5D /* CategoryResult.m in Sources */,
 				0D401BC01EF112FF0076CE5D /* CategoryDataList.m in Sources */,
@@ -1167,6 +1190,7 @@
 				64F927181ED0775900C2F424 /* KLFMLauchMovieVC.m in Sources */,
 				0DB24B5B1ECC315800ABF4CA /* BaseTableViewController.m in Sources */,
 				0D352D381ECD3E5400447E1B /* CycleBannerView.m in Sources */,
+				0D7ACC121F42B7F200049B20 /* YXGDBHelper.m in Sources */,
 				64853D991ED477A800D05788 /* HomeTJMenuView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

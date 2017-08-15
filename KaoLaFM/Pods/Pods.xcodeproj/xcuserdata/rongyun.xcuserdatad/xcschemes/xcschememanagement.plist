@@ -9,6 +9,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>FMDB.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>MBProgressHUD.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -77,7 +82,7 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>11F9D9DA73E901536188A36DBEFC647A</key>
+		<key>2A2C7D3498D77BA6CFA74162BB1C8FA8</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -87,22 +92,32 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>685B333AEF706F42B5702C38AE699ABB</key>
+		<key>5D9A5E3460F1C99C7C29970866FF90BB</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>7255790A7BA02A1F85317A9B675F69D5</key>
+		<key>630F81074298199779F0B4915849C01D</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>7BAE4C1C0BC0D3DD88DF9BA17CA1AF6B</key>
+		<key>8642CC820CE8C5B88C113D7F47AF4BC3</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>9508F7CE7E2E6D24B75F4F8BE3FE1F5E</key>
+		<key>86CA4E320C9793521A97D88CFA53018E</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>8D3DA9CD46CC4AF1219CE5D2CC31ECD3</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>96FE9BC351544138B2AB1751127A47E0</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -117,22 +132,17 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>A011AB9B6703A5073D69BD216A6F70E1</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
 		<key>A316B54C67E947D23CECD230FA5BFAEF</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>A5A04B49D0ADDC915953C5A3AC2161BD</key>
+		<key>B8477BC08C3AA03A791B2BECAF4B19B1</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>F2E34DB01D329426AC3ED5BD4D71FD9E</key>
+		<key>F0579373FC830F3AAEDCC2F7A3B794F6</key>
 		<dict>
 			<key>primary</key>
 			<true/>
