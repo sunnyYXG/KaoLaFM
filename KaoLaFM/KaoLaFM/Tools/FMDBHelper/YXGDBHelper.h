@@ -10,4 +10,12 @@
 
 @interface YXGDBHelper : NSObject
 
+@property (nonatomic,strong,readonly) FMDatabaseQueue *dbQueue;
+
++ (YXGDBHelper *)shareInstance;
+
++ (NSString *)dbPatch;
+
+- (BOOL)changeDBWithDirectoryName:(NSString *)directoryName;
+
 @end
