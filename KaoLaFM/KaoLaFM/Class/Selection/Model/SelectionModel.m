@@ -25,7 +25,7 @@
 
     for (NSDictionary *dic in baseModel.result.dataList) {
                 SelectionDataList *list = [SelectionDataList modelObjectWithDictionary:dic];
-        DDLog(@"%@-%.0f-%.0f-%.0f-%.0f",list.name,list.hasmore,list.moreType,list.componentType,list.contentType);
+//        DDLog(@"%@-%.0f-%.0f-%.0f-%.0f",list.name,list.hasmore,list.moreType,list.componentType,list.contentType);
         
         if (list.moreType != 0) {
             [listMarr addObject:list];
@@ -38,6 +38,23 @@
          */
 
     }
+    
+    //FMDB测试数据存储
+        dispatch_async(dispatch_get_global_queue(0, 0), ^{
+            NSMutableArray *marr = [[NSMutableArray alloc]init];
+            NSInteger n = 0;
+            for (NSDictionary *dic in baseModel.result.dataList) {
+                SelectionDataList *list = [SelectionDataList modelObjectWithDictionary:dic];
+                SelectionModel *model = [[SelectionModel alloc]init];
+                model.name = list.name;
+                [marr addObject:model];
+                n++;
+                if (n == 10) {
+                    n = 0;
+                    [SelectionModel saveObjects:marr];
+                }
+            }
+        });
     //顶部滚动图片
     SelectionDataList *SelectionData = (SelectionDataList *)[listMarr firstObject];
     [listMarr removeObjectAtIndex:0];

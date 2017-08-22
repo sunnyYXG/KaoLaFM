@@ -125,6 +125,11 @@
 -(void)setData:(NSArray *)data{
     _data = data;
     [self yxg_reloadData];
+    
+    //FMDB测试数据存储
+    NSArray *Arr = [SelectionModel findAll];
+    NSLog(@"all:%@",Arr);
+    [SelectionModel clearTable];
 }
 
 -(void)setBannerList:(NSArray *)BannerList{
