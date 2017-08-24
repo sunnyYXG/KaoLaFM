@@ -113,8 +113,18 @@
         [block_self.tableView.mj_header endRefreshing];
         if (success) {
             block_self.baseModel = (SelectionBaseClass *)[SelectionBaseClass yy_modelWithJSON:response];
-            [SelectionModel ModelResolver:block_self.baseModel VC:block_self];
-            [block_self yxg_reloadData];
+            //数据处理方法1： 使用block
+            [SelectionModel handleModelWith:block_self.baseModel success:^(NSDictionary *modelDic, BOOL success) {
+                block_self.data = modelDic[@"model2"];
+                block_self.TJMenuView.menus = modelDic[@"model1"];
+                block_self.bannerView.aryImg = modelDic[@"model0"];
+                [block_self yxg_reloadData];
+            } failure:^(BOOL failure) {
+            }];
+            //数据处理方法2：
+//            [SelectionModel ModelResolver:block_self.baseModel VC:block_self];
+//            [block_self yxg_reloadData];
+
         }else{
             [block_self showError:@"数据在火星..."];
         }

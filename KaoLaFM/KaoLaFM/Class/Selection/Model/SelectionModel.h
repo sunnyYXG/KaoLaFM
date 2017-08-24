@@ -10,9 +10,15 @@
 #import "YXGDBModel.h"
 @class SelectionBaseClass;
 
+//typedef void(^SelectionModelCompletion)(NSDictionary *modelDic, BOOL success);
+//typedef void(^SelectionModelCompletion)(NSDictionary *modelDic, BOOL success);
+
 @interface SelectionModel : YXGDBModel
+
+@property (nonatomic) NSString *name;
 
 + (NSDictionary *)ModelResolver:(SelectionBaseClass *)baseModel VC:(UIViewController *)VC;
 
-@property (nonatomic) NSString *name;
++ (void)handleModelWith:(SelectionBaseClass *)baseModel success:(void (^)(NSDictionary *modelDic, BOOL success))success failure:(void (^)(BOOL failure))failure;
+
 @end
