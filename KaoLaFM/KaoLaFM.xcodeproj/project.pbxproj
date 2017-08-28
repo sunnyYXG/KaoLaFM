@@ -15,6 +15,8 @@
 		0D1ACA1D1F00ADB6008282B7 /* SubscribeModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D1ACA1C1F00ADB6008282B7 /* SubscribeModel.m */; };
 		0D1ACA201F00B2BD008282B7 /* SubscribeCellFrame.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D1ACA1F1F00B2BD008282B7 /* SubscribeCellFrame.m */; };
 		0D1ACA231F00D22C008282B7 /* SubscribeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D1ACA221F00D22C008282B7 /* SubscribeCell.m */; };
+		0D27219B1F53F8AF0002E627 /* YYFPSLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D2721981F53F8AF0002E627 /* YYFPSLabel.m */; };
+		0D27219C1F53F8AF0002E627 /* YYWeakProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D27219A1F53F8AF0002E627 /* YYWeakProxy.m */; };
 		0D352D181ECD343200447E1B /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0D352D141ECD343200447E1B /* InfoPlist.strings */; };
 		0D352D191ECD343200447E1B /* KLFMAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D352D161ECD343200447E1B /* KLFMAppDelegate.m */; };
 		0D352D1F1ECD347500447E1B /* KLFMSelectionVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D352D1C1ECD347500447E1B /* KLFMSelectionVC.m */; };
@@ -125,6 +127,10 @@
 		0D1ACA1F1F00B2BD008282B7 /* SubscribeCellFrame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SubscribeCellFrame.m; sourceTree = "<group>"; };
 		0D1ACA211F00D22C008282B7 /* SubscribeCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SubscribeCell.h; sourceTree = "<group>"; };
 		0D1ACA221F00D22C008282B7 /* SubscribeCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SubscribeCell.m; sourceTree = "<group>"; };
+		0D2721971F53F8AF0002E627 /* YYFPSLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYFPSLabel.h; sourceTree = "<group>"; };
+		0D2721981F53F8AF0002E627 /* YYFPSLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YYFPSLabel.m; sourceTree = "<group>"; };
+		0D2721991F53F8AF0002E627 /* YYWeakProxy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYWeakProxy.h; sourceTree = "<group>"; };
+		0D27219A1F53F8AF0002E627 /* YYWeakProxy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YYWeakProxy.m; sourceTree = "<group>"; };
 		0D352D121ECD343200447E1B /* BaseDefine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseDefine.h; sourceTree = "<group>"; };
 		0D352D131ECD343200447E1B /* BaseUrl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseUrl.h; sourceTree = "<group>"; };
 		0D352D141ECD343200447E1B /* InfoPlist.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = InfoPlist.strings; sourceTree = "<group>"; };
@@ -372,6 +378,17 @@
 			path = DataModel;
 			sourceTree = "<group>";
 		};
+		0D2721961F53F8AF0002E627 /* YYFPSLabel */ = {
+			isa = PBXGroup;
+			children = (
+				0D2721971F53F8AF0002E627 /* YYFPSLabel.h */,
+				0D2721981F53F8AF0002E627 /* YYFPSLabel.m */,
+				0D2721991F53F8AF0002E627 /* YYWeakProxy.h */,
+				0D27219A1F53F8AF0002E627 /* YYWeakProxy.m */,
+			);
+			path = YYFPSLabel;
+			sourceTree = "<group>";
+		};
 		0D352D111ECD343200447E1B /* AppDelegate */ = {
 			isa = PBXGroup;
 			children = (
@@ -417,6 +434,7 @@
 		0D352D231ECD3E5400447E1B /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				0D2721961F53F8AF0002E627 /* YYFPSLabel */,
 				0D7ACC0F1F42B7C800049B20 /* FMDBHelper */,
 				0D354A921F022460003F3AA1 /* YXGNetWorking */,
 				0D6095DE1EF7CB560028666F /* YXGRollingLabel */,
@@ -1155,6 +1173,7 @@
 				0D401BC11EF112FF0076CE5D /* CategoryResult.m in Sources */,
 				0D401BC01EF112FF0076CE5D /* CategoryDataList.m in Sources */,
 				0D401BB61EF10F9A0076CE5D /* KLFMCategoryReq.m in Sources */,
+				0D27219B1F53F8AF0002E627 /* YYFPSLabel.m in Sources */,
 				0DDFE8C21EF37CD500BDE04B /* BroadDataList.m in Sources */,
 				6412F5C01EF54AF000198C55 /* YXGAVPlayer.m in Sources */,
 				0D5E537F1ED52707009FB1D9 /* KLFMNavBar.m in Sources */,
@@ -1192,6 +1211,7 @@
 				0D352D381ECD3E5400447E1B /* CycleBannerView.m in Sources */,
 				0D7ACC121F42B7F200049B20 /* YXGDBHelper.m in Sources */,
 				64853D991ED477A800D05788 /* HomeTJMenuView.m in Sources */,
+				0D27219C1F53F8AF0002E627 /* YYWeakProxy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

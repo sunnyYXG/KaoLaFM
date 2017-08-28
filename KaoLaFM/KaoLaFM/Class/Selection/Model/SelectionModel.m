@@ -126,7 +126,6 @@
             SelectionCellFrame *cellFrame = [SelectionCellFrame new];
             cellFrame.cellModel = (SelectionDataList *)listMarr[i];
             [marr addObject:cellFrame];
-            
         }
         dispatch_sync(dispatch_get_main_queue(), ^{
             success(@{@"model0":BannerList,@"model1":menuList,@"model2":marr},YES);
