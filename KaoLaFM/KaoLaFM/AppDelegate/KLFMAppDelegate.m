@@ -8,6 +8,7 @@
 
 #import "KLFMAppDelegate.h"
 #import "KLFMLauchMovieVC.h"
+#import <Bugly/Bugly.h>
 @interface KLFMAppDelegate ()
 
 @end
@@ -16,6 +17,9 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    
+    [Bugly startWithAppId:@"cdcc07a0e3"];
+    
     // Override point for customization after application launch.
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
     self.window.backgroundColor = [UIColor whiteColor];
