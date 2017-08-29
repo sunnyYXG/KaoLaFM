@@ -20,9 +20,13 @@
 #import "CycleBannerView.h"
 #import "HomeTJMenuView.h"
 #import "YXGAVPlayer.h"
+
+#import "YYFPSLabel.h"
+
 @interface KLFMSelectionVC ()<SelectionCellDelegate>{
     SelectionCell *_cell;
 }
+@property (nonatomic, strong) YYFPSLabel *fpsLabel;
 
 @end
 
@@ -54,6 +58,16 @@
     }
     return _TJMenuView;
 }
+- (void)startTheFPSLabel{
+    _fpsLabel = [[YYFPSLabel alloc]initWithFrame:CGRectMake(80, 200, 80, 60)];
+    [_fpsLabel sizeToFit];
+    _fpsLabel.alpha = 0;
+    _fpsLabel.textColor = [UIColor orangeColor];
+    _fpsLabel.backgroundColor = [UIColor redColor];
+    [self.view addSubview:_fpsLabel];
+//    [self.view bringSubviewToFront:_fpsLabel];
+    
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -65,6 +79,8 @@
 
     [self.view setHeight:self.view.height - 64];
     [self initBannerView];
+    
+    [self startTheFPSLabel];
 }
 //- (void)isPlayer_Notification:(NSNotification *)n{
 //    NSDictionary *dic = n.userInfo;
