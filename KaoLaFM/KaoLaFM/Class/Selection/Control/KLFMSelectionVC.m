@@ -173,6 +173,7 @@
     return self.data.count;
 }
 -(BaseTableViewCell *)yxg_cellAtIndexPath:(NSIndexPath *)indexPath{
+    DDLog(@"%s:%ld",__func__,self.data.count);
     SelectionCell *cell = [SelectionCell cellWithTableView:self.tableView identifier:[NSString stringWithFormat:@"cell%ld%ld",indexPath.section,indexPath.row]];
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     SelectionCellFrame *cellFrame = self.data[indexPath.row];
@@ -182,6 +183,7 @@
     return cell;
 }
 -(CGFloat)yxg_cellheightAtIndexPath:(NSIndexPath *)indexPath{
+    DDLog(@"%s",__func__);
     SelectionCellFrame *cellFrame = self.data[indexPath.row];
     return cellFrame.cellHeight;
 }
