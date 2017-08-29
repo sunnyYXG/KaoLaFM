@@ -13,4 +13,5 @@ pod 'YYCache'
 pod 'MBProgressHUD'
 pod 'SVProgressHUD'
 pod 'FMDB'
+pod 'Bugly'
 end
