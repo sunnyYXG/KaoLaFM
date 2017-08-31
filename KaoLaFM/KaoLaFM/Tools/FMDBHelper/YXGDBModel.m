@@ -43,6 +43,7 @@
     NSMutableArray *proTypes = [NSMutableArray array];
     NSArray *theTransients = [[self class] transients];
     unsigned int outCount, i;
+    //class_copyPropertyList获取本类的属性变量和实例变量
     objc_property_t *properties = class_copyPropertyList([self class], &outCount);
     for (i = 0; i < outCount; i++) {
         objc_property_t property = properties[i];
@@ -94,6 +95,7 @@
     
     NSMutableArray *proNames = [NSMutableArray array];
     NSMutableArray *proTypes = [NSMutableArray array];
+    //此方法主要是对getPropertys返回的属性和类型基础上 再拼接一个主键以及主键类型
     [proNames addObject:primaryId];
     [proTypes addObject:[NSString stringWithFormat:@"%@ %@",SQLINTEGER,PrimaryKey]];
     [proNames addObjectsFromArray:[dict objectForKey:@"name"]];
@@ -139,7 +141,9 @@
     __block BOOL res = YES;
     YXGDBHelper *jkDB = [YXGDBHelper shareInstance];
     [jkDB.dbQueue inTransaction:^(FMDatabase *db, BOOL *rollback) {
+        //该类的类名作为表名
         NSString *tableName = NSStringFromClass(self.class);
+        //获取数据库 每一列的类型 将每一列的类型转成字符串来进行sql操作
         NSString *columeAndType = [self.class getColumeAndTypeString];
         NSString *sql = [NSString stringWithFormat:@"CREATE TABLE IF NOT EXISTS %@(%@);",tableName,columeAndType];
         if (![db executeUpdate:sql]) {
@@ -247,10 +251,12 @@
 
 - (BOOL)save
 {
+    //用当前类的类名作为表名
     NSString *tableName = NSStringFromClass(self.class);
     NSMutableString *keyString = [NSMutableString string];
     NSMutableString *valueString = [NSMutableString string];
     NSMutableArray *insertValues = [NSMutableArray  array];
+    //查找每一列的列明
     for (int i = 0; i < self.columeNames.count; i++) {
         NSString *proname = [self.columeNames objectAtIndex:i];
         if ([proname isEqualToString:primaryId]) {
@@ -258,19 +264,21 @@
         }
         [keyString appendFormat:@"%@,", proname];
         [valueString appendString:@"?,"];
+        //通过列名作为key去获取对应的值
         id value = [self valueForKey:proname];
         if (!value) {
             value = @"";
         }
         [insertValues addObject:value];
     }
-    
+    //去掉字符串最后一次字符","
     [keyString deleteCharactersInRange:NSMakeRange(keyString.length - 1, 1)];
     [valueString deleteCharactersInRange:NSMakeRange(valueString.length - 1, 1)];
     
     YXGDBHelper *jkDB = [YXGDBHelper shareInstance];
     __block BOOL res = NO;
     [jkDB.dbQueue inDatabase:^(FMDatabase *db) {
+        //tableName表名、keyString(?,?...),valueString:要插入的值
         NSString *sql = [NSString stringWithFormat:@"INSERT INTO %@(%@) VALUES (%@);", tableName, keyString, valueString];
         res = [db executeUpdate:sql withArgumentsInArray:insertValues];
         self.pk = res?[NSNumber numberWithLongLong:db.lastInsertRowId].intValue:0;
@@ -364,7 +372,36 @@
     }];
     return res;
 }
-
+/** 更新单个对象 */
+//updataStr:作用索引条件的数据
+//updataName：作为索引条件的列名
+- (BOOL)update:(NSString*)updataStr updataName:(NSString *)updataName
+{
+        YXGDBHelper *jkDB = [YXGDBHelper shareInstance];
+        __block BOOL res = NO;
+        [jkDB.dbQueue inDatabase:^(FMDatabase *db) {
+            NSString *tableName = NSStringFromClass(self.class);
+            NSMutableString *keyString = [NSMutableString string];
+            NSMutableArray *updateValues = [NSMutableArray  array];
+            //第一列为主键不添加进来
+            for (int i = 1; i < self.columeNames.count; i++) {
+                NSString *proname = [self.columeNames objectAtIndex:i];
+                [keyString appendFormat:@" %@=?,", proname];
+                id value = [self valueForKey:proname];
+                if (!value) {
+                    value = @"";
+                }
+                [updateValues addObject:value];
+            }
+            
+            //删除最后那个逗号
+            [keyString deleteCharactersInRange:NSMakeRange(keyString.length - 1, 1)];
+            NSString *sql = [NSString stringWithFormat:@"UPDATE %@ SET %@ WHERE %@ = '%@';", tableName, keyString,updataName,updataStr];
+            res = [db executeUpdate:sql withArgumentsInArray:updateValues];
+            NSLog(res?@"更新成功":@"更新失败");
+        }];
+        return res;
+}
 /** 批量更新用户对象*/
 + (BOOL)updateObjects:(NSArray *)array
 {
@@ -607,6 +644,7 @@
 }
 
 #pragma mark - util method
+    //将getAllProperties返回的字典数据中的列名和属性拼接成字符串 以便进行数据库操作
 + (NSString *)getColumeAndTypeString
 {
     NSMutableString* pars = [NSMutableString string];

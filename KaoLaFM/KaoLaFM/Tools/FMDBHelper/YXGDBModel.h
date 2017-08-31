@@ -8,6 +8,13 @@
 
 #import <Foundation/Foundation.h>
 
+/*
+ 其实在我对表进行更新操作时发现，我针对特定行进行数据更新时需要先获得主键作为索引找到我要更新的那个行的数据，但我是没办法知道我要更新数据的那个行的主键值的，要更新成功的话必须从第一行开始更新，每更新一个必须对变量＋1作为主键的索引条件
+ 
+ 添加- (BOOL)update:(NSString*)updataStr updataName:(NSString *)updataName方法
+ 可用能拿得到的数据中可以作为唯一能识别的列的数据作为索引条件
+ */
+
 /** SQLite五种数据类型 */
 #define SQLTEXT     @"TEXT"
 #define SQLINTEGER  @"INTEGER"
@@ -57,6 +64,8 @@
 + (BOOL)saveObjects:(NSArray *)array;
 /** 更新单个数据 */
 - (BOOL)update;
+/** 更新单个对象 */
+- (BOOL)update:(NSString*)updataStr updataName:(NSString *)updataName;
 /** 批量更新数据*/
 + (BOOL)updateObjects:(NSArray *)array;
 /** 删除单个数据 */
@@ -69,7 +78,6 @@
 + (BOOL)deleteObjectsWithFormat:(NSString *)format, ...;
 /** 清空表 */
 + (BOOL)clearTable;
-
 /** 查询全部数据 */
 + (NSArray *)findAll;
 
